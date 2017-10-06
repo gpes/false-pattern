@@ -8,5 +8,5 @@ Este projeto tem por objetivo automatizar, usando a ferramenta [Docker](https://
 
 Para executar este experimento devemos realizar o seguinte conjunto de passos:
 * `git clone https://github.com/gpes/false-pattern.git`
-* Na pasta criada (`false-pattern`), `docker build -t job/design-pattern . `
-* Na pasta criada (`false-pattern)`, `docker run  -v $(pwd)/output:/output job/design-pattern axion-1.0-M2`, onde `axion-1.0-M2` é o nome do projeto que desejamos analisar.
+* Na pasta criada (`false-pattern`), `docker build -t ricardojob/design-pattern . `
+* Na pasta criada (`false-pattern)`, `docker run  -v $(pwd)/output:/output ricardojob/design-pattern axion-1.0-M2`, onde `axion-1.0-M2` é o nome do projeto que desejamos analisar.
