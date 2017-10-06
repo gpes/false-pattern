@@ -1,6 +1,6 @@
 # Projeto **_false_-pattern**
 
-Este projeto tem por objetivo automatizar, usando a feramenta [Docker](https://www.docker.com/), a execução de um exmperimento que:
+Este projeto tem por objetivo automatizar, usando a ferramenta [Docker](https://www.docker.com/), a execução de um experimento que:
 * Realiza o download de um projeto do [Qualitas.class Corpus](http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html);
 * Executa a ferramenta [Design Pattern detection Tool](http://users.encs.concordia.ca/~nikolaos/pattern_detection.html) para detectar padrões de projeto de software;
 
