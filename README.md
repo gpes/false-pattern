@@ -3,6 +3,7 @@
 Este projeto tem por objetivo automatizar, usando a ferramenta [Docker](https://www.docker.com/), a execução de um experimento que:
 * Realiza o download de um projeto do [Qualitas.class Corpus](http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html);
 * Executa a ferramenta [Design Pattern detection Tool](http://users.encs.concordia.ca/~nikolaos/pattern_detection.html) para detectar padrões de projeto de software;
+* Executa a ferramenta [Vocabulary Extractor](http://www.softwarevocabulary.org) e [Terms Counter](http://www.softwarevocabulary.org) para extrair as informações dos vocabulários do software;
 
 # How to
 
