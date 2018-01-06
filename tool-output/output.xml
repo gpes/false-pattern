@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<!-- Analisar esse Factory -->
+			<role name="Creator" element="org.dbunit.database.IResultSetTableFactory" />
+			<role name="FactoryMethod()" element="org.dbunit.database.IResultSetTableFactory::createTable(java.lang.String, java.lang.String, org.dbunit.database.IDatabaseConnection):org.dbunit.database.IResultSetTable" />
+			<role name="FactoryMethod()" element="org.dbunit.database.IResultSetTableFactory::createTable(org.dbunit.dataset.ITableMetaData, org.dbunit.database.IDatabaseConnection):org.dbunit.database.IResultSetTable" />
+			<role name="FactoryMethod()" element="org.dbunit.database.IResultSetTableFactory::createTable(java.lang.String, java.sql.PreparedStatement, org.dbunit.database.IDatabaseConnection):org.dbunit.database.IResultSetTable" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="FactoryMethod()" element="org.dbunit.database.IDatabaseConnection::createDataSet():org.dbunit.dataset.IDataSet" />
+			<role name="FactoryMethod()" element="org.dbunit.database.IDatabaseConnection::createDataSet(java.lang.String[]):org.dbunit.dataset.IDataSet" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.dbunit.util.fileloader.DataFileLoader" />
+			<role name="FactoryMethod()" element="org.dbunit.util.fileloader.DataFileLoader::load(java.lang.String):org.dbunit.dataset.IDataSet" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.dbunit.util.fileloader.AbstractDataFileLoader" />
+			<role name="FactoryMethod()" element="org.dbunit.util.fileloader.AbstractDataFileLoader::loadDataSet(java.net.URL):org.dbunit.dataset.IDataSet" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.dbunit.dataset.AbstractDataSet" />
+			<role name="FactoryMethod()" element="org.dbunit.dataset.AbstractDataSet::createIterator(boolean):org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.dbunit.dataset.filter.ITableFilter" />
+			<role name="FactoryMethod()" element="org.dbunit.dataset.filter.ITableFilter::iterator(org.dbunit.dataset.IDataSet, boolean):org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<!-- Analisar esse factory -->
+			<role name="Creator" element="org.dbunit.dataset.datatype.IDataTypeFactory" />
+			<role name="FactoryMethod()" element="org.dbunit.dataset.datatype.IDataTypeFactory::createDataType(int, java.lang.String, java.lang.String, java.lang.String):org.dbunit.dataset.datatype.DataType" />
+		</instance>
+		<instance>
+			<!-- Analisar esse Iterator -->
+			<role name="Creator" element="org.dbunit.dataset.ITableIterator" />
+			<role name="FactoryMethod()" element="org.dbunit.dataset.ITableIterator::getTable():org.dbunit.dataset.ITable" />
+			<role name="FactoryMethod()" element="org.dbunit.dataset.ITableIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<!-- Candidato -->
+		<instance>
+			<role name="Singleton" element="org.dbunit.ext.oracle.OracleSdoGeometry" />
+			<role name="uniqueInstance" element="org.dbunit.ext.oracle.OracleSdoGeometry::_OracleSdoGeometryFactory:org.dbunit.ext.oracle.OracleSdoGeometry" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.ext.oracle.OracleSdoOrdinateArray" />
+			<role name="uniqueInstance" element="org.dbunit.ext.oracle.OracleSdoOrdinateArray::_OracleSdoOrdinateArrayFactory:org.dbunit.ext.oracle.OracleSdoOrdinateArray" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.ext.oracle.OracleSdoElemInfoArray" />
+			<role name="uniqueInstance" element="org.dbunit.ext.oracle.OracleSdoElemInfoArray::_OracleSdoElemInfoArrayFactory:org.dbunit.ext.oracle.OracleSdoElemInfoArray" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.ext.oracle.OracleSdoPointType" />
+			<role name="uniqueInstance" element="org.dbunit.ext.oracle.OracleSdoPointType::_OracleSdoPointTypeFactory:org.dbunit.ext.oracle.OracleSdoPointType" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::NONE:org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::UPDATE:org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::INSERT:org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::REFRESH:org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::DELETE:org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::DELETE_ALL:org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::TRUNCATE_TABLE:org.dbunit.operation.DatabaseOperation" />
+			<role name="uniqueInstance" element="org.dbunit.operation.DatabaseOperation::CLEAN_INSERT:org.dbunit.operation.DatabaseOperation" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.IOperationListener" />
+			<role name="uniqueInstance" element="org.dbunit.IOperationListener::NO_OP_OPERATION_LISTENER:org.dbunit.IOperationListener" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.dataset.Column$AutoIncrement" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.Column$AutoIncrement::YES:org.dbunit.dataset.Column$AutoIncrement" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.Column$AutoIncrement::NO:org.dbunit.dataset.Column$AutoIncrement" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.Column$AutoIncrement::UNKNOWN:org.dbunit.dataset.Column$AutoIncrement" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::UNKNOWN:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::CHAR:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::VARCHAR:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::LONGVARCHAR:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::CLOB:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::NUMERIC:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::DECIMAL:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::BOOLEAN:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::BIT:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::TINYINT:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::SMALLINT:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::INTEGER:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::BIGINT:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::BIGINT_AUX_LONG:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::REAL:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::FLOAT:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::DOUBLE:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::DATE:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::TIME:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::TIMESTAMP:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::BINARY:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::VARBINARY:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::LONGVARBINARY:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::BLOB:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::NCHAR:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::NVARCHAR:org.dbunit.dataset.datatype.DataType" />
+			<role name="uniqueInstance" element="org.dbunit.dataset.datatype.DataType::LONGNVARCHAR:org.dbunit.dataset.datatype.DataType" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.dbunit.AbstractDatabaseTester$OperationType" />
+			<role name="uniqueInstance" element="org.dbunit.AbstractDatabaseTester$OperationType::SET_UP:org.dbunit.AbstractDatabaseTester$OperationType" />
+			<role name="uniqueInstance" element="org.dbunit.AbstractDatabaseTester$OperationType::TEAR_DOWN:org.dbunit.AbstractDatabaseTester$OperationType" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Adapter" element="org.dbunit.dataset.csv.CsvProducer" />
+			<role name="adaptee" element="org.dbunit.dataset.csv.CsvProducer::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvProducer::produce():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Adapter" element="org.dbunit.dataset.csv.CsvURLProducer" />
+			<role name="adaptee" element="org.dbunit.dataset.csv.CsvURLProducer::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvURLProducer::produce():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Adapter" element="org.dbunit.dataset.sqlloader.SqlLoaderControlProducer" />
+			<role name="adaptee" element="org.dbunit.dataset.sqlloader.SqlLoaderControlProducer::consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.sqlloader.SqlLoaderControlProducer::produce():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Adapter" element="org.dbunit.dataset.stream.DataSetProducerAdapter" />
+			<role name="adaptee" element="org.dbunit.dataset.stream.DataSetProducerAdapter::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.stream.DataSetProducerAdapter::produce():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Adapter" element="org.dbunit.database.QueryDataSet" />
+			<role name="adaptee" element="org.dbunit.database.QueryDataSet::_tables:org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Request()" element="org.dbunit.database.QueryDataSet::createIterator(boolean):org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Adapter" element="org.dbunit.dataset.AbstractDataSet" />
+			<role name="adaptee" element="org.dbunit.dataset.AbstractDataSet::_orderedTableNameMap:org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Request()" element="org.dbunit.dataset.AbstractDataSet::getTableNames():java.lang.String[]" />
+			<role name="Request()" element="org.dbunit.dataset.AbstractDataSet::getTable(java.lang.String):org.dbunit.dataset.ITable" />
+			<role name="Request()" element="org.dbunit.dataset.AbstractDataSet::getTables():org.dbunit.dataset.ITable[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Adapter" element="org.dbunit.dataset.CachedDataSet" />
+			<role name="adaptee" element="org.dbunit.dataset.CachedDataSet::_tables:org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Request()" element="org.dbunit.dataset.CachedDataSet::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.CachedDataSet::createIterator(boolean):org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Adapter" element="org.dbunit.dataset.excel.XlsDataSet" />
+			<role name="adaptee" element="org.dbunit.dataset.excel.XlsDataSet::_tables:org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Request()" element="org.dbunit.dataset.excel.XlsDataSet::createIterator(boolean):org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Adapter" element="org.dbunit.dataset.xml.FlatDtdDataSet" />
+			<role name="adaptee" element="org.dbunit.dataset.xml.FlatDtdDataSet::_tableMap:org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatDtdDataSet::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatDtdDataSet::createIterator(boolean):org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.util.xml.XmlWriter" />
+			<role name="Adapter" element="org.dbunit.dataset.xml.FlatXmlWriter" />
+			<role name="adaptee" element="org.dbunit.dataset.xml.FlatXmlWriter::_xmlWriter:org.dbunit.util.xml.XmlWriter" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::startDataSet():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::endDataSet():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.util.xml.XmlWriter" />
+			<role name="Adapter" element="org.dbunit.dataset.xml.XmlDataSetWriter" />
+			<role name="adaptee" element="org.dbunit.dataset.xml.XmlDataSetWriter::_xmlWriter:org.dbunit.util.xml.XmlWriter" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::startDataSet():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::endDataSet():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.stream.BufferedConsumer$TableBuffer" />
+			<role name="Adapter" element="org.dbunit.dataset.stream.BufferedConsumer" />
+			<role name="adaptee" element="org.dbunit.dataset.stream.BufferedConsumer::_activeTable:org.dbunit.dataset.stream.BufferedConsumer$TableBuffer" />
+			<role name="Request()" element="org.dbunit.dataset.stream.BufferedConsumer::row(java.lang.Object[]):void" />
+			<role name="Request()" element="org.dbunit.dataset.stream.BufferedConsumer::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.stream.BufferedConsumer::endTable():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.util.concurrent.Puttable" />
+			<role name="Adapter" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer" />
+			<role name="adaptee" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::_channel:org.dbunit.util.concurrent.Puttable" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::endDataSet():void" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.filter.PatternMatcher" />
+			<role name="Adapter" element="org.dbunit.dataset.filter.ExcludeTableFilter" />
+			<role name="adaptee" element="org.dbunit.dataset.filter.ExcludeTableFilter::_patternMatcher:org.dbunit.dataset.filter.PatternMatcher" />
+			<role name="Request()" element="org.dbunit.dataset.filter.ExcludeTableFilter::isValidName(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.filter.PatternMatcher" />
+			<role name="Adapter" element="org.dbunit.dataset.filter.IncludeTableFilter" />
+			<role name="adaptee" element="org.dbunit.dataset.filter.IncludeTableFilter::_patternMatcher:org.dbunit.dataset.filter.PatternMatcher" />
+			<role name="Request()" element="org.dbunit.dataset.filter.IncludeTableFilter::isValidName(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Adapter" element="org.dbunit.dataset.filter.SequenceTableFilter" />
+			<role name="adaptee" element="org.dbunit.dataset.filter.SequenceTableFilter::_tableNameMap:org.dbunit.dataset.OrderedTableNameMap" />
+			<role name="Request()" element="org.dbunit.dataset.filter.SequenceTableFilter::getTableNames(org.dbunit.dataset.IDataSet):java.lang.String[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.IDataSet" />
+			<role name="Adapter" element="org.dbunit.database.DatabaseTableIterator" />
+			<role name="adaptee" element="org.dbunit.database.DatabaseTableIterator::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.IDataSet" />
+			<role name="Adapter" element="org.dbunit.dataset.filter.SequenceTableIterator" />
+			<role name="adaptee" element="org.dbunit.dataset.filter.SequenceTableIterator::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Request()" element="org.dbunit.dataset.filter.SequenceTableIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.filter.SequenceTableIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.DefaultTable" />
+			<role name="Adapter" element="org.dbunit.dataset.CachedDataSet" />
+			<role name="adaptee" element="org.dbunit.dataset.CachedDataSet::_activeTable:org.dbunit.dataset.DefaultTable" />
+			<role name="Request()" element="org.dbunit.dataset.CachedDataSet::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.CachedDataSet::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.database.DatabaseConfig" />
+			<role name="Adapter" element="org.dbunit.database.AbstractDatabaseConnection" />
+			<role name="adaptee" element="org.dbunit.database.AbstractDatabaseConnection::_databaseConfig:org.dbunit.database.DatabaseConfig" />
+			<role name="Request()" element="org.dbunit.database.AbstractDatabaseConnection::getStatementFactory():org.dbunit.database.statement.IStatementFactory" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.stream.StreamingIterator$StreamingTable" />
+			<role name="Adapter" element="org.dbunit.dataset.stream.StreamingIterator" />
+			<role name="adaptee" element="org.dbunit.dataset.stream.StreamingIterator::_activeTable:org.dbunit.dataset.stream.StreamingIterator$StreamingTable" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator::next():boolean" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.dbunit.dataset.FilteredDataSet" />
+			<role name="Adaptee" element="org.dbunit.dataset.filter.ITableFilter" />
+			<role name="adaptee" element="org.dbunit.dataset.FilteredDataSet::_filter:org.dbunit.dataset.filter.ITableFilter" />
+			<role name="Request()" element="org.dbunit.dataset.FilteredDataSet::createIterator(boolean):org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="Adapter" element="org.dbunit.dataset.csv.CsvDataSetWriter" />
+			<role name="adaptee" element="org.dbunit.dataset.csv.CsvDataSetWriter::_activeMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvDataSetWriter::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvDataSetWriter::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvDataSetWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="Adapter" element="org.dbunit.dataset.xml.FlatXmlWriter" />
+			<role name="adaptee" element="org.dbunit.dataset.xml.FlatXmlWriter::_activeMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="Adapter" element="org.dbunit.dataset.xml.XmlDataSetWriter" />
+			<role name="adaptee" element="org.dbunit.dataset.xml.XmlDataSetWriter::_activeMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.filter.PatternMatcher" />
+			<role name="Adapter" element="org.dbunit.dataset.filter.DefaultColumnFilter" />
+			<role name="adaptee" element="org.dbunit.dataset.filter.DefaultColumnFilter::_includeMatcher:org.dbunit.dataset.filter.PatternMatcher" />
+			<role name="adaptee" element="org.dbunit.dataset.filter.DefaultColumnFilter::_excludeMatcher:org.dbunit.dataset.filter.PatternMatcher" />
+			<role name="Request()" element="org.dbunit.dataset.filter.DefaultColumnFilter::accept(java.lang.String, org.dbunit.dataset.Column):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.IDatabaseTester" />
+			<role name="Adapter" element="org.dbunit.DefaultPrepAndExpectedTestCase" />
+			<role name="adaptee" element="org.dbunit.DefaultPrepAndExpectedTestCase::databaseTester:org.dbunit.IDatabaseTester" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::cleanupData():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.datatype.ToleratedDeltaMap" />
+			<role name="Adapter" element="org.dbunit.dataset.datatype.DefaultDataTypeFactory" />
+			<role name="adaptee" element="org.dbunit.dataset.datatype.DefaultDataTypeFactory::_toleratedDeltaMap:org.dbunit.dataset.datatype.ToleratedDeltaMap" />
+			<role name="Request()" element="org.dbunit.dataset.datatype.DefaultDataTypeFactory::createDataType(int, java.lang.String, java.lang.String, java.lang.String):org.dbunit.dataset.datatype.DataType" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.dbunit.DefaultPrepAndExpectedTestCase" />
+			<role name="Adaptee" element="org.dbunit.dataset.IDataSet" />
+			<role name="adaptee" element="org.dbunit.DefaultPrepAndExpectedTestCase::prepDs:org.dbunit.dataset.IDataSet" />
+			<role name="adaptee" element="org.dbunit.DefaultPrepAndExpectedTestCase::expectedDs:org.dbunit.dataset.IDataSet" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::cleanupData():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.database.statement.IBatchStatement" />
+			<!-- Analisar decorator -->
+			<role name="Adapter" element="org.dbunit.database.statement.BatchStatementDecorator" />
+			<role name="adaptee" element="org.dbunit.database.statement.BatchStatementDecorator::_statement:org.dbunit.database.statement.IBatchStatement" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::addBatch():void" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::executeBatch():int" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::clearBatch():void" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="Adapter" element="org.dbunit.database.QueryTableIterator" />
+			<role name="adaptee" element="org.dbunit.database.QueryTableIterator::_connection:org.dbunit.database.IDatabaseConnection" />
+			<role name="Request()" element="org.dbunit.database.QueryTableIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.database.QueryTableIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.database.IResultSetTable" />
+			<role name="Adapter" element="org.dbunit.database.DatabaseTableIterator" />
+			<role name="adaptee" element="org.dbunit.database.DatabaseTableIterator::_currentTable:org.dbunit.database.IResultSetTable" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableIterator::next():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.database.IResultSetTable" />
+			<role name="Adapter" element="org.dbunit.database.QueryTableIterator" />
+			<role name="adaptee" element="org.dbunit.database.QueryTableIterator::_currentTable:org.dbunit.database.IResultSetTable" />
+			<role name="Request()" element="org.dbunit.database.QueryTableIterator::next():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.dataset.ITableIterator" />
+			<!-- Analisar Adapter -->
+			<role name="Adapter" element="org.dbunit.dataset.stream.DataSetProducerAdapter" />
+			<role name="adaptee" element="org.dbunit.dataset.stream.DataSetProducerAdapter::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Request()" element="org.dbunit.dataset.stream.DataSetProducerAdapter::produce():void" />
+		</instance>
+		<instance>
+			<!-- Analisar Builder (Builder encontrado dentro das instancias do adapter) -->
+			<role name="Adaptee" element="org.dbunit.dataset.xml.FlatXmlDataSetBuilder" />
+			<role name="Adapter" element="org.dbunit.util.fileloader.FlatXmlDataFileLoader" />
+			<role name="adaptee" element="org.dbunit.util.fileloader.FlatXmlDataFileLoader::builder:org.dbunit.dataset.xml.FlatXmlDataSetBuilder" />
+			<role name="Request()" element="org.dbunit.util.fileloader.FlatXmlDataFileLoader::loadDataSet(java.net.URL):org.dbunit.dataset.IDataSet" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.dbunit.database.DatabaseConfig" />
+			<role name="Adapter" element="org.dbunit.database.DatabaseDataSet$OracleRecycleBinTableFilter" />
+			<role name="adaptee" element="org.dbunit.database.DatabaseDataSet$OracleRecycleBinTableFilter::_config:org.dbunit.database.DatabaseConfig" />
+			<role name="Request()" element="org.dbunit.database.DatabaseDataSet$OracleRecycleBinTableFilter::accept(java.lang.String):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="org.dbunit.operation.DatabaseOperation" />
+			<role name="Decorator" element="org.dbunit.ext.mssql.InsertIdentityOperation" />
+			<role name="component" element="org.dbunit.ext.mssql.InsertIdentityOperation::_operation:org.dbunit.operation.DatabaseOperation" />
+			<role name="Operation()" element="org.dbunit.ext.mssql.InsertIdentityOperation::execute(org.dbunit.database.IDatabaseConnection, org.dbunit.dataset.IDataSet):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.operation.DatabaseOperation" />
+			<role name="Decorator" element="org.dbunit.operation.CloseConnectionOperation" />
+			<role name="component" element="org.dbunit.operation.CloseConnectionOperation::_operation:org.dbunit.operation.DatabaseOperation" />
+			<role name="Operation()" element="org.dbunit.operation.CloseConnectionOperation::execute(org.dbunit.database.IDatabaseConnection, org.dbunit.dataset.IDataSet):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.operation.DatabaseOperation" />
+			<role name="Decorator" element="org.dbunit.operation.TransactionOperation" />
+			<role name="component" element="org.dbunit.operation.TransactionOperation::_operation:org.dbunit.operation.DatabaseOperation" />
+			<role name="Operation()" element="org.dbunit.operation.TransactionOperation::execute(org.dbunit.database.IDatabaseConnection, org.dbunit.dataset.IDataSet):void" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.database.PrimaryKeyFilteredTableWrapper" />
+			<role name="Component" element="org.dbunit.dataset.ITable" />
+			<role name="component" element="org.dbunit.database.PrimaryKeyFilteredTableWrapper::originalTable:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.database.PrimaryKeyFilteredTableWrapper::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.database.PrimaryKeyFilteredTableWrapper::getValue(int, java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.CaseInsensitiveTable" />
+			<role name="Component" element="org.dbunit.dataset.ITable" />
+			<role name="component" element="org.dbunit.dataset.CaseInsensitiveTable::_table:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveTable::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveTable::getRowCount():int" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveTable::getValue(int, java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.ColumnFilterTable" />
+			<role name="Component" element="org.dbunit.dataset.ITable" />
+			<role name="component" element="org.dbunit.dataset.ColumnFilterTable::originalTable:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.dataset.ColumnFilterTable::getRowCount():int" />
+			<role name="Operation()" element="org.dbunit.dataset.ColumnFilterTable::getValue(int, java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.ForwardOnlyTable" />
+			<role name="Component" element="org.dbunit.dataset.ITable" />
+			<role name="component" element="org.dbunit.dataset.ForwardOnlyTable::_table:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.dataset.ForwardOnlyTable::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.ForwardOnlyTable::getValue(int, java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.ReplacementTable" />
+			<role name="Component" element="org.dbunit.dataset.ITable" />
+			<role name="component" element="org.dbunit.dataset.ReplacementTable::_table:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementTable::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementTable::getRowCount():int" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementTable::getValue(int, java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.RowFilterTable" />
+			<role name="Component" element="org.dbunit.dataset.ITable" />
+			<role name="component" element="org.dbunit.dataset.RowFilterTable::originalTable:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.dataset.RowFilterTable::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.RowFilterTable::getValue(int, java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.SortedTable" />
+			<role name="Component" element="org.dbunit.dataset.ITable" />
+			<role name="component" element="org.dbunit.dataset.SortedTable::_table:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedTable::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedTable::getRowCount():int" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedTable::getValue(int, java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.database.statement.IPreparedBatchStatement" />
+			<role name="Decorator" element="org.dbunit.database.statement.AutomaticPreparedBatchStatement" />
+			<role name="component" element="org.dbunit.database.statement.AutomaticPreparedBatchStatement::_statement:org.dbunit.database.statement.IPreparedBatchStatement" />
+			<role name="Operation()" element="org.dbunit.database.statement.AutomaticPreparedBatchStatement::addValue(java.lang.Object, org.dbunit.dataset.datatype.DataType):void" />
+			<role name="Operation()" element="org.dbunit.database.statement.AutomaticPreparedBatchStatement::addBatch():void" />
+			<role name="Operation()" element="org.dbunit.database.statement.AutomaticPreparedBatchStatement::executeBatch():int" />
+			<role name="Operation()" element="org.dbunit.database.statement.AutomaticPreparedBatchStatement::clearBatch():void" />
+			<role name="Operation()" element="org.dbunit.database.statement.AutomaticPreparedBatchStatement::close():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.dataset.IDataSet" />
+			<role name="Decorator" element="org.dbunit.dataset.CaseInsensitiveDataSet" />
+			<role name="component" element="org.dbunit.dataset.CaseInsensitiveDataSet::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveDataSet::getTableNames():java.lang.String[]" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveDataSet::getTableMetaData(java.lang.String):org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveDataSet::getTable(java.lang.String):org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.dataset.IDataSet" />
+			<role name="Decorator" element="org.dbunit.dataset.FilteredDataSet" />
+			<role name="component" element="org.dbunit.dataset.FilteredDataSet::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Operation()" element="org.dbunit.dataset.FilteredDataSet::getTableMetaData(java.lang.String):org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.FilteredDataSet::getTable(java.lang.String):org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.dataset.IDataSet" />
+			<role name="Decorator" element="org.dbunit.dataset.ReplacementDataSet" />
+			<role name="component" element="org.dbunit.dataset.ReplacementDataSet::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementDataSet::getTableNames():java.lang.String[]" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementDataSet::getTableMetaData(java.lang.String):org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementDataSet::getTable(java.lang.String):org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.dataset.IDataSet" />
+			<role name="Decorator" element="org.dbunit.dataset.SortedDataSet" />
+			<role name="component" element="org.dbunit.dataset.SortedDataSet::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedDataSet::getTableNames():java.lang.String[]" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedDataSet::getTableMetaData(java.lang.String):org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedDataSet::getTable(java.lang.String):org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Decorator" element="org.dbunit.dataset.stream.BufferedConsumer" />
+			<role name="component" element="org.dbunit.dataset.stream.BufferedConsumer::_wrappedConsumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Operation()" element="org.dbunit.dataset.stream.BufferedConsumer::startDataSet():void" />
+			<role name="Operation()" element="org.dbunit.dataset.stream.BufferedConsumer::endDataSet():void" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.database.PrimaryKeyFilter$FilterIterator" />
+			<role name="Component" element="org.dbunit.dataset.ITableIterator" />
+			<role name="component" element="org.dbunit.database.PrimaryKeyFilter$FilterIterator::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Operation()" element="org.dbunit.database.PrimaryKeyFilter$FilterIterator::next():boolean" />
+			<role name="Operation()" element="org.dbunit.database.PrimaryKeyFilter$FilterIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.database.PrimaryKeyFilter$FilterIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.CaseInsensitiveDataSet$CaseInsensitiveIterator" />
+			<role name="Component" element="org.dbunit.dataset.ITableIterator" />
+			<role name="component" element="org.dbunit.dataset.CaseInsensitiveDataSet$CaseInsensitiveIterator::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveDataSet$CaseInsensitiveIterator::next():boolean" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveDataSet$CaseInsensitiveIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.CaseInsensitiveDataSet$CaseInsensitiveIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.ForwardOnlyDataSet$ForwardOnlyIterator" />
+			<role name="Component" element="org.dbunit.dataset.ITableIterator" />
+			<role name="component" element="org.dbunit.dataset.ForwardOnlyDataSet$ForwardOnlyIterator::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Operation()" element="org.dbunit.dataset.ForwardOnlyDataSet$ForwardOnlyIterator::next():boolean" />
+			<role name="Operation()" element="org.dbunit.dataset.ForwardOnlyDataSet$ForwardOnlyIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.ForwardOnlyDataSet$ForwardOnlyIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.LowerCaseDataSet$LowerCaseIterator" />
+			<role name="Component" element="org.dbunit.dataset.ITableIterator" />
+			<role name="component" element="org.dbunit.dataset.LowerCaseDataSet$LowerCaseIterator::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Operation()" element="org.dbunit.dataset.LowerCaseDataSet$LowerCaseIterator::next():boolean" />
+			<role name="Operation()" element="org.dbunit.dataset.LowerCaseDataSet$LowerCaseIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.LowerCaseDataSet$LowerCaseIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.ReplacementDataSet$ReplacementIterator" />
+			<role name="Component" element="org.dbunit.dataset.ITableIterator" />
+			<role name="component" element="org.dbunit.dataset.ReplacementDataSet$ReplacementIterator::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementDataSet$ReplacementIterator::next():boolean" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementDataSet$ReplacementIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.ReplacementDataSet$ReplacementIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.SortedDataSet$SortedIterator" />
+			<role name="Component" element="org.dbunit.dataset.ITableIterator" />
+			<role name="component" element="org.dbunit.dataset.SortedDataSet$SortedIterator::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedDataSet$SortedIterator::next():boolean" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedDataSet$SortedIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedDataSet$SortedIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.dbunit.dataset.filter.AbstractTableFilter$FilterIterator" />
+			<role name="Component" element="org.dbunit.dataset.ITableIterator" />
+			<role name="component" element="org.dbunit.dataset.filter.AbstractTableFilter$FilterIterator::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Operation()" element="org.dbunit.dataset.filter.AbstractTableFilter$FilterIterator::next():boolean" />
+			<role name="Operation()" element="org.dbunit.dataset.filter.AbstractTableFilter$FilterIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Operation()" element="org.dbunit.dataset.filter.AbstractTableFilter$FilterIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Context" element="org.dbunit.dataset.xml.FlatXmlProducer" />
+			<role name="state" element="org.dbunit.dataset.xml.FlatXmlProducer::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlProducer::handleMissingColumns(org.xml.sax.Attributes):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlProducer::startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlProducer::endElement(java.lang.String, java.lang.String, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Context" element="org.dbunit.dataset.csv.CsvProducer" />
+			<role name="state" element="org.dbunit.dataset.csv.CsvProducer::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvProducer::produce():void" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvProducer::produceFromFile(java.io.File):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Context" element="org.dbunit.dataset.csv.CsvURLProducer" />
+			<role name="state" element="org.dbunit.dataset.csv.CsvURLProducer::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvURLProducer::produce():void" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvURLProducer::produceFromURL(java.net.URL):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Context" element="org.dbunit.dataset.sqlloader.SqlLoaderControlProducer" />
+			<role name="state" element="org.dbunit.dataset.sqlloader.SqlLoaderControlProducer::consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.sqlloader.SqlLoaderControlProducer::produce():void" />
+			<role name="Request()" element="org.dbunit.dataset.sqlloader.SqlLoaderControlProducer::produceFromControlFile(java.io.File):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<!-- Analisar Adapter -->
+			<role name="Context" element="org.dbunit.dataset.stream.DataSetProducerAdapter" />
+			<role name="state" element="org.dbunit.dataset.stream.DataSetProducerAdapter::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.stream.DataSetProducerAdapter::produce():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Context" element="org.dbunit.dataset.xml.FlatDtdProducer" />
+			<role name="state" element="org.dbunit.dataset.xml.FlatDtdProducer::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatDtdProducer::startDTD(java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatDtdProducer::endDTD():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatDtdProducer::addTable(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Context" element="org.dbunit.dataset.xml.XmlProducer" />
+			<role name="state" element="org.dbunit.dataset.xml.XmlProducer::_consumer:org.dbunit.dataset.stream.IDataSetConsumer" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlProducer::startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlProducer::endElement(java.lang.String, java.lang.String, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.stream.IDataSetProducer" />
+			<role name="Context" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer" />
+			<role name="state" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::_producer:org.dbunit.dataset.stream.IDataSetProducer" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::run():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer" />
+			<role name="State" element="org.dbunit.util.concurrent.Puttable" />
+			<role name="state" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::_channel:org.dbunit.util.concurrent.Puttable" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::endDataSet():void" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.stream.StreamingIterator$AsynchronousConsumer::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.Columns$ColumnDiff" />
+			<role name="State" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="state" element="org.dbunit.dataset.Columns$ColumnDiff::expectedMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="state" element="org.dbunit.dataset.Columns$ColumnDiff::actualMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.Columns$ColumnDiff::getMessage():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.IDataSet" />
+			<role name="Context" element="org.dbunit.database.DatabaseTableIterator" />
+			<role name="state" element="org.dbunit.database.DatabaseTableIterator::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.IDataSet" />
+			<role name="Context" element="org.dbunit.dataset.filter.SequenceTableIterator" />
+			<role name="state" element="org.dbunit.dataset.filter.SequenceTableIterator::_dataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Request()" element="org.dbunit.dataset.filter.SequenceTableIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.filter.SequenceTableIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.IDataSet" />
+			<role name="Context" element="org.dbunit.dataset.xml.FlatXmlProducer" />
+			<role name="state" element="org.dbunit.dataset.xml.FlatXmlProducer::_metaDataSet:org.dbunit.dataset.IDataSet" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlProducer::createTableMetaData(java.lang.String, org.xml.sax.Attributes):org.dbunit.dataset.ITableMetaData" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="Context" element="org.dbunit.dataset.DefaultTable" />
+			<role name="state" element="org.dbunit.dataset.DefaultTable::_metaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.DefaultTable::addRow():void" />
+			<role name="Request()" element="org.dbunit.dataset.DefaultTable::addTableRows(org.dbunit.dataset.ITable):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.FilteredDataSet" />
+			<role name="State" element="org.dbunit.dataset.filter.ITableFilter" />
+			<role name="state" element="org.dbunit.dataset.FilteredDataSet::_filter:org.dbunit.dataset.filter.ITableFilter" />
+			<role name="Request()" element="org.dbunit.dataset.FilteredDataSet::createIterator(boolean):org.dbunit.dataset.ITableIterator" />
+			<role name="Request()" element="org.dbunit.dataset.FilteredDataSet::getTableNames():java.lang.String[]" />
+		</instance>
+		<instance>
+			<role name="State" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="Context" element="org.dbunit.dataset.xml.XmlProducer" />
+			<role name="state" element="org.dbunit.dataset.xml.XmlProducer::_activeMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlProducer::endElement(java.lang.String, java.lang.String, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.csv.CsvDataSetWriter" />
+			<role name="State" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="state" element="org.dbunit.dataset.csv.CsvDataSetWriter::_activeMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvDataSetWriter::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvDataSetWriter::writeColumnNames():void" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvDataSetWriter::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.csv.CsvDataSetWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.xml.FlatXmlWriter" />
+			<role name="State" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="state" element="org.dbunit.dataset.xml.FlatXmlWriter::_activeMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::endTable():void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatXmlWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.xml.XmlDataSetWriter" />
+			<role name="State" element="org.dbunit.dataset.ITableMetaData" />
+			<role name="state" element="org.dbunit.dataset.xml.XmlDataSetWriter::_activeMetaData:org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::startTable(org.dbunit.dataset.ITableMetaData):void" />
+			<role name="Request()" element="org.dbunit.dataset.xml.XmlDataSetWriter::row(java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.DefaultPrepAndExpectedTestCase" />
+			<role name="State" element="org.dbunit.IDatabaseTester" />
+			<role name="state" element="org.dbunit.DefaultPrepAndExpectedTestCase::databaseTester:org.dbunit.IDatabaseTester" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::cleanupData():void" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::setupData():void" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::verifyData():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.operation.RefreshOperation$RowOperation" />
+			<role name="State" element="org.dbunit.database.statement.IPreparedBatchStatement" />
+			<role name="state" element="org.dbunit.operation.RefreshOperation$RowOperation::_statement:org.dbunit.database.statement.IPreparedBatchStatement" />
+			<role name="Request()" element="org.dbunit.operation.RefreshOperation$RowOperation::execute(org.dbunit.dataset.ITable, int):boolean" />
+			<role name="Request()" element="org.dbunit.operation.RefreshOperation$RowOperation::close():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.database.DatabaseDataSet" />
+			<role name="State" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="state" element="org.dbunit.database.DatabaseDataSet::_connection:org.dbunit.database.IDatabaseConnection" />
+			<role name="Request()" element="org.dbunit.database.DatabaseDataSet::initialize():void" />
+			<role name="Request()" element="org.dbunit.database.DatabaseDataSet::getTable(java.lang.String):org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.database.DatabaseTableMetaData" />
+			<role name="State" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="state" element="org.dbunit.database.DatabaseTableMetaData::_connection:org.dbunit.database.IDatabaseConnection" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableMetaData::getPrimaryKeyNames():java.lang.String[]" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableMetaData::getColumns():org.dbunit.dataset.Column[]" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableMetaData::getPrimaryKeys():org.dbunit.dataset.Column[]" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.xml.FlatDtdWriter" />
+			<role name="State" element="org.dbunit.dataset.xml.FlatDtdWriter$ContentModel" />
+			<role name="state" element="org.dbunit.dataset.xml.FlatDtdWriter::_contentModel:org.dbunit.dataset.xml.FlatDtdWriter$ContentModel" />
+			<role name="Request()" element="org.dbunit.dataset.xml.FlatDtdWriter::write(org.dbunit.dataset.IDataSet):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.DefaultPrepAndExpectedTestCase" />
+			<role name="State" element="org.dbunit.dataset.IDataSet" />
+			<role name="state" element="org.dbunit.DefaultPrepAndExpectedTestCase::prepDs:org.dbunit.dataset.IDataSet" />
+			<role name="state" element="org.dbunit.DefaultPrepAndExpectedTestCase::expectedDs:org.dbunit.dataset.IDataSet" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::cleanupData():void" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::verifyData():void" />
+		</instance>
+		<instance>
+			<!-- Analisar Decorators -->
+			<role name="Context" element="org.dbunit.database.statement.BatchStatementDecorator" />
+			<role name="State" element="org.dbunit.database.statement.IBatchStatement" />
+			<role name="state" element="org.dbunit.database.statement.BatchStatementDecorator::_statement:org.dbunit.database.statement.IBatchStatement" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::addBatch():void" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::executeBatch():int" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::clearBatch():void" />
+			<role name="Request()" element="org.dbunit.database.statement.BatchStatementDecorator::close():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.operation.RefreshOperation$InsertRowOperation" />
+			<role name="State" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="state" element="org.dbunit.operation.RefreshOperation$InsertRowOperation::_connection:org.dbunit.database.IDatabaseConnection" />
+			<role name="Request()" element="org.dbunit.operation.RefreshOperation$InsertRowOperation::execute(org.dbunit.dataset.ITable, int):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.assertion.DefaultFailureHandler" />
+			<role name="State" element="org.dbunit.assertion.FailureFactory" />
+			<!-- Analisar factory -->
+			<role name="state" element="org.dbunit.assertion.DefaultFailureHandler::failureFactory:org.dbunit.assertion.FailureFactory" />
+			<role name="Request()" element="org.dbunit.assertion.DefaultFailureHandler::createFailure(java.lang.String, java.lang.String, java.lang.String):java.lang.Error" />
+			<role name="Request()" element="org.dbunit.assertion.DefaultFailureHandler::createFailure(java.lang.String):java.lang.Error" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.database.PrimaryKeyFilter" />
+			<role name="State" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="state" element="org.dbunit.database.PrimaryKeyFilter::connection:org.dbunit.database.IDatabaseConnection" />
+			<role name="Request()" element="org.dbunit.database.PrimaryKeyFilter::scanPKs(java.lang.String, java.lang.String, java.util.Set, java.util.List):void" />
+			<role name="Request()" element="org.dbunit.database.PrimaryKeyFilter::addReverseEdge(org.dbunit.database.search.ForeignKeyRelationshipEdge, java.util.Set):void" />
+			<role name="Request()" element="org.dbunit.database.PrimaryKeyFilter::getPKColumn(java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.ext.mssql.InsertIdentityOperation" />
+			<role name="State" element="org.dbunit.dataset.filter.IColumnFilter" />
+			<role name="state" element="org.dbunit.ext.mssql.InsertIdentityOperation::DEFAULT_IDENTITY_FILTER:org.dbunit.dataset.filter.IColumnFilter" />
+			<role name="Request()" element="org.dbunit.ext.mssql.InsertIdentityOperation::hasIdentityColumn(org.dbunit.dataset.ITableMetaData, org.dbunit.database.IDatabaseConnection):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.util.search.DepthFirstSearch" />
+			<role name="State" element="org.dbunit.util.search.ISearchCallback" />
+			<role name="state" element="org.dbunit.util.search.DepthFirstSearch::callback:org.dbunit.util.search.ISearchCallback" />
+			<role name="Request()" element="org.dbunit.util.search.DepthFirstSearch::search(java.lang.Object, int):boolean" />
+			<role name="Request()" element="org.dbunit.util.search.DepthFirstSearch::reverseSearch(java.lang.Object, int):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.database.QueryTableIterator" />
+			<role name="State" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="state" element="org.dbunit.database.QueryTableIterator::_connection:org.dbunit.database.IDatabaseConnection" />
+			<role name="Request()" element="org.dbunit.database.QueryTableIterator::getTableMetaData():org.dbunit.dataset.ITableMetaData" />
+			<role name="Request()" element="org.dbunit.database.QueryTableIterator::getTable():org.dbunit.dataset.ITable" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.database.DatabaseTableIterator" />
+			<role name="State" element="org.dbunit.database.IResultSetTable" />
+			<role name="state" element="org.dbunit.database.DatabaseTableIterator::_currentTable:org.dbunit.database.IResultSetTable" />
+			<role name="Request()" element="org.dbunit.database.DatabaseTableIterator::next():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.database.QueryTableIterator" />
+			<role name="State" element="org.dbunit.database.IResultSetTable" />
+			<role name="state" element="org.dbunit.database.QueryTableIterator::_currentTable:org.dbunit.database.IResultSetTable" />
+			<role name="Request()" element="org.dbunit.database.QueryTableIterator::next():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.database.DatabaseDataSet" />
+			<role name="State" element="org.dbunit.dataset.filter.ITableFilterSimple" />
+			<role name="state" element="org.dbunit.database.DatabaseDataSet::_tableFilter:org.dbunit.dataset.filter.ITableFilterSimple" />
+			<role name="state" element="org.dbunit.database.DatabaseDataSet::_oracleRecycleBinTableFilter:org.dbunit.dataset.filter.ITableFilterSimple" />
+			<role name="Request()" element="org.dbunit.database.DatabaseDataSet::initialize():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.dataset.stream.DataSetProducerAdapter" />
+			<role name="State" element="org.dbunit.dataset.ITableIterator" />
+			<role name="state" element="org.dbunit.dataset.stream.DataSetProducerAdapter::_iterator:org.dbunit.dataset.ITableIterator" />
+			<role name="Request()" element="org.dbunit.dataset.stream.DataSetProducerAdapter::produce():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.ant.Operation" />
+			<role name="State" element="org.dbunit.operation.DatabaseOperation" />
+			<role name="state" element="org.dbunit.ant.Operation::_operation:org.dbunit.operation.DatabaseOperation" />
+			<role name="Request()" element="org.dbunit.ant.Operation::execute(org.dbunit.database.IDatabaseConnection):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.dbunit.DefaultPrepAndExpectedTestCase" />
+			<role name="State" element="org.dbunit.util.fileloader.DataFileLoader" />
+			<role name="state" element="org.dbunit.DefaultPrepAndExpectedTestCase::dataFileLoader:org.dbunit.util.fileloader.DataFileLoader" />
+			<role name="Request()" element="org.dbunit.DefaultPrepAndExpectedTestCase::makeCompositeDataSet(java.lang.String[]):org.dbunit.dataset.IDataSet" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="org.dbunit.dataset.SortedTable$AbstractRowComparator" />
+			<role name="Implementor" element="org.dbunit.dataset.ITable" />
+			<role name="implementor" element="org.dbunit.dataset.SortedTable$AbstractRowComparator::_table:org.dbunit.dataset.ITable" />
+			<role name="Operation()" element="org.dbunit.dataset.SortedTable$AbstractRowComparator::compare(java.lang.Object, java.lang.Object):int" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.dbunit.AbstractDatabaseTester" />
+			<role name="Implementor" element="org.dbunit.IOperationListener" />
+			<role name="implementor" element="org.dbunit.AbstractDatabaseTester::operationListener:org.dbunit.IOperationListener" />
+			<role name="Operation()" element="org.dbunit.AbstractDatabaseTester::executeOperation(org.dbunit.operation.DatabaseOperation, org.dbunit.AbstractDatabaseTester$OperationType):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.dbunit.database.search.AbstractMetaDataBasedSearchCallback" />
+			<role name="Implementor" element="org.dbunit.database.IDatabaseConnection" />
+			<role name="implementor" element="org.dbunit.database.search.AbstractMetaDataBasedSearchCallback::connection:org.dbunit.database.IDatabaseConnection" />
+			<role name="Operation()" element="org.dbunit.database.search.AbstractMetaDataBasedSearchCallback::getNodes(int, java.lang.Object):java.util.SortedSet" />
+			<role name="Operation()" element="org.dbunit.database.search.AbstractMetaDataBasedSearchCallback::getNodes(int, java.lang.Object, java.sql.Connection, java.lang.String, java.sql.DatabaseMetaData, java.util.SortedSet):void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.JdbcBasedDBTestCase" />
+			<role name="TemplateMethod()" element="org.dbunit.JdbcBasedDBTestCase::newDatabaseTester():org.dbunit.IDatabaseTester" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.operation.AbstractBatchOperation" />
+			<role name="TemplateMethod()" element="org.dbunit.operation.AbstractBatchOperation::execute(org.dbunit.database.IDatabaseConnection, org.dbunit.dataset.IDataSet):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.JndiBasedDBTestCase" />
+			<role name="TemplateMethod()" element="org.dbunit.JndiBasedDBTestCase::newDatabaseTester():org.dbunit.IDatabaseTester" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.DataSourceBasedDBTestCase" />
+			<role name="TemplateMethod()" element="org.dbunit.DataSourceBasedDBTestCase::newDatabaseTester():org.dbunit.IDatabaseTester" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.util.fileloader.AbstractDataFileLoader" />
+			<role name="TemplateMethod()" element="org.dbunit.util.fileloader.AbstractDataFileLoader::load(java.lang.String):org.dbunit.dataset.IDataSet" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.util.concurrent.SemaphoreControlledChannel" />
+			<role name="TemplateMethod()" element="org.dbunit.util.concurrent.SemaphoreControlledChannel::put(java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.dbunit.util.concurrent.SemaphoreControlledChannel::offer(java.lang.Object, long):boolean" />
+			<role name="TemplateMethod()" element="org.dbunit.util.concurrent.SemaphoreControlledChannel::take():java.lang.Object" />
+			<role name="TemplateMethod()" element="org.dbunit.util.concurrent.SemaphoreControlledChannel::poll(long):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.util.SQLHelper$ExceptionWrapper" />
+			<role name="TemplateMethod()" element="org.dbunit.util.SQLHelper$ExceptionWrapper::executeWrappedCall(java.sql.DatabaseMetaData):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.dataset.AbstractDataSet" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.AbstractDataSet::initialize():void" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.AbstractDataSet::iterator():org.dbunit.dataset.ITableIterator" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.AbstractDataSet::reverseIterator():org.dbunit.dataset.ITableIterator" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.dataset.filter.AbstractTableFilter" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.filter.AbstractTableFilter::accept(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.dataset.datatype.DataType" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.datatype.DataType::asString(java.lang.Object):java.lang.String" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.datatype.DataType::forSqlType(int):org.dbunit.dataset.datatype.DataType" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.datatype.DataType::forObject(java.lang.Object):org.dbunit.dataset.datatype.DataType" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.dbunit.dataset.SortedTable$AbstractRowComparator" />
+			<role name="TemplateMethod()" element="org.dbunit.dataset.SortedTable$AbstractRowComparator::compare(java.lang.Object, java.lang.Object):int" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.dbunit.database.ResultSetTableMetaData" />
+			<role name="RealSubject" element="org.dbunit.dataset.DefaultTableMetaData" />
+			<role name="Request()" element="org.dbunit.database.ResultSetTableMetaData::getColumns():org.dbunit.dataset.Column[]" />
+			<role name="Request()" element="org.dbunit.database.ResultSetTableMetaData::getPrimaryKeys():org.dbunit.dataset.Column[]" />
+			<role name="Request()" element="org.dbunit.database.ResultSetTableMetaData::getTableName():java.lang.String" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+
