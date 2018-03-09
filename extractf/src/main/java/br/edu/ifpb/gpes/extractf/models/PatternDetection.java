@@ -1,5 +1,5 @@
 
-package br.edu.ifpb.gpes.extractf.model;
+package br.edu.ifpb.gpes.extractf.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,14 +7,15 @@ import java.util.List;
 /**
  *
  * @author natan
+ * $1.xml
  */
 public class PatternDetection {
     
     private String namePattern;
-    private List<Instance> instances;
+    private List<Role> instances;
     
     public PatternDetection() {
-        this.instances = new ArrayList<Instance>();
+        this.instances = new ArrayList<>();
     }
 
     public PatternDetection(String namePattern) {
@@ -30,12 +31,12 @@ public class PatternDetection {
         this.namePattern = namePattern;
     }
 
-    public List<Instance> getInstances() {
+    public List<Role> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<Instance> instances) {
-        this.instances = instances;
+    public void addInstance(Role instance) {
+        this.instances.add(instance);
     }
 
     @Override

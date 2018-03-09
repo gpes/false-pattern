@@ -11,10 +11,11 @@ import java.util.Map;
 /**
  *
  * @author natan
+ * $1_Matriz.csv
  */
 public class TermsCounter {
     private String entityName;
-    private Map<String, Integer> termsWithCounter;
+    private HashMap<String, String> termsWithCounter;
     
     public TermsCounter() {
         this.termsWithCounter = new HashMap<>();
@@ -33,12 +34,16 @@ public class TermsCounter {
         this.entityName = entityName;
     }
 
-    public Map<String, Integer> getTermsWithCounter() {
+    public HashMap<String, String> getTermsWithCounter() {
         return termsWithCounter;
     }
 
-    public void setTermsWithCounter(Map<String, Integer> termsWithCounter) {
+    public void setTermsWithCounter(HashMap<String, String> termsWithCounter) {
         this.termsWithCounter = termsWithCounter;
+    }
+    
+    public void putTermsWithCounter(String key, String value) {
+        this.termsWithCounter.put(key, value);
     }
 
     @Override

@@ -1,19 +1,19 @@
 
-package br.edu.ifpb.gpes.extractf.model;
+package br.edu.ifpb.gpes.extractf.models;
 
 /**
  *
  * @author natan
  */
-class Instance {
+public class Role {
     private String name;
     private String element;
     
-    public Instance() {
+    public Role() {
         
     }
     
-    public Instance(String name, String element) {
+    public Role(String name, String element) {
         this.name = name;
         this.element = element;
     }
@@ -36,7 +36,7 @@ class Instance {
 
     @Override
     public String toString() {
-        return "Instance{" + "name=" + name + ", element=" + element + '}';
+        return "Role{" + "name=" + name + ", element=" + element + '}';
     }
     
     

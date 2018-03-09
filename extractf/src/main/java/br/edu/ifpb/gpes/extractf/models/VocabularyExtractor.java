@@ -8,6 +8,7 @@ package br.edu.ifpb.gpes.extractf.models;
 /**
  *
  * @author natan
+ * $1.csv
  */
 public class VocabularyExtractor {
     
