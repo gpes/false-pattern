@@ -12,7 +12,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -32,13 +37,17 @@ public class FileTermsCounter {
     private List<TermsCounter> termsCounterList;
     
     public FileTermsCounter() {
-        this.filePath = new File("../output/axion-1.0-M2_Matriz.csv");
+        this(new File("../output/axion-1.0-M2/axion-1.0-M2_Matriz.csv"));
+    }
+    
+    public FileTermsCounter(File filePath) {
+        this.filePath = filePath;
         this.records = this.proccessFile();
         
         this.termsCounterList = new ArrayList<>();
     }
     
-    public void consumeOutput() throws FileNotFoundException, IOException {
+    public List<TermsCounter> consumeOutput() throws FileNotFoundException, IOException {
         
         int lineIndex = 0;
         
@@ -46,13 +55,18 @@ public class FileTermsCounter {
             if(lineIndex == 0) {
                 for(int i = 1; i < record.size(); i++) {
                     TermsCounter termsCounter = new TermsCounter();
-                    termsCounter.setEntityName(record.get(i));
+                    String entityName = record.get(i);
+//                    entityName = entityName.replace("/", "");
+//                    entityName = entityName.replace(":", "");
+                    String[] parts = entityName.split(":");
+                    entityName = parts[1];
+                    termsCounter.setEntityName(entityName);
                     this.termsCounterList.add(termsCounter);
                 }
             } else {
                 for(int j = 1; j < record.size(); j++) {
                     if(record.get(j).equals("0")) {
-                    } else this.termsCounterList.get(j-1).putTermsWithCounter(record.get(0), record.get(j));
+                    } else this.termsCounterList.get(j-1).putTermsWithCounter(record.get(0), Integer.parseInt(record.get(j)));
                 }
             }
             
@@ -60,9 +74,10 @@ public class FileTermsCounter {
         }
         
         this.termsCounterList.stream().forEach(action -> {
-            System.out.println(action.getEntityName());
-            action.getTermsWithCounter().forEach((k, v) -> System.out.println("\t" + k + ": " + v));
+            action.setTermsWithCounter(this.sortByValues(action.getTermsWithCounter()));
         });
+        
+        return this.termsCounterList;
     }
     
     // Metodo para ler o arquivo csv de termos
@@ -77,6 +92,25 @@ public class FileTermsCounter {
         }
         
         return null;
+    }
+    
+    private HashMap sortByValues(HashMap hashMap) {
+        List list = new LinkedList(hashMap.entrySet());
+        
+        Collections.sort(list, new Comparator(){
+            @Override
+            public int compare(Object o1, Object o2) {
+                return ((Comparable) ((Map.Entry) (o2)).getValue()).compareTo(((Map.Entry) (o1)).getValue());
+            }
+        });
+        
+        HashMap sortedHashMap = new LinkedHashMap();
+        for(Iterator iterator = list.iterator(); iterator.hasNext();) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            sortedHashMap.put(entry.getKey(), entry.getValue());
+        }
+        
+        return sortedHashMap;
     }
     
     

@@ -1,0 +1,13 @@
+FunctionFactory; 3; Factory Method; axion-1.0-M2;
+Index; 1; Factory Method; axion-1.0-M2;
+BaseDatabase; 0; Factory Method; axion-1.0-M2;
+BaseIndex; 0; Factory Method; axion-1.0-M2;
+BaseTable; 0; Factory Method; axion-1.0-M2;
+LobLocator; 1; Factory Method; axion-1.0-M2;
+BaseDataType; 0; Factory Method; axion-1.0-M2;
+LobLocatorFactory; 1; Factory Method; axion-1.0-M2;
+IndexLoader; 1; Factory Method; axion-1.0-M2;
+TableFactory; 1; Factory Method; axion-1.0-M2;
+TransactionManager; 1; Factory Method; axion-1.0-M2;
+Table; 0; Factory Method; axion-1.0-M2;
+IndexFactory; 3; Factory Method; axion-1.0-M2;

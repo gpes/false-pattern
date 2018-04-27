@@ -2,8 +2,10 @@
 pattern4.jar
 how to.txt
 /output
+/projects
 termsCounter_file.properties
 /extractf/target/
+/extractf/nb-configuration.xml
 
 TermsCounter.jar
 termsCounter.properties

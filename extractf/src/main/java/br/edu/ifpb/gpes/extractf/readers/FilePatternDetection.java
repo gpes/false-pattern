@@ -1,9 +1,12 @@
 
 package br.edu.ifpb.gpes.extractf.readers;
 
+import br.edu.ifpb.gpes.extractf.models.Instance;
+import br.edu.ifpb.gpes.extractf.models.PatternDetection;
 import br.edu.ifpb.gpes.extractf.models.Role;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -19,11 +22,15 @@ public class FilePatternDetection {
     private File filePath;
 
     public FilePatternDetection() {
-        this.filePath = new File("../output/axion-1.0-M2.xml");
+        this(new File("../output/axion-1.0-M2/axion-1.0-M2.xml"));
+    }
+
+    public FilePatternDetection(File filePath) {
+        this.filePath = filePath;
     }
     
-    public void readOutput() throws JDOMException, IOException {
-//        List<PatternDetection> patternDetections = new ArrayList<>();
+    public List<PatternDetection> readOutput() throws JDOMException, IOException {
+        List<PatternDetection> patternDetections = new ArrayList<>();
         
         SAXBuilder builder = new SAXBuilder();
         
@@ -39,35 +46,37 @@ public class FilePatternDetection {
             // Nome do padrao
             String name = pattern.getAttributeValue("name");
             
-            System.out.println("\n" + name);
+//            System.out.println("\n" + name);
             
             // Instanciando objeto da que representa cada detecção de padrão
-//            PatternDetection patternDetection = new PatternDetection(name);
+            PatternDetection patternDetection = new PatternDetection(name);
             
             List<Element> instances = pattern.getChildren();
             instances.stream().forEach(instance -> {
                 
-                System.out.println("");
+//                System.out.println("");    
+                Instance instancePattern = new Instance();
                 
                 List<Element> roles = instance.getChildren();
                 roles.stream().forEach(role -> {
                     String nameRole = role.getAttributeValue("name");
                     String elementRole = role.getAttributeValue("element");
                     
-                    System.out.println("\t " + nameRole + "  -  " + elementRole);
+//                    System.out.println("\t " + nameRole + "  -  " + elementRole);
 
-//                    Role roleInstance = new Role(nameRole, elementRole);
+                    Role roleInstance = new Role(nameRole, elementRole);
                     
-//                    patternDetection.addInstance(roleInstance);
+                    instancePattern.addRole(roleInstance);
                 });
                 
-                System.out.println("");
+                patternDetection.addInstance(instancePattern);
+//                System.out.println("");
             });
             
-//            patternDetections.add(patternDetection);
+            patternDetections.add(patternDetection);
         });
         
-        
+        return patternDetections;
     }
     
 }

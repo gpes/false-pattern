@@ -12,7 +12,7 @@ import java.util.List;
 public class PatternDetection {
     
     private String namePattern;
-    private List<Role> instances;
+    private List<Instance> instances;
     
     public PatternDetection() {
         this.instances = new ArrayList<>();
@@ -31,11 +31,11 @@ public class PatternDetection {
         this.namePattern = namePattern;
     }
 
-    public List<Role> getInstances() {
+    public List<Instance> getInstances() {
         return instances;
     }
 
-    public void addInstance(Role instance) {
+    public void addInstance(Instance instance) {
         this.instances.add(instance);
     }
 

@@ -6,7 +6,6 @@
 package br.edu.ifpb.gpes.extractf.models;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  *
@@ -15,7 +14,7 @@ import java.util.Map;
  */
 public class TermsCounter {
     private String entityName;
-    private HashMap<String, String> termsWithCounter;
+    private HashMap<String, Integer> termsWithCounter;
     
     public TermsCounter() {
         this.termsWithCounter = new HashMap<>();
@@ -34,15 +33,15 @@ public class TermsCounter {
         this.entityName = entityName;
     }
 
-    public HashMap<String, String> getTermsWithCounter() {
+    public HashMap<String, Integer> getTermsWithCounter() {
         return termsWithCounter;
     }
 
-    public void setTermsWithCounter(HashMap<String, String> termsWithCounter) {
+    public void setTermsWithCounter(HashMap<String, Integer> termsWithCounter) {
         this.termsWithCounter = termsWithCounter;
     }
     
-    public void putTermsWithCounter(String key, String value) {
+    public void putTermsWithCounter(String key, Integer value) {
         this.termsWithCounter.put(key, value);
     }
 

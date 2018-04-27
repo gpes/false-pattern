@@ -1,0 +1,7 @@
+AbstractTestBag; 1; Factory Method; collections-3.2.1;
+BidiMap; 1; Factory Method; collections-3.2.1;
+IterableMap; 1; Factory Method; collections-3.2.1;
+AbstractDualBidiMap; 1; Factory Method; collections-3.2.1;
+AbstractTestBidiMap; 2; Factory Method; collections-3.2.1;
+OrderedMap; 1; Factory Method; collections-3.2.1;
+OrderedBidiMap; 1; Factory Method; collections-3.2.1;
