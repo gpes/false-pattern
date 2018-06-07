@@ -8,7 +8,13 @@ module.exports = app => {
         },
 
         getAll: async () => {
-            return await Padrao.find({})
+            return await Padrao.find({}, 'padrao categoria')
+        },
+
+        getTermosByCategoria: async categoria => {
+            return await Padrao.find({
+                categoria: categoria
+            }, 'termos' );
         }
     }
 

@@ -1,12 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Questionario</title>
 </head>
+
 <body>
-    
+    <div class="questao">
+        <h3>Questao 1</h3>
+        <h2>Criacional</h2>
+        <h1>Singleton</h1>
+        <input type="checkbox" name="questao1"> termo1
+        <input type="checkbox" name="questao1"> termo2
+        <input type="checkbox" name="questao1"> termo2
+        <input type="checkbox" name="questao1"> termo2
+        <input type="checkbox" name="questao1"> termo2
+    </div>
+
+    <br>
+    <br>
+
+    <div class="questao">
+        <h3>Questao 2</h3>
+        <h2>Estrutural</h2>
+        <h1>Factory Method</h1>
+        <input type="checkbox" name="questao2"> termo1
+        <input type="checkbox" name="questao2"> termo2
+        <input type="checkbox" name="questao2"> termo2
+        <input type="checkbox" name="questao2"> termo2
+        <input type="checkbox" name="questao2"> termo2
+    </div>
+
+    <br>
+    <br>
+
+    <div class="questao">
+        <h3>Questao 10</h3>
+        <h2>Dê sugestões de termos</h2>
+        <input type="text" name="padrao" placeholder="Padrão de Projeto">
+        <input type="text" name="tipo" placeholder="Tipo">
+        <input type="text" name="nome" placeholder="Nome">
+        <button type="button" onclick="addCampoSugestao();">+</button>
+    </div>
+
 </body>
+
+    <script>
+        function addCampoSugestao() {
+            let campos = document.getElementsByName('nome');
+            let ultimoCampoDeTermos = campos[campos.length - 1];
+
+            let novoCampo = `
+                <br>  
+                <input type="text" name="padrao" placeholder="Padrão de Projeto">
+                <input name="tipo" placeholder="Tipo"> 
+                <input name="nome" placeholder="Nome">
+            `;
+
+            let span = document.createElement('span');
+            span.innerHTML = novoCampo;
+
+            ultimoCampoDeTermos.parentNode.insertBefore(span, ultimoCampoDeTermos.nextSibling);
+        } 
+    </script>
+
 </html>
