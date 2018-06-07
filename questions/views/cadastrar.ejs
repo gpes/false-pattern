@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar Termos</title>
+</head>
+<body>
+    <form method="post" action="/padrao">
+        <label for="padrao">Padrao:</label>
+        <input type="text" name="padrao">
+        <br><br>
+
+        <label for="categoria">Categoria:</label>
+        <input type="text" name="categoria">
+        <br><br>
+
+        <label for="termos">Termos:</label>
+        <input type="text" name="tipo" placeholder="tipo">
+        <input type="text" name="nome" placeholder="nome">
+        <br>
+
+        <button type="button" onclick="addCampoTermo();">+</button>
+        <br>
+        
+        <button type="submit">Enviar</button> 
+    </form>
+</body>
+
+    <script>
+        function addCampoTermo() {
+            let campos = document.getElementsByName('nome');
+            let ultimoCampoDeTermos = campos[campos.length - 1];
+            
+            let novoCampo = '<br> <input name="tipo" placeholder="tipo"> <input name="nome" placeholder="nome">';
+
+            let span = document.createElement('span');
+            span.innerHTML = novoCampo;
+
+            ultimoCampoDeTermos.parentNode.insertBefore(span, ultimoCampoDeTermos.nextSibling);
+        } 
+    </script>
+
+</html>

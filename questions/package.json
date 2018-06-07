@@ -1,0 +1,33 @@
+{
+  "name": "questions",
+  "version": "0.0.1",
+  "description": "Aplicação para coleta de dados sobre vocabulário de termos em padrões de projeto",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon app.js",
+    "prod": "node app.js"
+  },
+  "keywords": [
+    "design-patterns",
+    "software-vocabulary"
+  ],
+  "author": [
+    "Natan Severo",
+    "Ricardo Job"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "cors": "^2.8.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-validator": "^5.2.0",
+    "helmet": "^3.12.1",
+    "mongoose": "^5.1.4",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
