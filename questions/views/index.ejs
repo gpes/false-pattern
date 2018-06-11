@@ -8,33 +8,25 @@
 </head>
 
 <body>
-    <div class="questao">
-        <h3>Questao 1</h3>
-        <h2>Criacional</h2>
-        <h1>Singleton</h1>
-        <input type="checkbox" name="questao1"> termo1
-        <input type="checkbox" name="questao1"> termo2
-        <input type="checkbox" name="questao1"> termo2
-        <input type="checkbox" name="questao1"> termo2
-        <input type="checkbox" name="questao1"> termo2
-    </div>
 
-    <br>
-    <br>
+    <% if(questoes.length > 0 || questoes != null) { %>
 
-    <div class="questao">
-        <h3>Questao 2</h3>
-        <h2>Estrutural</h2>
-        <h1>Factory Method</h1>
-        <input type="checkbox" name="questao2"> termo1
-        <input type="checkbox" name="questao2"> termo2
-        <input type="checkbox" name="questao2"> termo2
-        <input type="checkbox" name="questao2"> termo2
-        <input type="checkbox" name="questao2"> termo2
-    </div>
+        <% for(var i = 0; i < questoes.length; i++) { %>
+            <div class="questao">
+                <h3>Questão <%= i + 1 %></h3>
+                <h2><%= questoes[i].categoria %></h2>
+                <h1><%= questoes[i].padrao %></h1>
 
-    <br>
-    <br>
+                <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
+                    <input type="checkbox" name="questao<%= i + 1 %>"> <%= questoes[i].termos[j] %>
+                <% } %>
+            </div>
+
+            <br>
+            <br>
+        <% } %>
+
+    <% } %>
 
     <div class="questao">
         <h3>Questao 10</h3>

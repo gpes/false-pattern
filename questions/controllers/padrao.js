@@ -88,7 +88,6 @@ module.exports = app => {
 
                     // Montando obj para questão
                     let questao = {
-                        questao: `Questão ${i + 1}`,
                         categoria: padrao.categoria,
                         padrao: padrao.padrao,
                         termos: termosParaQuestao
@@ -96,6 +95,11 @@ module.exports = app => {
 
                     dataForRender.push(questao);
                 }
+                
+                // Ordenando questões por categoria
+                dataForRender.sort((a, b) => {
+                    return a.categoria > b.categoria;
+                });
 
                 res.render('index', {
                     questoes: dataForRender
