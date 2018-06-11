@@ -8,7 +8,7 @@ module.exports = app => {
     }
 
     let controller = {
-        create: async (req, res) => {
+        post: async (req, res) => {
             try {
                 let tipo = req.body.tipo;
                 let nome = req.body.nome;
@@ -46,9 +46,8 @@ module.exports = app => {
                 }
 
                 await padraoRepository.create(data);
-                res.redirect('/cadastrar');
+                res.redirect('/padrao');
             } catch (e) {
-                console.log(e)
                 res.status(500).send({
                     message: 'Falha ao processar a requisição'
                 })

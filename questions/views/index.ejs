@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form name="questoes" action="/responder" method="post">
+    <form name="questoes" action="/q/responder" method="post">
         <% if(questoes.length > 0 || questoes != null) { %>
 
             <% for(var i = 0; i < questoes.length; i++) { %>
@@ -31,11 +31,11 @@
 
         <div class="questao">
             <h3>Questao 10</h3>
-            <h2>Dê sugestões de termos</h2>
-            <input type="text" name="sugestao[padrao]" placeholder="Padrão de Projeto">
-            <input type="text" name="sugestao[tipo]" placeholder="Tipo">
-            <input type="text" name="sugestao[nome]" placeholder="Nome">
-            <button type="button" onclick="addCampoSugestao();">+</button>
+            <h2>Dê suguestões de termos</h2>
+            <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
+            <input type="text" name="suguestao[tipo]" placeholder="Tipo">
+            <input type="text" name="suguestao[nome]" placeholder="Nome">
+            <button type="button" onclick="addCampoSuguestao();">+</button>
         </div>
 
         <br>
@@ -46,15 +46,15 @@
 </body>
 
     <script>
-        function addCampoSugestao() {
-            let campos = document.getElementsByName('sugestao[nome]');
+        function addCampoSuguestao() {
+            let campos = document.getElementsByName('suguestao[nome]');
             let ultimoCampoDeTermos = campos[campos.length - 1];
 
             let novoCampo = `
                 <br>  
-                <input type="text" name="sugestao[padrao]" placeholder="Padrão de Projeto">
-                <input type="text" name="sugestao[tipo]" placeholder="Tipo">
-                <input type="text" name="sugestao[nome]" placeholder="Nome">
+                <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
+                <input type="text" name="suguestao[tipo]" placeholder="Tipo">
+                <input type="text" name="suguestao[nome]" placeholder="Nome">
             `;
 
             let span = document.createElement('span');

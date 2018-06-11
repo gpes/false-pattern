@@ -17,9 +17,9 @@ module.exports = app => {
 
     const mainSchema = new Schema({
         resposta: [ respostaSchema ],
-        seguestao: [ suguestaoSchema ],
+        suguestao: [ suguestaoSchema ],
         data: { type: Date, default: Date.now }
     })
 
-    return mongoose.model('respostas', mainSchema);
+    return mainSchema;
 }
