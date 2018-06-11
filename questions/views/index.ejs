@@ -8,47 +8,53 @@
 </head>
 
 <body>
+    <form name="questoes" action="/responder" method="post">
+        <% if(questoes.length > 0 || questoes != null) { %>
 
-    <% if(questoes.length > 0 || questoes != null) { %>
+            <% for(var i = 0; i < questoes.length; i++) { %>
+                <div class="questao">
+                    <h3>Questão <%= i + 1 %></h3>
+                    <h2><%= questoes[i].categoria %></h2>
+                    <h1><%= questoes[i].padrao %></h1>
+                    
+                    <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
+                    <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
+                        <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> <%= questoes[i].termos[j] %>
+                    <% } %>
+                </div>
 
-        <% for(var i = 0; i < questoes.length; i++) { %>
-            <div class="questao">
-                <h3>Questão <%= i + 1 %></h3>
-                <h2><%= questoes[i].categoria %></h2>
-                <h1><%= questoes[i].padrao %></h1>
+                <br>
+                <br>
+            <% } %>
 
-                <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
-                    <input type="checkbox" name="questao<%= i + 1 %>"> <%= questoes[i].termos[j] %>
-                <% } %>
-            </div>
-
-            <br>
-            <br>
         <% } %>
 
-    <% } %>
+        <div class="questao">
+            <h3>Questao 10</h3>
+            <h2>Dê sugestões de termos</h2>
+            <input type="text" name="sugestao[padrao]" placeholder="Padrão de Projeto">
+            <input type="text" name="sugestao[tipo]" placeholder="Tipo">
+            <input type="text" name="sugestao[nome]" placeholder="Nome">
+            <button type="button" onclick="addCampoSugestao();">+</button>
+        </div>
 
-    <div class="questao">
-        <h3>Questao 10</h3>
-        <h2>Dê sugestões de termos</h2>
-        <input type="text" name="padrao" placeholder="Padrão de Projeto">
-        <input type="text" name="tipo" placeholder="Tipo">
-        <input type="text" name="nome" placeholder="Nome">
-        <button type="button" onclick="addCampoSugestao();">+</button>
-    </div>
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
 
 </body>
 
     <script>
         function addCampoSugestao() {
-            let campos = document.getElementsByName('nome');
+            let campos = document.getElementsByName('sugestao[nome]');
             let ultimoCampoDeTermos = campos[campos.length - 1];
 
             let novoCampo = `
                 <br>  
-                <input type="text" name="padrao" placeholder="Padrão de Projeto">
-                <input name="tipo" placeholder="Tipo"> 
-                <input name="nome" placeholder="Nome">
+                <input type="text" name="sugestao[padrao]" placeholder="Padrão de Projeto">
+                <input type="text" name="sugestao[tipo]" placeholder="Tipo">
+                <input type="text" name="sugestao[nome]" placeholder="Nome">
             `;
 
             let span = document.createElement('span');

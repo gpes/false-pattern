@@ -3,6 +3,12 @@ module.exports = app => {
 
     app.get('/', padraoController.getRandomAll);
 
+    app.post('/responder', (req, res) => {
+        console.log(req.body)
+
+        res.redirect('/')
+    })
+
     app.get('/cadastrar', (req, res) => {
         res.render('cadastrar');
     })
