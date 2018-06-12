@@ -17,7 +17,8 @@ module.exports = app => {
         },
 
         finish: (req, res) => {
-            req.session.id_usuario = null;
+            // req.session.id_usuario = null;
+            req.session.destroy();
             res.redirect('/');
         }
     }

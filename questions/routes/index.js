@@ -27,16 +27,21 @@ module.exports = app => {
 
     // render
     app.get('/admin', (req, res) => {
-        res.render('admin');    
+        res.render('admin/admin');    
     })
     app.post('/admin/logar', adminController.login);
-    app.get('/admin/logout', adminController.logout);
-
+    app.get('/admin/logout', authAdmin, adminController.logout);
+    
     // render
-    app.get('/padrao', authAdmin, (req, res) => {
-        res.render('cadastrar');
+    app.get('/admin/dashboard', authAdmin, (req, res) => {
+        res.render('admin/dashboard')
+    });
+    
+    // render
+    app.get('/admin/padrao', authAdmin, (req, res) => {
+        res.render('admin/cadastrar-padrao');
     })
-    app.post('/padrao/cadastrar', authAdmin, padraoController.post);
+    app.post('/admin/padrao/cadastrar', authAdmin, padraoController.post);
 
 
 }

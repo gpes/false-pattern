@@ -18,7 +18,7 @@ module.exports = app => {
                 else {
                     req.session.id_admin = admin._id; 
 
-                    res.redirect('/padrao')
+                    res.redirect('/admin/dashboard')
                 } 
             } catch(e) {
                 res.status(500).send('Falha ao processar a rquisição');
@@ -26,8 +26,9 @@ module.exports = app => {
         },
 
         logout: (req, res) => {
-            req.session.id_admin = null;
-            req.redirect('/admin')
+            // req.session.id_admin = null;
+            req.session.destroy();
+            res.redirect('/admin')
         }
     }
 

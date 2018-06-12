@@ -46,7 +46,7 @@ module.exports = app => {
                 }
 
                 await padraoRepository.create(data);
-                res.redirect('/padrao');
+                res.redirect('/admin/padrao');
             } catch (e) {
                 res.status(500).send({
                     message: 'Falha ao processar a requisição'
@@ -59,13 +59,22 @@ module.exports = app => {
                 let data = await padraoRepository.getAll();
                 
                 let dataForRender = [];
+                
+                // Arrays que irão conter os numero que já sairam no random para os padrões
+                let numerosParaQuestoes = [];
 
-                for(let i = 0; i < 9; i++) {
+                let i = 0;
+                while(i < 9) {
                     /* 
                         data.length = 16
                         Pegando um padrão aleatorio
-                    */                
+                    */             
                     let randomParaPadrao = Math.floor(Math.random() * data.length);
+
+                    // Check se o numero já saiu, se não, jogue ele no array
+                    if(numerosParaQuestoes.includes(randomParaPadrao)) continue;
+                    else numerosParaQuestoes.push(randomParaPadrao);
+
                     let padrao = data[randomParaPadrao];
 
                     // Pegando os termos de acordo com a categoria do padrão escolhido acima
@@ -73,17 +82,28 @@ module.exports = app => {
                     
                     // Armazenar os termos para a questão
                     let termosParaQuestao = []
+
+                    // Arrays que irão conter os numero que já sairam no random para os termos
+                    let verificarTermosParaAlternativas = [];
                     
                     // Jogando 5 termos no array
-                    for(let j = 0; j < 5; j++) {
+                    let j = 0;
+                    while(j < 5) {
                         // Pegando termo aleatorio no array de termos
                         let randomParaTermo = Math.floor(Math.random() * termosByCategoria.length);
-
+                        
                         // Pagando o nome de temos aleatorio
                         let randomNome = Math.floor(Math.random() * termosByCategoria[randomParaTermo].termos.length)
+
+                        let nome = termosByCategoria[randomParaTermo].termos[randomNome].nome
+
+                        if(verificarTermosParaAlternativas.includes(nome)) continue;
+                        else verificarTermosParaAlternativas.push(nome);
+
+                        termosParaQuestao.push(nome);
                         
-                        termosParaQuestao.push(termosByCategoria[randomParaTermo].termos[randomNome].nome);
-                    }
+                        j++;
+                    } // end while 5
 
                     // Montando obj para questão
                     let questao = {
@@ -93,7 +113,10 @@ module.exports = app => {
                     }
 
                     dataForRender.push(questao);
-                }
+                    
+                    i++;
+                } // end while 9 
+
                 
                 // Ordenando questões por categoria
                 dataForRender.sort((a, b) => {
