@@ -9,7 +9,7 @@ module.exports = app => {
                 
                 req.session.id_usuario = usuario._id;
                 
-                res.redirect('/q');
+                res.redirect('/questionario');
             } catch(e) {
                 console.log(e);
                 res.status(500).send('Falha ao processar a requisição')
@@ -17,7 +17,7 @@ module.exports = app => {
         },
 
         finish: (req, res) => {
-            req.session.destroy();
+            req.session.id_usuario = null;
             res.redirect('/');
         }
     }

@@ -67,7 +67,7 @@ module.exports = app => {
 
             try {
                 await respostaRepository.create(req.session.id_usuario, data);
-                res.redirect('/q/finalizar');
+                res.redirect('/questionario/finalizar');
             } catch(e) {
                 res.status(500).send({
                     message: 'Falha ao processar a requisição'

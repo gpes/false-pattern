@@ -100,7 +100,7 @@ module.exports = app => {
                     return a.categoria > b.categoria;
                 });
 
-                res.render('index', {
+                res.render('questionario', {
                     questoes: dataForRender
                 });
             } catch (e) {

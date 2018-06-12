@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questionario</title>
+</head>
+
+<body>
+    <form name="questoes" action="/questionario/responder" method="post">
+        <% if(questoes.length > 0 || questoes != null) { %>
+
+            <% for(var i = 0; i < questoes.length; i++) { %>
+                <div class="questao">
+                    <h3>Questão <%= i + 1 %></h3>
+                    <h2><%= questoes[i].categoria %></h2>
+                    <h1><%= questoes[i].padrao %></h1>
+                    
+                    <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
+                    <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
+                        <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> <%= questoes[i].termos[j] %>
+                    <% } %>
+                </div>
+
+                <br>
+                <br>
+            <% } %>
+
+        <% } %>
+
+        <div class="questao">
+            <h3>Questao 10</h3>
+            <h2>Dê suguestões de termos</h2>
+            <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
+            <input type="text" name="suguestao[tipo]" placeholder="Tipo">
+            <input type="text" name="suguestao[nome]" placeholder="Nome">
+            <button type="button" onclick="addCampoSuguestao();">+</button>
+        </div>
+
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+
+    <script>
+        function addCampoSuguestao() {
+            let campos = document.getElementsByName('suguestao[nome]');
+            let ultimoCampoDeTermos = campos[campos.length - 1];
+
+            let novoCampo = `
+                <br>  
+                <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
+                <input type="text" name="suguestao[tipo]" placeholder="Tipo">
+                <input type="text" name="suguestao[nome]" placeholder="Nome">
+            `;
+
+            let span = document.createElement('span');
+            span.innerHTML = novoCampo;
+
+            ultimoCampoDeTermos.parentNode.insertBefore(span, ultimoCampoDeTermos.nextSibling);
+        } 
+    </script>
+
+</html>

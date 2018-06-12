@@ -3,26 +3,40 @@ function authUsuario(req, res, next) {
     next();
 }
 
+function authAdmin(req, res, next) {
+    if(req.session.id_admin === undefined || req.session.id_admin === null) res.redirect('/admin');
+    next();
+}
+
 module.exports = app => {
     let padraoController = app.controllers.padrao;
     let respostaController = app.controllers.resposta;
     let usuarioController = app.controllers.usuario;
+    let adminController = app.controllers.admin;
 
     // render
     app.get('/', (req, res) => {
-        res.render('usuario');
+        res.render('index');
     });
     app.post('/usuario/cadastrar', usuarioController.post);
 
     // render
-    app.get('/q', authUsuario, padraoController.getRandomAll);
-    app.post('/q/responder', authUsuario, respostaController.post);
-    app.get('/q/finalizar', usuarioController.finish);
+    app.get('/questionario', authUsuario, padraoController.getRandomAll);
+    app.post('/questionario/responder', authUsuario, respostaController.post);
+    app.get('/questionario/finalizar', authUsuario, usuarioController.finish);
 
     // render
-    app.get('/padrao', (req, res) => {
+    app.get('/admin', (req, res) => {
+        res.render('admin');    
+    })
+    app.post('/admin/logar', adminController.login);
+    app.get('/admin/logout', adminController.logout);
+
+    // render
+    app.get('/padrao', authAdmin, (req, res) => {
         res.render('cadastrar');
     })
-    app.post('/padrao/cadastrar', padraoController.post);
+    app.post('/padrao/cadastrar', authAdmin, padraoController.post);
+
 
 }
