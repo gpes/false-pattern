@@ -33,9 +33,13 @@ module.exports = app => {
     app.get('/admin/logout', authAdmin, adminController.logout);
     
     // render
-    app.get('/admin/dashboard', authAdmin, (req, res) => {
-        res.render('admin/dashboard')
+    app.get('/admin/dashboard', (req, res) => {
+        res.render('admin/dashboard', {
+            respostas: []
+        })
     });
+
+    app.post('/admin/dashboard/buscar', respostaController.retrieve);
     
     // render
     app.get('/admin/padrao', authAdmin, (req, res) => {

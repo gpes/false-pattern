@@ -3,7 +3,11 @@ module.exports = app => {
 
     let repository = {
         create: async (id_usuario, data) => {
-            return await Usuario.findByIdAndUpdate(id_usuario, { resposta: data } )
+            return await Usuario.findByIdAndUpdate(id_usuario, { $set: data } )
+        },
+
+        retrieveUsersWithAnwsers: async data => {
+            return await Usuario.find(data);
         }
     }
 

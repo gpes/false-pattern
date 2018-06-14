@@ -73,6 +73,53 @@ module.exports = app => {
                     message: 'Falha ao processar a requisição'
                 })
             }
+        },
+
+        retrieve: async (req, res) => {
+            try {
+                let padrao = req.body.padrao;
+                let experiencia = req.body.experiencia;
+                
+                let find;
+                if(experiencia === 'none') find = {}
+                else find = { experiencia: experiencia }
+                
+                let usuariosComRespostas = await respostaRepository.retrieveUsersWithAnwsers(find);
+
+                if(padrao === 'none') res.render('admin/dashboard', { respostas: usuariosComRespostas }); 
+
+                // Array que conterá os dados corretos a serem retornados
+                let returnData = [];
+                for(let i = 0; i < usuariosComRespostas.length; i++) {
+                    let resposta = usuariosComRespostas[i].resposta;
+
+                    // Array que conterá somente os objs { termos, padrao } que conterem o padrao definido na pesquisa
+                    let newResposta = [];
+                    for(let j = 0; j < resposta.length; j++) {
+                        if(resposta[j].padrao === padrao) newResposta.push(resposta[j])
+                    }
+
+                    if(newResposta.length == 0) continue;
+
+                    // Montando obj para o array de conterá os dados corretos
+                    let newData = {
+                        id: usuariosComRespostas[i]._id,
+                        formacao: usuariosComRespostas[i].formacao,
+                        experiencia: usuariosComRespostas[i].experiencia,
+                        resposta: newResposta,
+                        suguestao: usuariosComRespostas[i].suguestao
+                    }
+
+                    returnData.push(newData);
+                }
+                
+                res.render('admin/dashboard', {
+                    respostas: returnData 
+                });
+            } catch(e) {
+                console.log(e)
+                res.status(500).send('Falha ao processar requisição')
+            }
         }
     }
 

@@ -3,12 +3,32 @@ const Schema = mongoose.Schema;
 
 module.exports = app => {
 
-    let respostaModel = app.models.resposta;
+    // let respostaModel = app.models.resposta;
     
+    const respostaSchema = new Schema({
+        padrao: { type: String, required: true },
+        termos: [ 
+            { type: String, required: true } 
+        ]
+    })
+    
+    const suguestaoSchema = new Schema({
+        padrao: { type: String, required: true },
+        tipo: { type: String, required: true },
+        nome: { type: String, required: true } 
+    }) 
+
+    // const mainSchema = new Schema({
+    //     resposta: [ respostaSchema ],
+    //     suguestao: [ suguestaoSchema ],
+    //     data: { type: Date, default: Date.now }
+    // })
+
     const usuarioSchema = new Schema({
         formacao: { type: String, required: true },
         experiencia: { type: String, required: true },
-        resposta: respostaModel 
+        resposta: [ respostaSchema ],
+        suguestao: [ suguestaoSchema ], 
     })
 
     return mongoose.model('usuarios', usuarioSchema);
