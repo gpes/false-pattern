@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atualizar padrão</title>
+</head>
+<body>
+    <h1>Atualizar Padrão</h1>
+    
+    <form name="atualizarPadrao" method="POST" action="/admin/padrao/atualizar">
+        <label for="padrao">Padrao: </label>
+        <input type="text" name="padrao" /> 
+        <br><br>
+
+        <label for="descricao">Descrição: </label>
+        <br>
+        <textarea name="descricao" cols="60" rows="10"></textarea>
+        <br><br>
+
+        <label for="imagem">Imagem: </label>
+        <input type="text" name="imagem" />
+        <br><br>
+
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

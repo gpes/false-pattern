@@ -8,13 +8,25 @@ module.exports = app => {
         },
 
         getAll: async () => {
-            return await Padrao.find({}, 'padrao categoria')
+            return await Padrao.find({}, 'padrao categoria descricao imagem')
         },
 
         getTermosByCategoria: async categoria => {
             return await Padrao.find({
                 categoria: categoria
             }, 'termos' );
+        },
+
+        updateDescAndImgByPadrao: async data => {
+            return await Padrao.update({
+                padrao: data.padrao
+            }, 
+            {
+                $set: { 
+                    descricao: data.descricao,
+                    imagem: data.imagem 
+                }
+            })
         }
     }
 

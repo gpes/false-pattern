@@ -16,6 +16,9 @@
                     <h3>Questão <%= i + 1 %></h3>
                     <h2><%= questoes[i].categoria %></h2>
                     <h1><%= questoes[i].padrao %></h1>
+                    <h4><%= questoes[i].descricao %></h4>
+                    <img src="<%= questoes[i].imagem %>" />
+                    <br>
                     
                     <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
                     <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
@@ -24,6 +27,7 @@
                 </div>
 
                 <br>
+                <hr>
                 <br>
             <% } %>
 

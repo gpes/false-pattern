@@ -42,11 +42,13 @@ module.exports = app => {
                 let data = {
                     padrao: req.body.padrao,
                     categoria: req.body.categoria,
+                    descricao: req.body.descricao,
+                    imagem: req.body.imagem,
                     termos: termos
                 }
 
                 await padraoRepository.create(data);
-                res.redirect('/admin/padrao');
+                res.redirect('/admin/padrao/cadastrar-padrao');
             } catch (e) {
                 res.status(500).send({
                     message: 'Falha ao processar a requisição'
@@ -109,6 +111,8 @@ module.exports = app => {
                     let questao = {
                         categoria: padrao.categoria,
                         padrao: padrao.padrao,
+                        descricao: padrao.descricao,
+                        imagem: padrao.imagem,
                         termos: termosParaQuestao
                     }
 
@@ -131,6 +135,26 @@ module.exports = app => {
                     message: 'Falha ao processar a requisição'
                 })
             }
+
+        },
+        
+        updatePadrao: async (req, res) => {
+            try {
+                let data = {
+                    padrao: req.body.padrao,
+                    descricao: req.body.descricao,
+                    imagem: req.body.imagem
+                }
+
+                await padraoRepository.updateDescAndImgByPadrao(data)
+                
+                res.redirect('/admin/padrao/atualizar-padrao')
+            } catch(e) {
+                res.status(500).send({
+                    message: 'Falha ao processar a requisição'
+                })
+            }
+
         }
     }
 

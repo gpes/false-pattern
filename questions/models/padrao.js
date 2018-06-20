@@ -9,6 +9,12 @@ module.exports = app => {
         categoria: {
             type: String, required: true
         },
+        descricao: {
+            type: String, required: true
+        },
+        imagem: {
+            type: String, required: true
+        },
         termos: [{
             tipo: { type: String, required: true },
             nome: { type: String, required: true }

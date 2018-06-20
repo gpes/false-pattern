@@ -42,10 +42,15 @@ module.exports = app => {
     app.post('/admin/dashboard/buscar', respostaController.retrieve);
     
     // render
-    app.get('/admin/padrao', authAdmin, (req, res) => {
+    app.get('/admin/padrao/cadastrar-padrao', authAdmin, (req, res) => {
         res.render('admin/cadastrar-padrao');
     })
     app.post('/admin/padrao/cadastrar', authAdmin, padraoController.post);
-
+    
+    // render
+    app.get('/admin/padrao/atualizar-padrao', (req, res) => {
+        res.render('admin/atualizar-padrao')
+    })
+    app.post('/admin/padrao/atualizar', padraoController.updatePadrao);
 
 }
