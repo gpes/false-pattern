@@ -21,7 +21,7 @@ module.exports = app => {
     app.post('/usuario/cadastrar', usuarioController.post);
 
     // render
-    app.get('/questionario', authUsuario, padraoController.getRandomAll);
+    app.get('/questionario', padraoController.getRandomAll);
     app.post('/questionario/responder', authUsuario, respostaController.post);
     app.get('/questionario/finalizar', authUsuario, usuarioController.finish);
 

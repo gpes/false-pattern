@@ -1,71 +1,86 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Questionario</title>
-</head>
+<% include partials/header %>
+    
+    <div class="container-fluid">
+        <div class="row">
 
-<body>
-    <form name="questoes" action="/questionario/responder" method="post">
-        <% if(questoes.length > 0 || questoes != null) { %>
+            <form name="questoes" action="/questionario/responder" method="post">
 
-            <% for(var i = 0; i < questoes.length; i++) { %>
-                <div class="questao">
-                    <h3>Questão <%= i + 1 %></h3>
-                    <h2><%= questoes[i].categoria %></h2>
-                    <h1><%= questoes[i].padrao %></h1>
-                    <h4><%= questoes[i].descricao %></h4>
-                    <img src="<%= questoes[i].imagem %>" />
-                    <br>
-                    
-                    <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
-                    <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
-                        <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> <%= questoes[i].termos[j] %>
+                <% if (questoes.length > 0 || questoes != null) { %>
+
+                    <% for(var i = 0; i < 1; i++) { %>
+
+                        <div class="questao">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card my-card-color">
+                                    <div class="card-content white-text">
+                                        <span class="card-title">Questão <%= i + 1 %></span>
+                                        <h5><%= questoes[i].categoria %></h5>
+                                        <h3><%= questoes[i].padrao %></h3>
+                                        <!--<h4><%= questoes[i].descricao %></h4>-->
+                                        <!--<img src="<%= questoes[i].imagem %>" />-->
+                                                
+                                        <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
+                                        <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
+                                            <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> <%= questoes[i].termos[j] %>
+                                        <% } %>
+                                    </div>
+                                    <div class="card-action right-align">
+                                        <button type="button" class="left waves-effect waves-light btn grey lighten-3 black-text">Anterior</button>
+
+                                        <button type="button" class="waves-effect waves-light btn grey lighten-3 black-text">Próxima</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end .questao -->
                     <% } %>
-                </div>
 
-                <br>
-                <hr>
-                <br>
+                <% } %>
+
+            </form>
+        
+        </div>
+    </div>
+
+
+        <form class="hide" name="questoes" action="/questionario/responder" method="post">
+            <% if (questoes.length > 0 || questoes != null) { %>
+
+                <% for(var i = 0; i < 1; i++) { %>
+                    <div class="questao">
+                        <h3>Questão <%= i + 1 %></h3>
+                        <h2><%= questoes[i].categoria %></h2>
+                        <h1><%= questoes[i].padrao %></h1>
+                        <h4><%= questoes[i].descricao %></h4>
+                        <img src="<%= questoes[i].imagem %>" />
+                        <br>
+                        
+                        <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
+                        <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
+                            <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> <%= questoes[i].termos[j] %>
+                        <% } %>
+                    </div>
+
+                    <br>
+                    <br>
+                <% } %>
+
             <% } %>
 
-        <% } %>
 
-        <div class="questao">
-            <h3>Questao 10</h3>
-            <h2>Dê suguestões de termos</h2>
-            <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
-            <input type="text" name="suguestao[tipo]" placeholder="Tipo">
-            <input type="text" name="suguestao[nome]" placeholder="Nome">
-            <button type="button" onclick="addCampoSuguestao();">+</button>
-        </div>
 
-        <br>
-
-        <button type="submit">Enviar</button>
-    </form>
-
-</body>
-
-    <script>
-        function addCampoSuguestao() {
-            let campos = document.getElementsByName('suguestao[nome]');
-            let ultimoCampoDeTermos = campos[campos.length - 1];
-
-            let novoCampo = `
-                <br>  
+            <!--<div class="questao">
+                <h3>Questao 10</h3>
+                <h2>Dê suguestões de termos</h2>
                 <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
                 <input type="text" name="suguestao[tipo]" placeholder="Tipo">
                 <input type="text" name="suguestao[nome]" placeholder="Nome">
-            `;
+                <button type="button" onclick="addCampoSuguestao();">+</button>
+            </div>-->
 
-            let span = document.createElement('span');
-            span.innerHTML = novoCampo;
+            <br>
 
-            ultimoCampoDeTermos.parentNode.insertBefore(span, ultimoCampoDeTermos.nextSibling);
-        } 
-    </script>
+            <!--<button type="submit">Enviar</button>-->
+        </form>
+    </div>
 
-</html>
+<% include partials/footer %>
