@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <form name="questoes" action="/questionario/responder" method="post">
+            <form id="form_questoes" name="questoes" action="/questionario/responder" method="post">
 
                 <% if (questoes.length > 0 || questoes != null) { %>
 
@@ -15,8 +15,9 @@
                                             <div class="card-content white-text">
                                                 <span class="card-title">Questão <%= i + 1 %></span>
                                                 <h5><%= questoes[i].categoria %></h5>
-                                                <h3 class="my-text"><%= questoes[i].padrao %></h3>
-                                                <button data-target="modal<%= i %>" class="btn modal-trigger">+</button>
+                                                <span class="my-text question-title"><%= questoes[i].padrao %>
+                                                    <button data-target="modal<%= i %>" class="btn modal-trigger btn-small">+</button>
+                                                </span>
                                                 <br>
                                                 
                                                 <div id="modal<%= i %>" class="modal">
@@ -32,7 +33,10 @@
                                                         
                                                 <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
                                                 <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
-                                                    <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> <%= questoes[i].termos[j] %>
+                                                    <label class="item-resposta">
+                                                        <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> 
+                                                        <span class="resposta"><%= questoes[i].termos[j] %></span>
+                                                    </label>
                                                 <% } %>
                                             </div>
                                             <div class="card-action right-align">

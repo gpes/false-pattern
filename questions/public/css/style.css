@@ -10,6 +10,11 @@ html {
     text-transform: capitalize;
 }
 
+.question-title {
+    font-size: 50px;
+    margin-right: 2%;
+}
+
 .my-card-color {
     background-color: #1976D2;
 }
@@ -21,4 +26,14 @@ html {
 
 div.modal-overlay {
     /* height: 100% !important; */
+}
+
+.item-resposta {
+    margin: 0 4% 0 0;
+    /* color: white; */
+}
+
+.resposta {
+    font-size: 20px !important;
+    color: white;
 }
