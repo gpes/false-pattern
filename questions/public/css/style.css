@@ -2,10 +2,23 @@ body {
     background-color: #2196F3;
 }
 
+html {
+    height: 100%;
+}
+
+.my-text {
+    text-transform: capitalize;
+}
+
 .my-card-color {
     background-color: #1976D2;
 }
 
-.questao {
-    margin-top: 10%;
+.my-carousel {  
+    /* margin-top: 10%; */
+    /* margin-bottom: 10%; */
+}
+
+div.modal-overlay {
+    /* height: 100% !important; */
 }
