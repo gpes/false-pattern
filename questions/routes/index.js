@@ -1,6 +1,10 @@
+const passportGithub = require('../libs/auth/github');
+
 function authUsuario(req, res, next) {
-    if(req.session.id_usuario === undefined || req.session.id_usuario === null) res.redirect('/');
-    next();
+    if(req.isAuthenticated()) {
+        // if(req.session.id_usuario === undefined || req.session.id_usuario === null) res.redirect('/');
+        next();
+    }
 }
 
 function authAdmin(req, res, next) {
@@ -14,6 +18,13 @@ module.exports = app => {
     let usuarioController = app.controllers.usuario;
     let adminController = app.controllers.admin;
 
+    // Github router
+    app.get('/auth/github', passportGithub.authenticate('github', { scope : [ 'user:email' ] }))
+    app.get('/auth/github/callback', passportGithub.authenticate('github', { failureRedirect: '/' }), (req, res) => {
+        // just a test
+        res.redirect('/admin')
+    })
+
     // render
     app.get('/', (req, res) => {
         res.render('index');
@@ -26,7 +37,8 @@ module.exports = app => {
     app.get('/questionario/finalizar', authUsuario, usuarioController.finish);
 
     // render
-    app.get('/admin', (req, res) => {
+    app.get('/admin', authUsuario, (req, res) => {
+        // console.log("/admin pega profile: ", req.user)
         res.render('admin/admin');    
     })
     app.post('/admin/logar', adminController.login);

@@ -5,6 +5,7 @@ const expressValidator = require('express-validator');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const path = require('path');
+const passport = require('passport')
 
 module.exports = app => {
     app.set('port', process.env.PORT || 3000);
@@ -16,9 +17,11 @@ module.exports = app => {
     app.use(expressValidator());
     app.use(expressSession({
         secret: 'appbsied',
-        resave: false,
-        saveUninitialized: false
+        resave: true,
+        saveUninitialized: true
     }));
+    app.use(passport.initialize())
+    app.use(passport.session())
     app.use(morgan('dev'));
     app.use(helmet());
 }
