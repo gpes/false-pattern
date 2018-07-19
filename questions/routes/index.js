@@ -38,7 +38,7 @@ module.exports = app => {
 
     // render
     app.get('/admin', authUsuario, (req, res) => {
-        // console.log("/admin pega profile: ", req.user)
+        console.log("/admin pega profile: ", req.user)
         res.render('admin/admin');    
     })
     app.post('/admin/logar', adminController.login);
