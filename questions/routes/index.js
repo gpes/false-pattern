@@ -1,10 +1,12 @@
-const passportGithub = require('../libs/auth/github');
+// const passportGithub = require('../libs/auth/github');
 
 function authUsuario(req, res, next) {
-    if(req.isAuthenticated()) {
-        // if(req.session.id_usuario === undefined || req.session.id_usuario === null) res.redirect('/');
-        next();
-    }
+    if(req.session.id_usuario === undefined || req.session.id_usuario === null) res.redirect('/');
+    else next();
+    // if(req.isAuthenticated()) next();
+    
+    // res.redirect('/')
+    
 }
 
 function authAdmin(req, res, next) {
@@ -17,28 +19,29 @@ module.exports = app => {
     let respostaController = app.controllers.resposta;
     let usuarioController = app.controllers.usuario;
     let adminController = app.controllers.admin;
+    let passportGithub = app.libs.auth.github;
 
     // Github router
     app.get('/auth/github', passportGithub.authenticate('github', { scope : [ 'user:email' ] }))
     app.get('/auth/github/callback', passportGithub.authenticate('github', { failureRedirect: '/' }), (req, res) => {
-        // just a test
-        res.redirect('/admin')
+        // console.log(req.user._id)
+        req.session.id_usuario = req.user._id;
+        res.redirect('/questionario')
     })
 
     // render
     app.get('/', (req, res) => {
         res.render('index');
     });
-    app.post('/usuario/cadastrar', usuarioController.post);
+    // app.get('/usuario/cadastrar', usuarioController.post);
 
     // render
-    app.get('/questionario', padraoController.getRandomAll);
+    app.get('/questionario', authUsuario, padraoController.getRandomAll);
     app.post('/questionario/responder', authUsuario, respostaController.post);
     app.get('/questionario/finalizar', authUsuario, usuarioController.finish);
 
     // render
-    app.get('/admin', authUsuario, (req, res) => {
-        console.log("/admin pega profile: ", req.user)
+    app.get('/admin', (req, res) => {
         res.render('admin/admin');    
     })
     app.post('/admin/logar', adminController.login);

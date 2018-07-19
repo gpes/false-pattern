@@ -9,6 +9,7 @@ consign()
     .then('models')
     .then('repositories')
     .then('controllers')
+    .then('libs/auth/github.js')
     .then('routes')
     .then('libs/boot.js')
     .into(app);

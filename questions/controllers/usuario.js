@@ -5,7 +5,8 @@ module.exports = app => {
     let controller = {
         post: async (req, res) => {
             try {
-                let usuario = await usuarioRepository.create(req.body);
+                // req.user vem do passport
+                let usuario = await usuarioRepository.create(req.user);
                 
                 req.session.id_usuario = usuario._id;
                 

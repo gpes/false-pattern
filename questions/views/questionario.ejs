@@ -7,7 +7,7 @@
 
                 <% if (questoes.length > 0 || questoes != null) { %>
 
-                        <% for(var i = 0; i < questoes.length; i++) { %>
+                        <% for(var i = 0; i < 0; i++) { %>
                             
                                 <div class="questao hide animated">
                                     <div class="col s12 m6 offset-m3">
@@ -57,10 +57,10 @@
                                             <span class="card-title">Questão 10</span>
                                             <h5>Dê suguestão de termos</h5>
 
-                                            <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
-                                            <input type="text" name="suguestao[tipo]" placeholder="Tipo">
-                                            <input type="text" name="suguestao[nome]" placeholder="Nome">
-                                            <button type="button" onclick="addCampoSuguestao();">+</button>
+                                            <input type="text" class="input-color-text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
+                                            <input type="text" class="input-color-text" name="suguestao[tipo]" placeholder="Tipo">
+                                            <input type="text" class="input-color-text" name="suguestao[nome]" placeholder="Nome">
+                                            <button type="button" class="btn btn-small" onclick="addCampoSuguestao();">+</button>
                                         
                                         </div>
                                         <div class="card-action right-align">

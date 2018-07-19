@@ -40,9 +40,9 @@ function addCampoSuguestao() {
 
     let novoCampo = `
         <br>  
-        <input type="text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
-        <input type="text" name="suguestao[tipo]" placeholder="Tipo">
-        <input type="text" name="suguestao[nome]" placeholder="Nome">
+        <input type="text" class="input-color-text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
+        <input type="text" class="input-color-text" name="suguestao[tipo]" placeholder="Tipo">
+        <input type="text" class="input-color-text" name="suguestao[nome]" placeholder="Nome">
     `;
 
     let span = document.createElement('span');
