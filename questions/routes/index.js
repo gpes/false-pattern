@@ -36,6 +36,7 @@ module.exports = app => {
     // app.get('/usuario/cadastrar', usuarioController.post);
 
     // render
+    // Precisa colocar o authUsuario
     app.get('/questionario', authUsuario, padraoController.getRandomAll);
     app.post('/questionario/responder', authUsuario, respostaController.post);
     app.get('/questionario/finalizar', authUsuario, usuarioController.finish);

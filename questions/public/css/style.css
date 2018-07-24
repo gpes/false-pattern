@@ -39,5 +39,5 @@ div.modal-overlay {
 }
 
 .input-color-text {
-    color: white;
+    color: white !important;
 }

@@ -7,7 +7,7 @@
 
                 <% if (questoes.length > 0 || questoes != null) { %>
 
-                        <% for(var i = 0; i < 0; i++) { %>
+                        <% for(var i = 0; i < questoes.length; i++) { %>
                             
                                 <div class="questao hide animated">
                                     <div class="col s12 m6 offset-m3">
@@ -56,10 +56,42 @@
                                         <div class="card-content white-text">
                                             <span class="card-title">Questão 10</span>
                                             <h5>Dê suguestão de termos</h5>
+                                            <div class="sug">
+                                                <select name="suguestao[padrao]" class="input-color-text">
+                                                    <option value="none" disabled selected>Selecione um padrão</option>
+                                                    <optgroup label="Criacional">
+                                                        <option value="builder">Builder</option>
+                                                        <option value="factory method">Factory Method</option>
+                                                        <option value="prototype">Prototype</option>
+                                                        <option value="singleton">Singleton</option>            
+                                                    </optgroup>
+                                                            
+                                                    <optgroup label="Estrutural">
+                                                        <option value="adapter">Adapter</option>
+                                                        <option value="bridge">Bridge</option>
+                                                        <option value="composite">Composite</option>
+                                                        <option value="decorator">Decorator</option>
+                                                        <option value="proxy">Proxy</option> 
+                                                        <option value="chain">Chain of Responsibility</option>
+                                                    </optgroup>
 
-                                            <input type="text" class="input-color-text" name="suguestao[padrao]" placeholder="Padrão de Projeto">
-                                            <input type="text" class="input-color-text" name="suguestao[tipo]" placeholder="Tipo">
-                                            <input type="text" class="input-color-text" name="suguestao[nome]" placeholder="Nome">
+                                                    <optgroup label="Comportamental">
+                                                        <option value="command">Command</option>
+                                                        <option value="observer">Observer</option>
+                                                        <option value="state">State</option>
+                                                        <option value="strategy">Strategy</option>
+                                                        <option value="template method">Template Method</option>
+                                                        <option value="visitor">Visitor</option>
+                                                    </optgroup>
+                                                </select>
+                                                <select name="suguestao[tipo]">
+                                                    <option value="none" disabled selected>Selecione um tipo de termo</option>
+                                                    <option value="classe">Classe</option>
+                                                    <option value="atributo">Atributo</option>
+                                                    <option value="metodo">Método</option>
+                                                </select>
+                                                <input type="text" class="input-color-text" name="suguestao[nome]" placeholder="Digite o termo">
+                                            </div>
                                             <button type="button" class="btn btn-small" onclick="addCampoSuguestao();">+</button>
                                         
                                         </div>
