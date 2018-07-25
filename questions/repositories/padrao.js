@@ -17,6 +17,12 @@ module.exports = app => {
             }, 'termos' );
         },
 
+        getTermosByPadrao: async padrao => {
+            return await Padrao.find({
+                padrao: padrao
+            }, 'termos')
+        },
+
         updateDescAndImgByPadrao: async data => {
             return await Padrao.update({
                 padrao: data.padrao

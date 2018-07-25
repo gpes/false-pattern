@@ -82,15 +82,27 @@ module.exports = app => {
                     // Pegando os termos de acordo com a categoria do padrão escolhido acima
                     let termosByCategoria = await padraoRepository.getTermosByCategoria(padrao.categoria)                     
                     
+                    // Uma lista de termos daquele padrão sorteado. Um desses termos, servirar para assegurar UMA ALTERNATIVA CORRETA
+                    let termosByPadrao = await padraoRepository.getTermosByPadrao(padrao.padrao)
+
                     // Armazenar os termos para a questão
                     let termosParaQuestao = []
-
+                    
                     // Arrays que irão conter os numero que já sairam no random para os termos
                     let verificarTermosParaAlternativas = [];
+
+                    // Random para um termos do padrão da questão
+                    let randomParaUmTermoAssegurado = Math.floor(Math.random() * termosByPadrao[0].termos.length)
+                    // Pegando um termo assegurado
+                    let nomeAssegurado = termosByPadrao[0].termos[randomParaUmTermoAssegurado].nome
                     
-                    // Jogando 5 termos no array
+                    // Um termos assegurado para o array de termos da questão
+                    verificarTermosParaAlternativas.push(nomeAssegurado)
+                    termosParaQuestao.push(nomeAssegurado)
+
+                    // Jogando 4 termos no array
                     let j = 0;
-                    while(j < 5) {
+                    while(j < 4) {
                         // Pegando termo aleatorio no array de termos
                         let randomParaTermo = Math.floor(Math.random() * termosByCategoria.length);
                         
@@ -106,6 +118,10 @@ module.exports = app => {
                         
                         j++;
                     } // end while 5
+
+                    termosParaQuestao.sort((a, b) => {
+                        return a > b;
+                    })
 
                     // Montando obj para questão
                     let questao = {
