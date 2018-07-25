@@ -32,6 +32,7 @@
                                                 </div>
                                                         
                                                 <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
+                                                <input type="hidden" name="questao<%= i + 1 %>[categoria]" value="<%= questoes[i].categoria %>" />
                                                 <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
                                                     <label class="item-resposta">
                                                         <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> 

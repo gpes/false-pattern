@@ -1,98 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
-</head>
-<body>
+<% include ../partials/header %>
+    <div class="container-fluid">
+        <nav class="indigo accent-2">
+            <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/admin/padrao/cadastrar-padrao">Cadastrar Padrão</a></li>
+                <li><a href="/admin/padrao/atualizar-padrao">Atualizar Padrão</a></li>
+                <li><a href="/admin/logout">Sair</a></li>
+            </ul>
+            </div>
+        </nav>
 
-    <a href="/admin/padrao/cadastrar-padrao">Cadastrar Padrão</a>
-    <br>
-    <a href="/admin/logout">Sair</a>
+        <h1>Dashboard</h1>
+        <h4>Respostas</h4>
+        
+        <div class="row">
+            <div class="input-field col s4">
+                <select name="categoria" id="categoria">
+                    <option value="none">none</option>
+                    <option value="criacional">criacional</option>
+                    <option value="estrutural">estrutural</option>
+                    <option value="comportamental">comportamental</option>
+                </select>
+                <label for="categoria">Categoria:</label>
+            </div>
 
-    <br>
+            <div class="input-field col s4">
+                <select name="padrao" id="padrao">
+                    <option value="none">none</option>
+                    <optgroup label="Criacional">
+                        <option value="builder">builder</option>
+                        <option value="factory method">factory Method</option>
+                        <option value="prototype">prototype</option>
+                        <option value="singleton">singleton</option>            
+                    </optgroup>
+                            
+                    <optgroup label="Estrutural">
+                        <option value="adapter">adapter</option>
+                        <option value="bridge">bridge</option>
+                        <option value="composite">composite</option>
+                        <option value="decorator">decorator</option>
+                        <option value="proxy">proxy</option> 
+                        <option value="chain">chain</option>
+                    </optgroup>
 
-    <h1>Dashboard</h1>
+                    <optgroup label="Comportamental">
+                        <option value="command">command</option>
+                        <option value="observer">observer</option>
+                        <option value="state">state</option>
+                        <option value="strategy">strategy</option>
+                        <option value="template method">template Method</option>
+                        <option value="visitor">visitor</option>
+                    </optgroup>
+                </select>
+                <label for="padrao">Padrão de projeto:</label>            
+            </div> 
 
-    <h2>Respostas</h2>
-
-    <form name="buscar" method="post" action="/admin/dashboard/buscar"> 
-        <label for="padrao">Padrão de projeto:</label> 
-        <select name="padrao">
-            <option value="none">-</option>
-            <optgroup label="Criacional">
-                <option value="builder">Builder</option>
-                <option value="factory method">Factory Method</option>
-                <option value="prototype">Prototype</option>
-                <option value="singleton">Singleton</option>            
-            </optgroup>
-                    
-            <optgroup label="Estrutural">
-                <option value="adapter">Adapter</option>
-                <option value="bridge">Bridge</option>
-                <option value="composite">Composite</option>
-                <option value="decorator">Decorator</option>
-                <option value="proxy">Proxy</option> 
-                <option value="chain">Chain of Responsibility</option>
-            </optgroup>
-
-            <optgroup label="Comportamental">
-                <option value="command">Command</option>
-                <option value="observer">Observer</option>
-                <option value="state">State</option>
-                <option value="strategy">Strategy</option>
-                <option value="template method">Template Method</option>
-                <option value="visitor">Visitor</option>
-            </optgroup>
-        </select>
-
-        <label for="experiencia">Experiência do Dev:</label>
-        <select name="experiencia">
-            <option value="none">-</option>
-            <option value="0-1">Menos de 1 ano</option>
-            <option value="1-3">1 a 3 anos</option>
-            <option value="3-5">3 a 5 anos</option>
-            <option value="5-#">Mais de 5 anos</option>
-        </select>
-        <button type="submit">Buscar</button>
-    </form>
-    <br>
-    
-    <% if(respostas.length > 0) { %>
-        <% for(var i = 0; i < respostas.length; i++) { %>
-            <b>Id: </b><%= respostas[i]._id %><br>
-            <b>Experiência: </b><%= respostas[i].experiencia %>
+            <button type="button" class="btn col m2" onclick="call();">Buscar</button>
+        </div>
+        
+        <div class="row">
+            <div id="tabulacao">
             
-            <br>
-            <br>
-            <b>-Respostas das questões: </b>
-            <br>
-            <% for(var j = 0; j < respostas[i].resposta.length; j++) { %>
-                <b>Padrão: </b><%= respostas[i].resposta[j].padrao %>
-                <br>
-                <% for(var z = 0; z < respostas[i].resposta[j].termos.length; z++) { %>
-                    <%= respostas[i].resposta[j].termos[z] %>
-                <% } %>
-                <br>
-            <% } %>
+            </div>
+        </div>
 
-            <br>
-            <b>-Suguestões: </b>
-            <br>
-            <% for(var y = 0; y < respostas[i].suguestao.length; y++) { %>
-                <b>padrão: </b><%= respostas[i].suguestao[y].padrao %> <br>  
-                <b>tipo: </b><%= respostas[i].suguestao[y].tipo %> <br> 
-                <b>nome: </b><%= respostas[i].suguestao[y].nome %>
-                <br><br>
-            <% } %>
-            <br>
-            <hr>
-            <br>
-        <% } %>
-    <% } %>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+        });
 
-</body>
+        async function fetchDatas(link, data) {
+            let response = await fetch(link, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
 
-</html>
+            return await response.json()        
+        }
+
+        async function call() {
+            let categoria = document.getElementById('categoria').value
+            let padrao = document.getElementById('padrao').value
+            console.log(categoria, padrao)
+            let result = await fetchDatas('http://localhost:3000/admin/dashboard/buscar/', { 
+                categoria: categoria, 
+                padrao: padrao
+            })
+
+            let partOneHeader = `
+                <div class="row">
+                    <div class="col s4"><b>ID</b></div>
+                    <div class="col s4"><b>Email</b></div>
+                    <div class="col s4"><b>Repositorio publicos</b></div>
+                </div>
+            `
+
+            let partTwoHeader = `
+                <div class="row">
+                    <div class="col s4"><b>Categoria</b></div>
+                    <div class="col s4"><b>Padrao</b></div>
+                    <div class="col s4"><b>Resposta</b></div>
+                </div>
+            `
+
+            let partThreeHeader = `
+                <div class="row">
+                    <div class="col s4"><b>Padrão</b></div>
+                    <div class="col s4"><b>Tipo</b></div>
+                    <div class="col s4"><b>Nome</b></div>
+                </div>
+            `
+
+            let finalHtml = "";
+
+            for(let i = 0; i < result.length; i++){
+                let partOne = "";
+                partOne += partOneHeader;
+                partOne += '<div class="row"> <div class="col m4">' + result[i]._id + '</div> <div class="col m4">' + result[i].email + '</div>  <div class="col m4">' + result[i].public_repos + '</div>  </div>'
+
+                let partTwo = ""
+                partTwo += partTwoHeader
+                for(let j = 0; j < result[i].resposta.length; j++) {
+                    partTwo += '<div class="row">'
+                    
+                    partTwo += '<div class="col m4">' + result[i].resposta[j].categoria + '</div>'
+                    partTwo += '<div class="col m4">' + result[i].resposta[j].padrao + '</div>'
+                    partTwo += '<div class="col m4">'
+                    for(let termo of result[i].resposta[j].termos) {
+                        partTwo += termo + '<br>'                                 
+                    }
+                    
+                    partTwo += '</div> </div>'
+                }
+
+                let partThree = "";
+                partThree += partThreeHeader
+                let suguestao = result[i].suguestao;
+
+                for(let sug of suguestao) {
+                    partThree += '<div class="row">'
+                    
+                    partThree += '<div class="col m4">' + sug.padrao + '</div>'
+                    partThree += '<div class="col m4">' + sug.tipo + '</div>'
+                    partThree += '<div class="col m4">' + sug.nome + '</div>'
+                    
+                    partThree += '</div>'
+                }
+                    
+                // Final 
+                finalHtml += partOne
+                finalHtml += partTwo
+                finalHtml += partThree
+                finalHtml += '<br /> <hr> <br />'
+            }
+
+            document.getElementById('tabulacao').innerHTML = finalHtml;
+        }
+    </script>
+<% include ../partials/footer %>

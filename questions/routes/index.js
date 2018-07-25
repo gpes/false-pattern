@@ -37,9 +37,11 @@ module.exports = app => {
 
     // render
     // Precisa colocar o authUsuario
-    app.get('/questionario', padraoController.getRandomAll);
+    app.get('/questionario', authUsuario, padraoController.getRandomAll);
     app.post('/questionario/responder', authUsuario, respostaController.post);
     app.get('/questionario/finalizar', authUsuario, usuarioController.finish);
+
+    // ADMIN
 
     // render
     app.get('/admin', (req, res) => {
@@ -49,12 +51,9 @@ module.exports = app => {
     app.get('/admin/logout', authAdmin, adminController.logout);
     
     // render
-    app.get('/admin/dashboard', (req, res) => {
-        res.render('admin/dashboard', {
-            respostas: []
-        })
+    app.get('/admin/dashboard', authAdmin, (req, res) => {
+        res.render('admin/dashboard')
     });
-
     app.post('/admin/dashboard/buscar', respostaController.retrieve);
     
     // render
@@ -64,9 +63,9 @@ module.exports = app => {
     app.post('/admin/padrao/cadastrar', authAdmin, padraoController.post);
     
     // render
-    app.get('/admin/padrao/atualizar-padrao', (req, res) => {
+    app.get('/admin/padrao/atualizar-padrao', authAdmin, (req, res) => {
         res.render('admin/atualizar-padrao')
     })
-    app.post('/admin/padrao/atualizar', padraoController.updatePadrao);
+    app.post('/admin/padrao/atualizar', authAdmin, padraoController.updatePadrao);
 
 }

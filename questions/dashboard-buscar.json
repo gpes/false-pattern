@@ -1,0 +1,65 @@
+[
+    {
+        "id": "5b588ac85fe8752878f7fb65",
+        "email": "natanseverolp@gmail.com",
+        "public_repos": 80,
+        "resposta": [
+            {
+                "termos": [
+                    "impl",
+                    "implementor"
+                ],
+                "_id": "5b588b395fe8752878f7fb6c",
+                "padrao": "bridge",
+                "categoria": "estrutural"
+            },
+            {
+                "termos": [
+                    "component",
+                    "composite"
+                ],
+                "_id": "5b588b395fe8752878f7fb6b",
+                "padrao": "composite",
+                "categoria": "estrutural"
+            },
+            {
+                "termos": [
+                    "decorator"
+                ],
+                "_id": "5b588b395fe8752878f7fb6a",
+                "padrao": "decorator",
+                "categoria": "estrutural"
+            },
+            {
+                "termos": [
+                    "adaptee"
+                ],
+                "_id": "5b588b395fe8752878f7fb69",
+                "padrao": "adapter",
+                "categoria": "estrutural"
+            },
+            {
+                "termos": [
+                    "proxy"
+                ],
+                "_id": "5b588b395fe8752878f7fb68",
+                "padrao": "proxy",
+                "categoria": "estrutural"
+            }
+        ],
+        "suguestao": [
+            {
+                "_id": "5b588b395fe8752878f7fb67",
+                "padrao": "singleton",
+                "tipo": "metodo",
+                "nome": "sasasa"
+            },
+            {
+                "_id": "5b588b395fe8752878f7fb66",
+                "padrao": "builder",
+                "tipo": "classe",
+                "nome": "dsdsdsd"
+            }
+        ]
+    }
+]

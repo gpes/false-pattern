@@ -4,6 +4,7 @@ const expressSession = require('express-session');
 const expressValidator = require('express-validator');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const cors = require('cors')
 const path = require('path');
 const passport = require('passport')
 
@@ -14,6 +15,7 @@ module.exports = app => {
 
     app.use(express.static(path.join(__dirname, '..', 'public')));
     app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json())
     app.use(expressValidator());
     app.use(expressSession({
         secret: 'appbsied',
@@ -24,4 +26,5 @@ module.exports = app => {
     app.use(passport.session())
     app.use(morgan('dev'));
     app.use(helmet());
+    app.use(cors())
 }

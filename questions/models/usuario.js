@@ -7,6 +7,7 @@ module.exports = app => {
     
     const respostaSchema = new Schema({
         padrao: { type: String, required: true },
+        categoria: { type: String, required: true },
         termos: [ 
             { type: String, required: true } 
         ]
