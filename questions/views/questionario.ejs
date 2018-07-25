@@ -7,19 +7,21 @@
 
                 <% if (questoes.length > 0 || questoes != null) { %>
 
-                        <% for(var i = 0; i < questoes.length; i++) { %>
+                        <% for(var i = 0; i < 0; i++) { %>
                             
                                 <div class="questao hide animated">
-                                    <div class="col s12 m6 offset-m3">
+                                    <div class="col s12 m6 l6 offset-m3 offset-l3">
                                         <div class="card my-card-color">
                                             <div class="card-content white-text">
-                                                <span class="card-title">Questão <%= i + 1 %></span>
-                                                <h5><%= questoes[i].categoria %></h5>
-                                                <span class="my-text question-title"><%= questoes[i].padrao %>
-                                                    <button data-target="modal<%= i %>" class="btn modal-trigger btn-small">+</button>
+                                                <span class="card-title">Questão <%= i + 1 %> / 10</span>
+                                                <span class="question-categoria my-text"><%= questoes[i].categoria %></span>
+                                                <br>
+                                                <span class="question-title my-text"><%= questoes[i].padrao %>
+                                                    <button data-target="modal<%= i %>" class="btn modal-trigger btn-small">Sobre o padrão</button>
                                                 </span>
                                                 <br>
-                                                
+                                                <br>
+
                                                 <div id="modal<%= i %>" class="modal">
                                                     <div class="modal-content black-text">
                                                         <h4>Descrição</h4>
@@ -33,17 +35,26 @@
                                                         
                                                 <input type="hidden" name="questao<%= i + 1 %>[padrao]" value="<%= questoes[i].padrao %>" >
                                                 <input type="hidden" name="questao<%= i + 1 %>[categoria]" value="<%= questoes[i].categoria %>" />
-                                                <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
-                                                    <label class="item-resposta">
-                                                        <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> 
-                                                        <span class="resposta"><%= questoes[i].termos[j] %></span>
-                                                    </label>
-                                                <% } %>
+                                                <div class="row">
+                                                    <% for(var j = 0; j < questoes[i].termos.length; j++) { %>
+                                                        <div class="col s12 m4 l4">
+                                                            <label class="item-resposta">
+                                                                <input type="checkbox" name="questao<%= i + 1 %>[termos]" value="<%= questoes[i].termos[j] %>"> 
+                                                                <span class="resposta"><%= questoes[i].termos[j] %></span>
+                                                            </label>
+                                                        </div>
+                                                    <% } %>
+                                                </div>
                                             </div>
-                                            <div class="card-action right-align">
-                                                <button type="button" id="prev" onclick="anterior();" class="left waves-effect waves-light btn grey lighten-3 black-text">Anterior</button>
-
-                                                <button type="button" id="next" onclick="proximo();" class="waves-effect waves-light btn grey lighten-3 black-text">Próxima</button>
+                                            <div class="card-action">
+                                                <div class="row">
+                                                    <div class="col s6 m4 l4">
+                                                        <button type="button" id="prev" onclick="anterior();" class="waves-effect waves-light btn grey lighten-3 black-text">Anterior</button>
+                                                    </div>
+                                                    <div class="col s6 m4 l4 offset-m4 offset-l4 align-right">
+                                                        <button type="button" id="next" onclick="proximo();" class="waves-effect waves-light btn grey lighten-3 black-text">Próxima</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -55,8 +66,8 @@
                                 <div class="col s12 m6 offset-m3">
                                     <div class="card my-card-color">
                                         <div class="card-content white-text">
-                                            <span class="card-title">Questão 10</span>
-                                            <h5>Dê suguestão de termos</h5>
+                                            <span class="card-title">Questão 10 / 10</span>
+                                            <h5>Dê sugestão de termos</h5>
                                             <div class="sug">
                                                 <select name="suguestao[padrao]" class="input-color-text">
                                                     <option value="none" disabled selected>Selecione um padrão</option>
@@ -93,13 +104,18 @@
                                                 </select>
                                                 <input type="text" class="input-color-text" name="suguestao[nome]" placeholder="Digite o termo">
                                             </div>
-                                            <button type="button" class="btn btn-small" onclick="addCampoSuguestao();">+</button>
+                                            <button type="button" class="btn btn-small" onclick="addCampoSuguestao();">Mais sugestões</button>
                                         
                                         </div>
-                                        <div class="card-action right-align">
-                                            <button type="button" id="prev" onclick="anterior();" class="left waves-effect waves-light btn grey lighten-3 black-text">Anterior</button>
-
-                                            <button type="button" id="next" onclick="proximo();" class="waves-effect waves-light btn grey lighten-3 black-text">Próxima</button>
+                                        <div class="card-action">
+                                            <div class="row">
+                                                <div class="col s6 m4 l4">
+                                                    <button type="button" id="prev" onclick="anterior();" class="waves-effect waves-light btn grey lighten-3 black-text">Anterior</button>
+                                                </div>
+                                                <div class="col s6 m4 l4 offset-m4 offset-l4 align-right">
+                                                    <button type="button" id="next" onclick="proximo();" class="waves-effect waves-light btn grey lighten-3 black-text">Próxima</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

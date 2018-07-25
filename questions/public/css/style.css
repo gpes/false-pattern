@@ -10,13 +10,21 @@ html {
     text-transform: capitalize;
 }
 
+.question-categoria {
+    font-size: 150%;
+}
+
 .question-title {
-    font-size: 50px;
+    font-size: 280%;
     margin-right: 2%;
 }
 
 .my-card-color {
     background-color: #1976D2;
+}
+
+.align-right {
+    text-align: right;
 }
 
 .my-carousel {  
@@ -41,3 +49,6 @@ div.modal-overlay {
 .input-color-text {
     color: white !important;
 }
+ .select-dropdown {
+     color: white;
+ }

@@ -16,7 +16,7 @@ let indexQuestion = 0;
 questoes[indexQuestion].classList.remove('hide')
 
 function proximo() {
-    console.log("pro")
+    // console.log("pro")
     if(indexQuestion == 9) {
         document.getElementById('form_questoes').submit();
     } else {
@@ -29,7 +29,7 @@ function proximo() {
 }
 
 function anterior() {
-    console.log("anterior")
+    // console.log("anterior")
     if(indexQuestion == 0) {
         // does something
     } else {
