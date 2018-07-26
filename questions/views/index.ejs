@@ -1,16 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bem-vindo</title>
-</head>
-<body>
-    <h1>Bem vindo ao questionario</h1>
-    <h2>Este questionario é para Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto magni eaque dolorem voluptatum, aliquid, accusamus sed recusandae assumenda similique culpa, et cumque sapiente. Pariatur labore asperiores, eveniet expedita dolore beatae?</h2>
+<% include partials/header %>
+    <div class="container-fluid align-center">
+        <div class="row">
+            <h3 class="my-text-color">Bem-vindo ao questionário</h3>
+        </div>
 
-    <br>
+        <div class="row">
+            <span class="my-text-color desc">Este questionário tem o propósito de recolher informações a respeito
+            de termos comumente utilizados em Padrões de Projetos</span>
+            <span class="my-text-color desc">Para da questão, você deve selecionar os termos que você que correspondem ao Padrão de Projeto da questão</span>
+            <span class="my-text-color desc">Se houve alguma dúvida sobre o Padrão de Projeto, você pode clicar no botão "SOBRE O PADRÃO"</span>
+        </div>
+
+        <div class="row">
+            <span class="my-text-color desc">Clique no botão abaixo e autentique-se com o Github para
+            iniciar o questionário</span>
+        </div>
+
+        <div class="row">
+            <a class="waves-effect waves-light btn grey lighten-3 black-text btn-large" href="/auth/github">
+                <i class="material-icons left">group</i>
+                Github
+            </a>
+        </div>
+    </div>
     
     <!--
     <form name="usuario" action="/usuario/cadastrar" method="post">
@@ -36,7 +48,5 @@
         <button type="submit">Iniciar Questionario</button>
     </form>-->
 
-    <a href="/auth/github">github</a>
 
-</body>
-</html>
+<% include partials/footer %>

@@ -2,12 +2,12 @@ body {
     background-color: #2196F3;
 }
 
-html {
-    height: 100%;
-}
-
 .my-text {
     text-transform: capitalize;
+}
+
+.desc {
+    font-size: 160%;
 }
 
 .question-categoria {
@@ -23,17 +23,26 @@ html {
     background-color: #1976D2;
 }
 
+img {
+    width: 100%;
+    max-width: auto;
+    height: auto;
+}
+
 .align-right {
     text-align: right;
 }
 
-.my-carousel {  
-    /* margin-top: 10%; */
-    /* margin-bottom: 10%; */
+.align-center {
+    text-align: center;
 }
 
-div.modal-overlay {
-    /* height: 100% !important; */
+.aling-justify {
+    text-align: justify;
+}
+
+.my-text-color {
+    color: white !important;
 }
 
 .item-resposta {
@@ -49,6 +58,11 @@ div.modal-overlay {
 .input-color-text {
     color: white !important;
 }
- .select-dropdown {
-     color: white;
- }
+
+.select-dropdown {
+    color: white;
+}
+
+.my-row {
+    margin-top: 8%;
+}

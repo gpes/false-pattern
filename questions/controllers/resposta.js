@@ -4,7 +4,8 @@ module.exports = app => {
 
     let controller = {
         post: async (req, res) => {
-
+            // res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+            
             let respostas = [];
             let suguestoes = [];
 
@@ -31,6 +32,8 @@ module.exports = app => {
                     let padroes = req.body[key].padrao;
                     let tipos = req.body[key].tipo;
                     let nomes = req.body[key].nome;
+                    
+                    if(padroes === undefined || tipos === undefined || nomes === undefined) continue;
 
                     if(padroes.length == 0 || tipos.length == 0 || nomes.length == 0) continue; 
                     

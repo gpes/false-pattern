@@ -1,13 +1,13 @@
 <% include partials/header %>
     
-    <div class="container-fluid">
-        <div class="row">
+    <div class="">
+        <div class="row my-row">
 
             <form id="form_questoes" name="questoes" action="/questionario/responder" method="post">
 
                 <% if (questoes.length > 0 || questoes != null) { %>
 
-                        <% for(var i = 0; i < 0; i++) { %>
+                        <% for(var i = 0; i < questoes.length; i++) { %>
                             
                                 <div class="questao hide animated">
                                     <div class="col s12 m6 l6 offset-m3 offset-l3">
@@ -25,7 +25,7 @@
                                                 <div id="modal<%= i %>" class="modal">
                                                     <div class="modal-content black-text">
                                                         <h4>Descrição</h4>
-                                                        <p><%= questoes[i].descricao %></p>
+                                                        <p class="align-justify"><%= questoes[i].descricao %></p>
                                                         <img src="<%= questoes[i].imagem %>" />
                                                     </div>
                                                     <div class="modal-footer">
@@ -125,7 +125,8 @@
 
             </form>
         
-        </div>
+        </div> 
+
     </div>            
 
 <% include partials/footer %>
