@@ -95,7 +95,7 @@
             let categoria = document.getElementById('categoria').value
             let padrao = document.getElementById('padrao').value
             console.log(categoria, padrao)
-            let result = await fetchDatas('http://localhost:3000/admin/dashboard/buscar/', { 
+            let result = await fetchDatas('https://termsq.herokuapp.com/admin/dashboard/buscar/', { 
                 categoria: categoria, 
                 padrao: padrao
             })

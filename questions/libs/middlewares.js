@@ -26,5 +26,7 @@ module.exports = app => {
     app.use(passport.session())
     app.use(morgan('dev'));
     app.use(helmet());
-    app.use(cors())
+    app.use(cors({
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+    }))
 }
