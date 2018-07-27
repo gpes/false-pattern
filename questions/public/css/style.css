@@ -7,7 +7,7 @@ body {
 }
 
 .desc {
-    font-size: 160%;
+    font-size: 24px;
 }
 
 .question-categoria {
@@ -65,4 +65,14 @@ img {
 
 .my-row {
     margin-top: 8%;
+}
+
+.index {
+    padding: 20px;
+}
+
+.link {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
 }

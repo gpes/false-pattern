@@ -40,6 +40,9 @@ module.exports = app => {
     app.get('/questionario', authUsuario, padraoController.getRandomAll);
     app.post('/questionario/responder', authUsuario, respostaController.post);
     app.get('/questionario/finalizar', authUsuario, usuarioController.finish);
+    app.get('/thanks', (req, res) => {
+        res.render('thanks')
+    })
 
     // ADMIN
 

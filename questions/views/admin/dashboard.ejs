@@ -1,4 +1,10 @@
 <% include ../partials/header %>
+    <style>
+        .border {
+            border: 1px solid black;
+        }
+    </style>
+
     <div class="container-fluid">
         <nav class="indigo accent-2">
             <div class="nav-wrapper">
@@ -123,12 +129,12 @@
             for(let i = 0; i < result.length; i++){
                 let partOne = "";
                 partOne += partOneHeader;
-                partOne += '<div class="row"> <div class="col m4">' + result[i]._id + '</div> <div class="col m4">' + result[i].email + '</div>  <div class="col m4">' + result[i].public_repos + '</div>  </div>'
+                partOne += '<div class="row border"> <div class="col m4">' + result[i]._id + '</div> <div class="col m4">' + result[i].email + '</div>  <div class="col m4">' + result[i].public_repos + '</div>  </div>'
 
                 let partTwo = ""
                 partTwo += partTwoHeader
                 for(let j = 0; j < result[i].resposta.length; j++) {
-                    partTwo += '<div class="row">'
+                    partTwo += '<div class="row border">'
                     
                     partTwo += '<div class="col m4">' + result[i].resposta[j].categoria + '</div>'
                     partTwo += '<div class="col m4">' + result[i].resposta[j].padrao + '</div>'
@@ -145,7 +151,7 @@
                 let suguestao = result[i].suguestao;
 
                 for(let sug of suguestao) {
-                    partThree += '<div class="row">'
+                    partThree += '<div class="row border">'
                     
                     partThree += '<div class="col m4">' + sug.padrao + '</div>'
                     partThree += '<div class="col m4">' + sug.tipo + '</div>'
