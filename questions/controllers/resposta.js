@@ -4,12 +4,12 @@ module.exports = app => {
 
     let controller = {
         post: async (req, res) => {
-            // res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-            
+
             let respostas = [];
             let suguestoes = [];
 
             for (let key in req.body) {
+                console.log("key: " + key);
                 if (key !== 'suguestao') {
                     let termos = req.body[key].termos;
 
@@ -32,6 +32,8 @@ module.exports = app => {
                     let padroes = req.body[key].padrao;
                     let tipos = req.body[key].tipo;
                     let nomes = req.body[key].nome;
+
+                    console.log(padroes, tipos, nomes)
                     
                     if(padroes === undefined || tipos === undefined || nomes === undefined) continue;
 
@@ -39,6 +41,8 @@ module.exports = app => {
                     
                     if (!Array.isArray(padroes) && !Array.isArray(tipos) && !Array.isArray(nomes)) {
                         
+                        if(padroes == 'none' || tipos == 'none' || nomes == '') continue
+
                         let obj = {
                             padrao: padroes,
                             tipo: tipos,
@@ -48,6 +52,7 @@ module.exports = app => {
                         suguestoes.push(obj);
                     } else {
                         for (let i = 0; i < padroes.length; i++) {
+                            if(padroes[i] === undefined || tipos[i] === undefined || nomes[i] === undefined) continue;
                             if(padroes[i].length == 0 || tipos[i].length == 0 || nomes[i].length == 0) continue;
                             
                             let obj = {

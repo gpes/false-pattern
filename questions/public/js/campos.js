@@ -49,7 +49,7 @@ function addCampoSuguestao() {
     let novoCampo = `
         <br>  
         <select name="suguestao[padrao]" class="input-color-text">
-            <option value="none" disabled selected>Selecione um padrão</option>
+            <option value="none" selected>Selecione um padrão</option>
             <optgroup label="Criacional">
                 <option value="builder">Builder</option>
                 <option value="factory method">Factory Method</option>
@@ -77,7 +77,7 @@ function addCampoSuguestao() {
         </select>
 
         <select name="suguestao[tipo]">
-            <option value="none" disabled selected>Selecione um tipo de termo</option>
+            <option value="none" selected>Selecione um tipo de termo</option>
             <option value="classe">Classe</option>
             <option value="atributo">Atributo</option>
             <option value="metodo">Método</option>
