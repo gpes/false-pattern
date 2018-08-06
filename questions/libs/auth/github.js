@@ -22,7 +22,8 @@ module.exports = app => {
     passport.use(new GithubStrategy(configObj, async (accessToken, refreshToken, profile, done) => {
         // console.log("auth Github: " + JSON.stringify(profile))
         const userObj = {
-            email: profile.emails[0].value,
+            email: profile.emails != undefined ? profile.emails[0].value : '',
+            displayName: profile.displayName != undefined ? profile.displayName : '',
             public_repos: profile._json.public_repos
         }
         // console.log("auth Github: " + JSON.stringify(userObj))

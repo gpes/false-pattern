@@ -28,7 +28,8 @@ module.exports = app => {
     const usuarioSchema = new Schema({
         // formacao: { type: String, required: true },
         // experiencia: { type: String, required: true },
-        email: { type: String, required: true },
+        email: { type: String },
+        displayName: { type: String },
         public_repos: { type: Number, required: true },
         resposta: [ respostaSchema ],
         suguestao: [ suguestaoSchema ], 
