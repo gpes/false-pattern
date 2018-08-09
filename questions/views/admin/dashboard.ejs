@@ -11,6 +11,7 @@
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/admin/padrao/cadastrar-padrao">Cadastrar Padrão</a></li>
                 <li><a href="/admin/padrao/atualizar-padrao">Atualizar Padrão</a></li>
+                <li><a href="/admin/calc/dev">Calcular experiência</a></li>
                 <li><a href="/admin/logout">Sair</a></li>
             </ul>
             </div>
@@ -129,7 +130,7 @@
             for(let i = 0; i < result.length; i++){
                 let partOne = "";
                 partOne += partOneHeader;
-                partOne += '<div class="row border"> <div class="col m4">' + result[i]._id + '</div> <div class="col m4">' + result[i].email + '</div>  <div class="col m4">' + result[i].public_repos + '</div>  </div>'
+                partOne += '<div class="row border"> <div class="col m4">' + result[i]._id + '</div> <div class="col m4">' + 'email' + '</div>  <div class="col m4">' + result[i].public_repos + '</div>  </div>'
 
                 let partTwo = ""
                 partTwo += partTwoHeader

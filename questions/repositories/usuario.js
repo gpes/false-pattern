@@ -5,6 +5,12 @@ module.exports = app => {
         create: async data => {
             let usuario = new Usuario(data)
             return await usuario.save();
+        },
+
+        getOneByUsername: async username => {
+            return await Usuario.findOne({ 
+                username: username
+            }, 'username')
         }
     }
 

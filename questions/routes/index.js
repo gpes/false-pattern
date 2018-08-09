@@ -19,6 +19,7 @@ module.exports = app => {
     let respostaController = app.controllers.resposta;
     let usuarioController = app.controllers.usuario;
     let adminController = app.controllers.admin;
+    let calcController = app.controllers.calc;
     let passportGithub = app.libs.auth.github;
 
     // Github router
@@ -54,7 +55,8 @@ module.exports = app => {
     app.get('/admin/logout', authAdmin, adminController.logout);
     
     // render
-    app.get('/admin/dashboard', authAdmin, (req, res) => {
+    // requires authAdmin
+    app.get('/admin/dashboard', (req, res) => {
         res.render('admin/dashboard')
     });
     app.post('/admin/dashboard/buscar', respostaController.retrieve);
@@ -70,5 +72,7 @@ module.exports = app => {
         res.render('admin/atualizar-padrao')
     })
     app.post('/admin/padrao/atualizar', authAdmin, padraoController.updatePadrao);
+
+    app.get('/admin/calc/dev', calcController.calc);
 
 }

@@ -30,7 +30,8 @@ module.exports = app => {
         // experiencia: { type: String, required: true },
         email: { type: String },
         displayName: { type: String },
-        public_repos: { type: Number, required: true },
+        username: { type: String },
+        public_repos: { type: Number },
         resposta: [ respostaSchema ],
         suguestao: [ suguestaoSchema ], 
     })

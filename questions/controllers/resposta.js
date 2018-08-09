@@ -107,7 +107,7 @@ module.exports = app => {
                         // Montando obj para o array de conterá os dados corretos
                         let newData = {
                             _id: usuariosComRespostas[i]._id,
-                            email: usuariosComRespostas[i].email,
+                            // email: usuariosComRespostas[i].email,
                             public_repos: usuariosComRespostas[i].public_repos,
                             resposta: newResposta,
                             suguestao: usuariosComRespostas[i].suguestao
@@ -131,7 +131,7 @@ module.exports = app => {
                         // Montando obj para o array de conterá os dados corretos
                         let newData = {
                             _id: usuariosComRespostas[i]._id,
-                            email: usuariosComRespostas[i].email,
+                            // email: usuariosComRespostas[i].email,
                             public_repos: usuariosComRespostas[i].public_repos,
                             resposta: newResposta,
                             suguestao: usuariosComRespostas[i].suguestao
