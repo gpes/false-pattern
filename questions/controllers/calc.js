@@ -16,22 +16,42 @@ async function handleFetch(url) {
     return res.json();
 }
 
+// FUNÇÕES COM FOCO EM REPOSITÓRIOS DO USER E SEUS COMMITS
+
+async function countCommitsOfARepo(repoUrl) {
+    let commits = await handleFetch(`${repoUrl}/commits`)
+    
+    if(!isNaN(commits.length)) return commits.length
+    return 0
+}
+
+// FUNCÕES COM FOCO EM FORKS E PULL REQUESTS
+
 /**
- * @description Função para retornar repositorios que são fork de um usuário
- * @param {string} username 
- * @returns {(Array)} Um array contendo os links de todos os repos que são forks 
- * se existirem forks ou um array vazio se não houver forks 
+ * @description Função para retornar repositorios que são ou não fork de um usuário
+ * @param {string} username
+ * @param {boolean} sholdBeForks 
+ * @returns {Array} Um array contendo os links de todos os repos que são ou não forks
+ * ou um array vazio se não houver nenhum repositório 
  */
-async function returnReposThatAreForks(username) {
+async function returnRepos(username, shouldBeForks) {
     let userRepos = await handleFetch(`https://api.github.com/users/${username}/repos`)
     
-    let reposThatAraForks = []
-    
+    let repos = []
+
     userRepos.forEach(repo => {
-        if(repo.fork) reposThatAraForks.push(repo.url)
+        if(shouldBeForks) {
+            if(repo.fork) {
+                repos.push(repo.url)
+            } 
+        } else {
+            if(!repo.fork) {
+                repos.push(repo.url)
+            }
+        }
     });
 
-    if(reposThatAraForks.length > 0) return reposThatAraForks
+    if(repos.length > 0) return repos
     else return []
 }
 
@@ -73,6 +93,16 @@ async function handleACommitEndpoint(commitEndpoint) {
     return commits.length;
 }
 
+/**
+ * @description Função para calcular a experiencia do desenvolvedor
+ * @param {number} numberOfCommits 
+ * @param {number} numberOfCommitsPR 
+ * @returns {number} Calculo da experiencia
+ */
+function calcExp(numberOfCommits, numberOfCommitsPR) {
+    return numberOfCommits + (2 * numberOfCommitsPR)
+}
+
 module.exports = app => {
     let calcRepository = app.repositories.calc
     let usuarioRepository = app.repositories.usuario
@@ -80,36 +110,49 @@ module.exports = app => {
     let controller = {
         calc: async (req, res) => {
             // const username = 'chabou'
-            const username = 'acdlite'
+            // const username = 'acdlite'
+            const username = 'natansevero'
             let quantCommits = 0;
             
             try {
-                let forkRepos = await returnReposThatAreForks(username);
-                if(forkRepos) {
-                    await asyncForEach(forkRepos, async (repo) => {
-                        let parentRepo = await returnParentRepo(repo) 
-                        console.log("repo: ", parentRepo)                 
-                        let commitsEndpoints = await handleRepoPulls(username, parentRepo)
-                        console.log("commitsEndpoints:", commitsEndpoints)
+                // let forkRepos = await returnRepos(username, true);
+                // if(forkRepos) {
+                //     await asyncForEach(forkRepos, async (repo) => {
+                //         let parentRepo = await returnParentRepo(repo) 
+                //         console.log("repo: ", parentRepo)                 
+                //         let commitsEndpoints = await handleRepoPulls(username, parentRepo)
+                //         console.log("commitsEndpoints:", commitsEndpoints)
                         
-                        await asyncForEach(commitsEndpoints, async (commitEndpoint) => {
-                            console.log(commitEndpoint)
-                            let quant = await handleACommitEndpoint(commitEndpoint);
+                //         await asyncForEach(commitsEndpoints, async (commitEndpoint) => {
+                //             console.log(commitEndpoint)
+                //             let quant = await handleACommitEndpoint(commitEndpoint);
                             
-                            // Faz a soma de todos os commits de todos os pull requests
-                            console.log(quant)
-                            quantCommits += quant
-                            // quantCommits += quant;
-                        })
-                    })
+                //             // Faz a soma de todos os commits de todos os pull requests
+                //             console.log(quant)
+                //             quantCommits += quant
+                //             // quantCommits += quant;
+                //         })
+                //     })
     
-                    // console.log("Quant: ", quantCommits)
-                    console.log("final quant", quantCommits)
-                } else {
-                    console.log('No there is pull requests')
+                //     // console.log("Quant: ", quantCommits)
+                //     console.log("final quant", quantCommits)
+                // } else {
+                //     console.log('No there is pull requests')
+                // }
+                let finalCount = 0;
+                let repos = await returnRepos(username, false);
+                if(repos) {
+                    await asyncForEach(repos, async (repo) => {
+                        console.log(repo)
+                        let count = await countCommitsOfARepo(repo)
+                        console.log(count)
+                        finalCount += count
+                    })
                 }
+
+                console.log("finalCount", finalCount)
             } catch(e) {
-                res.status(500).jsno({error: e})
+                res.status(500).json({error: e.message})
             }
 
 
