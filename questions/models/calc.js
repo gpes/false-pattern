@@ -5,10 +5,10 @@ module.exports = app => {
     const calcSchema = new Schema({
         usuario: { type: String, required: true },
         exp: { type: Number, required: true },
-        commmits: [{
-            endpoint: { type: String, required: true },
-            quant_commits: { type: Number, required: true },
-            tempo: { type: String, required: true }
+        pulls: [{
+            endpoint: { type: String },
+            quant_commits: { type: Number },
+            tempo: { type: String }
         }]
     })
 

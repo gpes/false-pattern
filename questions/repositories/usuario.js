@@ -11,6 +11,10 @@ module.exports = app => {
             return await Usuario.findOne({ 
                 username: username
             }, 'username')
+        },
+
+        getAll: async () => {
+            return await Usuario.find({}, 'username')
         }
     }
 
