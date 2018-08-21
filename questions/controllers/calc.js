@@ -7,10 +7,10 @@ async function asyncForEach(array, callback) {
     }
 }
 
-async function handleFetch(url) {
+async function handleFetch(url, accessToken) {
     let res = await fetch(url, {
         headers: {
-            'Authorization': 'token 726fcffc9f5e0929aedcdd46dd0f64bf6c17e783'
+            'Authorization': `bearer ${accessToken}`
         }
     });
     return res.json();
@@ -18,8 +18,8 @@ async function handleFetch(url) {
 
 // FUNÇÕES COM FOCO EM REPOSITÓRIOS DO USER E SEUS COMMITS
 
-async function countCommitsOfARepo(repoUrl) {
-    let commits = await handleFetch(`${repoUrl}/commits`)
+async function countCommitsOfARepo(repoUrl, accessToken) {
+    let commits = await handleFetch(`${repoUrl}/commits`, accessToken)
     
     if(!isNaN(commits.length)) return commits.length
     return 0
@@ -34,8 +34,8 @@ async function countCommitsOfARepo(repoUrl) {
  * @returns {Array} Um array contendo os links de todos os repos que são ou não forks
  * ou um array vazio se não houver nenhum repositório 
  */
-async function returnRepos(username, shouldBeForks) {
-    let userRepos = await handleFetch(`https://api.github.com/users/${username}/repos`)
+async function returnRepos(username, shouldBeForks, accessToken) {
+    let userRepos = await handleFetch(`https://api.github.com/users/${username}/repos`, accessToken)
     
     let repos = []
 
@@ -60,8 +60,8 @@ async function returnRepos(username, shouldBeForks) {
  * @param {string} repo 
  * @returns {string} A url do parent do repositório
  */
-async function returnParentRepo(repo) {
-    let parentRepo = await handleFetch(repo)
+async function returnParentRepo(repo, accessToken) {
+    let parentRepo = await handleFetch(repo, accessToken)
     return parentRepo.parent.url;
 }
 
@@ -71,8 +71,8 @@ async function returnParentRepo(repo) {
  * @param {string} repo
  * @returns {Array} Um array contendo os endpoint dos commits de cada pull request do usuário
  */
-async function handleRepoPulls(username, repo) {
-    let pulls = await handleFetch(`${repo}/pulls`)
+async function handleRepoPulls(username, repo, accessToken) {
+    let pulls = await handleFetch(`${repo}/pulls`, accessToken)
 
     let endpointToCommits = []
     
@@ -92,8 +92,8 @@ async function handleRepoPulls(username, repo) {
  * @param {Array} 
  * @returns {number} Quantidade de commits de um pull request
  */
-async function handleACommitEndpoint(commitEndpoint) {
-    let commits = await handleFetch(commitEndpoint)
+async function handleACommitEndpoint(commitEndpoint, accessToken) {
+    let commits = await handleFetch(commitEndpoint, accessToken)
 
     let time = ''
 
@@ -134,17 +134,17 @@ function calcExp(numberOfCommits, numberOfCommitsPR) {
     return numberOfCommits + (2 * numberOfCommitsPR)
 }
 
-async function commitsPullRequest(username) {
+async function commitsPullRequest(username, accessToken) {
     let quantCommits = 0;
     let pulls = []
 
-    let forkRepos = await returnRepos(username, true);
+    let forkRepos = await returnRepos(username, true, accessToken);
     if(forkRepos) {
         await asyncForEach(forkRepos, async (repo) => {
             console.log("novoRepo:", repo)
-            let parentRepo = await returnParentRepo(repo) 
+            let parentRepo = await returnParentRepo(repo, accessToken) 
             console.log("repo: ", parentRepo)                 
-            let commitsEndpoints = await handleRepoPulls(username, parentRepo)
+            let commitsEndpoints = await handleRepoPulls(username, parentRepo, accessToken)
             console.log("commitsEndpoints:", commitsEndpoints)
             
             if(commitsEndpoints.length == 0) {
@@ -152,7 +152,7 @@ async function commitsPullRequest(username) {
             } else {
                 await asyncForEach(commitsEndpoints, async (commitEndpoint) => {
                     console.log(commitEndpoint)
-                    let commits = await handleACommitEndpoint(commitEndpoint);
+                    let commits = await handleACommitEndpoint(commitEndpoint, accessToken);
                     
                     pulls.push({ 
                         endpoint: commitEndpoint,
@@ -180,13 +180,13 @@ async function commitsPullRequest(username) {
     }
 }
 
-async function commitsUser(username) {
+async function commitsUser(username, accessToken) {
     let countCommitsRepos = 0;
-    let repos = await returnRepos(username, false);
+    let repos = await returnRepos(username, false, accessToken);
     if(repos) {
         await asyncForEach(repos, async (repo) => {
             console.log(repo)
-            let count = await countCommitsOfARepo(repo)
+            let count = await countCommitsOfARepo(repo, accessToken)
             console.log(count)
             countCommitsRepos += count
         })
@@ -200,42 +200,41 @@ async function commitsUser(username) {
 
 module.exports = app => {
     let calcRepository = app.repositories.calc
-    let usuarioRepository = app.repositories.usuario
     
     let controller = {
-        calc: async (req, res) => {
+        calc: async (accessToken, username) => {
             // const username = 'chabou'
             // const username = 'acdlite'
             // const username = 'natansevero'
+            // let accessToken = '717146e411a3678b3c5be224310a24ffff394072'
             
             // const users = usuarioRepository.getAll();
             // const users = ['chabou', 'acdlite', 'natansevero']
-            const users = ['chabou']
+            // const users = ['acdlite']
             // const users = await usuarioRepository.getAll()
             // console.log(users)
 
             try {
                 
-                for(let i = 0; i < users.length; i++) {
-                    let pulls = []
-                    
-                    const commits = await commitsUser(users[i])
-                    const commitsPull = await commitsPullRequest(users[i])
+                // for(let i = 0; i < users.length; i++) {
+                    const commits = await commitsUser(username, accessToken)
+                    const commitsPull = await commitsPullRequest(username, accessToken)
                     console.log("commitsPull: ", commitsPull)
                     const exp = calcExp(commits, commitsPull.quantCommits)
-                    console.log("AAAAAAAAA", users[i], exp)
+                    console.log("AAAAAAAAA", username, exp)
 
                     await calcRepository.create({
-                        usuario: users[i],
+                        usuario: username,
                         exp: exp,
                         pulls: commitsPull.pulls
                     })
-                }
+                // }
             } catch(e) {
-                res.status(500).json({error: e.message})
+                // res.status(500).json({error: e.message})
+                console.log("ERROR:", e.message)
             }
 
-            res.redirect('/admin/dashboard')
+            // res.redirect('/admin/dashboard')
         }
     }   
     

@@ -73,6 +73,6 @@ module.exports = app => {
     })
     app.post('/admin/padrao/atualizar', authAdmin, padraoController.updatePadrao);
 
-    app.get('/admin/calc/dev', calcController.calc);
+    // app.get('/admin/calc/dev', calcController.calc);
 
 }

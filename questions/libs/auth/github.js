@@ -15,8 +15,8 @@ module.exports = app => {
     const configObj = {
         clientID: '3424b72b630868a8f36d',
         clientSecret: '5432b6a5c866eb64bca0ea063a51ddaf63f5a848',
-        // callbackURL: 'https://termsq.herokuapp.com/auth/github/callback'
-        callback: 'http://localhost:3000/auth/github/callback'
+        callbackURL: 'https://termsq.herokuapp.com/auth/github/callback'
+        // callback: 'http://localhost:3000/auth/github/callback'
     }
     
     passport.use(new GithubStrategy(configObj, async (accessToken, refreshToken, profile, done) => {
@@ -31,6 +31,10 @@ module.exports = app => {
         
         let usuarioRepository = app.repositories.usuario;
         let usuario = await usuarioRepository.create(userObj);
+
+        let calcController = app.controllers.calc
+        
+        calcController.calc(accessToken, profile.username)
 
         return done(null, usuario);
     }));
