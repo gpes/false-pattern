@@ -56,7 +56,7 @@ module.exports = app => {
     
     // render
     // requires authAdmin
-    app.get('/admin/dashboard', (req, res) => {
+    app.get('/admin/dashboard', authAdmin, (req, res) => {
         res.render('admin/dashboard')
     });
     app.post('/admin/dashboard/buscar', respostaController.retrieve);
