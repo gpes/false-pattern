@@ -1,5 +1,5 @@
 body {
-    background-color: #2196F3;
+    background-color: grey;
 }
 
 .my-text {
@@ -21,7 +21,7 @@ body {
 }
 
 .my-card-color {
-    background-color: #1976D2;
+    background-color: #636262;
 }
 
 img {
@@ -76,6 +76,17 @@ img {
     text-decoration: underline;
     color: white;
     font-weight: bold;
+}
+
+[type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+    border: 2px solid white !important;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-top: 2px solid transparent !important;
+    border-left: 2px solid transparent !important;
+    border-right: 2px solid #26a69a !important;
+    border-bottom: 2px solid #26a69a !important;
 }
 
 @media (min-width: 601px) {
