@@ -12,12 +12,16 @@ body {
 }
 
 .question-categoria {
-    font-size: 150%;
+    font-size: 160%;
 }
 
 .question-title {
     font-size: 280%;
     margin-right: 2%;
+}
+
+.question-info {
+    font-size: 140%;
 }
 
 .my-card-color {
@@ -65,7 +69,7 @@ img {
 }
 
 .my-row {
-    margin-top: 8%;
+    margin-top: 4%;
 }
 
 .index {
