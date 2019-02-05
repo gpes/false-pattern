@@ -1,0 +1,15 @@
+.progressSpinnerVisibility {
+    visibility: hidden;
+}
+
+.pageContent {
+    text-align: center;
+}
+
+.field {
+    margin-top: 1%;
+}
+
+.select {
+    width: 100% !important;
+}
