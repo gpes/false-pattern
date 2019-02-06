@@ -3,6 +3,7 @@ import { Menubar } from 'primereact/menubar';
 import { Container } from 'react-grid-system';
 
 import ResultsPage from './pages/Results';
+import Footer from './components/Footer';
 
 export default class App extends Component {
     items = [
@@ -19,6 +20,7 @@ export default class App extends Component {
                 <Container>
                     <ResultsPage />
                 </Container>
+                <Footer />
             </>
         )
     }

@@ -2,7 +2,8 @@
     visibility: hidden;
 }
 
-.pageContent {
+.chartContent {
+    margin-top: 5%;
     text-align: center;
 }
 
@@ -12,4 +13,8 @@
 
 .select {
     width: 100% !important;
+}
+
+.visualizeButton {
+    width: 100%;
 }
