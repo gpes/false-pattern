@@ -1,5 +1,5 @@
-.progressSpinnerVisibility {
-    visibility: hidden;
+.isLoading {
+    display: none;
 }
 
 .chartContent {
