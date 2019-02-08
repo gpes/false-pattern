@@ -5,6 +5,9 @@ import { Button } from 'primereact/button';
 import { Chart } from 'primereact/chart';
 import { Row, Col } from 'react-grid-system';
 
+import { forEach } from 'async-foreach';
+import request from '../../utils/request';
+
 import PageTitle from '../../components/PageTitle/index';
 
 import styles from './index.module.css';
@@ -14,12 +17,16 @@ class ResultsPage extends Component {
         patternName: ''
     }
 
+    API_URL = 'http://localhost:8080/extractf/metric';
+
     patternNames = [
         { label: 'Factory Method', value: 'factory' },
     ]
 
+    projectNames = ['axion-1.0-M2', 'collections-3.2.1', 'xerces-2.10.0', 'xalan-2.7.1', 'jext-5.0']
+
     dataChart = {
-        labels: ['axion', 'collections', 'project3', 'project4', 'project5'],
+        labels: ['axion', 'collections', 'xerces', 'xalan', 'jext'],
         datasets: [
             {
                 label: 'Projetos do Qualitas.class',
@@ -27,6 +34,17 @@ class ResultsPage extends Component {
                 data: [65, 59, 80, 81, 56, 55, 40]
             }
         ]
+    }
+
+    handleRequests = () => {
+        forEach(this.projectNames, async (item, index) => {
+            let data = await request(this.API_URL, item);
+            console.log(data);
+        })
+    }
+
+    componentDidMount() {
+        this.handleRequests();
     }
 
     render() {
