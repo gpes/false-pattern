@@ -5,13 +5,22 @@
  */
 package br.edu.ifpb.gpes.extractf;
 
+import br.edu.ifpb.gpes.extractf.models.TermsCounter;
+import br.edu.ifpb.gpes.extractf.readers.FileTermsCounter;
+import java.io.IOException;
+import java.util.List;
+
 /**
  *
  * @author natan
  */
 public class AppTermsCounter {
-    public static void main(String[] args) {
-//        FileTermsCounter fileTermsCounter = new FileTermsCounter();
-//        fileTermsCounter.consumeOutput();
+    public static void main(String[] args) throws IOException {
+        FileTermsCounter fileTermsCounter = new FileTermsCounter();
+        
+        List<TermsCounter> consumeOutput = fileTermsCounter.consumeOutput();
+        consumeOutput.forEach(terms -> {
+            System.out.println(terms);
+        });
     }
 }
