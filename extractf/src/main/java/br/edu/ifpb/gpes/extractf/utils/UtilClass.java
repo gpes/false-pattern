@@ -24,7 +24,7 @@ public class UtilClass {
 
         patternDetections.forEach(pattern -> {
 
-            if (pattern.getNamePattern().equals("Factory Method")) {
+            if (pattern.getPatternName().equals("Factory Method")) {
 
                 List<Instance> instances = pattern.getInstances();
                 instances.forEach(instance -> {
@@ -39,7 +39,7 @@ public class UtilClass {
                                 PatternsPerTerms ppt = new PatternsPerTerms();
 
                                 // Set o nome do Padrao no Objeto
-                                ppt.setNamePattern(pattern.getNamePattern());
+                                ppt.setNamePattern(pattern.getPatternName());
 
                                 // Set o nome da classe e os termos dela
                                 ppt.setClassName(objet.getEntityName());

@@ -1,11 +1,11 @@
 axion-1.0-M2
+cobertura-1.9.4.1
 collections-3.2.1
 freecs-1.3.20100406
 galleon-2.3.0
 informa-0.7.0-alpha2
 jext-5.0
 jgraph-5.13.0.0
-junit-4.1
 marauroa-3.8.1
 nekohtml-1.9.14
 oscache-2.3

@@ -73,7 +73,7 @@ public class AppTermsPerPatterns {
 
         List<String> classesWithFactoryPattern = new ArrayList<>();
         patternDetections.forEach(pattern -> {
-            if (pattern.getNamePattern().equals("Factory Method")) {
+            if (pattern.getPatternName().equals("Factory Method")) {
                 List<Instance> instances = pattern.getInstances();
                 instances.forEach(instance -> {
                     List<Role> roles = instance.getRoles();

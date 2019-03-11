@@ -11,24 +11,24 @@ import java.util.List;
  */
 public class PatternDetection {
     
-    private String namePattern;
+    private String patternName;
     private List<Instance> instances;
     
     public PatternDetection() {
         this.instances = new ArrayList<>();
     }
 
-    public PatternDetection(String namePattern) {
+    public PatternDetection(String patternName) {
         this();
-        this.namePattern = namePattern;
+        this.patternName = patternName;
     }
 
-    public String getNamePattern() {
-        return namePattern;
+    public String getPatternName() {
+        return patternName;
     }
 
-    public void setNamePattern(String namePattern) {
-        this.namePattern = namePattern;
+    public void setPatternName(String patternName) {
+        this.patternName = patternName;
     }
 
     public List<Instance> getInstances() {
@@ -41,7 +41,7 @@ public class PatternDetection {
 
     @Override
     public String toString() {
-        return "PatternDetection{" + "namePattern=" + namePattern + ", instances=" + instances + '}';
+        return "PatternDetection{" + "patternName=" + patternName + ", instances=" + instances + '}';
     }
     
 }
