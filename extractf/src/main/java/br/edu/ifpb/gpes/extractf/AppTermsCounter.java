@@ -9,6 +9,7 @@ import br.edu.ifpb.gpes.extractf.models.TermsCounter;
 import br.edu.ifpb.gpes.extractf.readers.FileTermsCounter;
 import java.io.IOException;
 import java.util.List;
+import org.json.JSONObject;
 
 /**
  *
@@ -19,8 +20,13 @@ public class AppTermsCounter {
         FileTermsCounter fileTermsCounter = new FileTermsCounter();
         
         List<TermsCounter> consumeOutput = fileTermsCounter.consumeOutput();
-        consumeOutput.forEach(terms -> {
-            System.out.println(terms);
-        });
+//        consumeOutput.forEach(terms -> {
+//            System.out.println(terms);
+//        });
+        
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("terms", consumeOutput);
+        
+        System.out.println(jsonObject);
     }
 }

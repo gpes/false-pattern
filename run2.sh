@@ -17,7 +17,19 @@ else
         mkdir output/$1
 fi
 
-java -Xms64m -Xmx2048m -jar pattern4.jar -target projects/$1/bin -output output/$1/$1.xml
+cd ./projects/$1
+if [ -d "bin" ]
+then
+    cd ../..
+    java -Xms64m -Xmx2048m -jar pattern4.jar -target projects/$1/bin -output output/$1/$1.xml
+elif [ -d "classes" ]
+then
+    cd ../..
+    java -Xms64m -Xmx2048m -jar pattern4.jar -target projects/$1/classes -output output/$1/$1.xml
+else
+    cd ../..
+fi
+
 java -jar VocabularyExtractor.jar -n "$1" -r "$1" -d "./projects/$1/src/" -loc iah -vxl "./output/$1/$1.vxl" -csv "./output/$1/$1.csv"
 java -jar TermsCounter.jar -prop ./termsCounter.properties -vxl ./output/$1/$1.vxl -csv ./output/$1/$1_Matriz.csv -txt ./output/$1/$1_Info.txt
 

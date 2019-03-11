@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  *
  * @author natan
- * Classe copia da metrica NameOfTheClass adaptada para algumas validaçoes do Artigo Principia
+ * Classe copia da metrica NameOfTheClass adaptada para algumas validaçoes do Artigo Principia/RITA
  */
 public class ClassName {
     public ClassName() {
