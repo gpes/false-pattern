@@ -5,7 +5,7 @@
  */
 package br.edu.ifpb.gpes.extractf.metrics;
 
-import br.edu.ifpb.gpes.extractf.models.TermsCounter;
+import br.edu.ifpb.gpes.shared.TermsCounter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

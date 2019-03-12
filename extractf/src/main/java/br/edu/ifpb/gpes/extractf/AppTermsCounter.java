@@ -5,8 +5,8 @@
  */
 package br.edu.ifpb.gpes.extractf;
 
-import br.edu.ifpb.gpes.extractf.models.TermsCounter;
 import br.edu.ifpb.gpes.extractf.readers.FileTermsCounter;
+import br.edu.ifpb.gpes.shared.TermsCounter;
 import java.io.IOException;
 import java.util.List;
 import org.json.JSONObject;

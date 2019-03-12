@@ -5,7 +5,7 @@
  */
 package br.edu.ifpb.gpes.extractf.readers;
 
-import br.edu.ifpb.gpes.extractf.models.TermsCounter;
+import br.edu.ifpb.gpes.shared.TermsCounter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

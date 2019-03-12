@@ -6,12 +6,12 @@
 package br.edu.ifpb.gpes.extractf;
 
 import br.edu.ifpb.gpes.extractf.metrics.NameOfTheClass;
-import br.edu.ifpb.gpes.extractf.models.PatternDetection;
-import br.edu.ifpb.gpes.extractf.models.PatternsPerTerms;
-import br.edu.ifpb.gpes.extractf.models.TermsCounter;
 import br.edu.ifpb.gpes.extractf.readers.FilePatternDetection;
 import br.edu.ifpb.gpes.extractf.readers.FileTermsCounter;
 import br.edu.ifpb.gpes.extractf.utils.UtilClass;
+import br.edu.ifpb.gpes.shared.PatternDetection;
+import br.edu.ifpb.gpes.shared.PatternsPerTerms;
+import br.edu.ifpb.gpes.shared.TermsCounter;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

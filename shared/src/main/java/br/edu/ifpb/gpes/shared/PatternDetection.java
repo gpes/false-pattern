@@ -1,5 +1,5 @@
 
-package br.edu.ifpb.gpes.extractf.models;
+package br.edu.ifpb.gpes.shared;
 
 import java.util.ArrayList;
 import java.util.List;

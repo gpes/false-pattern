@@ -1,11 +1,10 @@
 package br.edu.ifpb.gpes.extractf;
 
-import br.edu.ifpb.gpes.extractf.models.PatternDetection;
 import br.edu.ifpb.gpes.extractf.readers.FilePatternDetection;
+import br.edu.ifpb.gpes.shared.PatternDetection;
 import java.io.IOException;
 import java.util.List;
 import org.jdom2.JDOMException;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class AppPatternDetection {

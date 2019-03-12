@@ -1,7 +1,7 @@
 
 package br.edu.ifpb.gpes.extractf.metrics;
 
-import br.edu.ifpb.gpes.extractf.models.PatternsPerTerms;
+import br.edu.ifpb.gpes.shared.PatternsPerTerms;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;

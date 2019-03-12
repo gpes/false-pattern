@@ -1,10 +1,10 @@
 package br.edu.ifpb.gpes.extractf.utils;
 
-import br.edu.ifpb.gpes.extractf.models.Instance;
-import br.edu.ifpb.gpes.extractf.models.PatternDetection;
-import br.edu.ifpb.gpes.extractf.models.PatternsPerTerms;
-import br.edu.ifpb.gpes.extractf.models.Role;
-import br.edu.ifpb.gpes.extractf.models.TermsCounter;
+import br.edu.ifpb.gpes.shared.Instance;
+import br.edu.ifpb.gpes.shared.PatternDetection;
+import br.edu.ifpb.gpes.shared.PatternsPerTerms;
+import br.edu.ifpb.gpes.shared.Role;
+import br.edu.ifpb.gpes.shared.TermsCounter;
 import java.util.ArrayList;
 import java.util.List;
 
