@@ -1,5 +1,5 @@
 
-package br.edu.ifpb.gpes.extractf.readers;
+package br.edu.ifpb.gpes.shared.readers;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class FileProjectNames {
     private File filePath;
     
     public FileProjectNames() {
-        this(new File("./projectNames.txt"));
+        this(new File("../projectNames.txt"));
     }
     
     public FileProjectNames(File filePath) {

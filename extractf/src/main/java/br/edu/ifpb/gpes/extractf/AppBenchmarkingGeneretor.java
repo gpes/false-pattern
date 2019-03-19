@@ -1,7 +1,7 @@
 package br.edu.ifpb.gpes.extractf;
 
 import br.edu.ifpb.gpes.extractf.readers.FilePatternDetection;
-import br.edu.ifpb.gpes.extractf.readers.FileProjectNames;
+import br.edu.ifpb.gpes.shared.readers.FileProjectNames;
 import br.edu.ifpb.gpes.extractf.readers.FileTermsCounter;
 import br.edu.ifpb.gpes.shared.PatternDetection;
 import br.edu.ifpb.gpes.shared.TermsCounter;
@@ -38,7 +38,7 @@ public class AppBenchmarkingGeneretor {
                 jsonObject.put("patterns", patternDetections);
                 jsonObject.put("terms", termsCounters);
 
-                try (FileWriter fileWriter = new FileWriter(String.format("benchmarking/%s.json", projectName))) {
+                try (FileWriter fileWriter = new FileWriter(String.format("../benchmarking/%s.json", projectName))) {
                     fileWriter.write(jsonObject.toString());
                 } finally {
                     System.out.println(projectName + " done!");
