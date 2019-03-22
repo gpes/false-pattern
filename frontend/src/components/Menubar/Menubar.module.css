@@ -1,0 +1,18 @@
+.menubar {
+    padding: 10px 0 10px 0 !important;
+}
+
+.menubar span {
+    vertical-align: middle;
+}
+
+.iconBarSize {
+    font-size: 26px;
+    background-color: transparent;
+    border: 0ch;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}

@@ -1,0 +1,10 @@
+li {
+    cursor: pointer;
+    /* border: 1px solid black; */
+    padding: 10px;
+    font-weight: bold;
+}
+
+li:hover {
+    background-color: mintcream;
+}
