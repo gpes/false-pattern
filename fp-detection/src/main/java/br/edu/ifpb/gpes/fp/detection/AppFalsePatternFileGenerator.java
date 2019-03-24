@@ -4,7 +4,10 @@ import br.edu.ifpb.gpes.fp.detection.metrics.ClassName;
 import br.edu.ifpb.gpes.fp.detection.readers.FileBenchmarking;
 import br.edu.ifpb.gpes.shared.Benchmarking;
 import br.edu.ifpb.gpes.shared.FalsePattern;
+import br.edu.ifpb.gpes.shared.Instance;
 import br.edu.ifpb.gpes.shared.Metric;
+import br.edu.ifpb.gpes.shared.Role;
+import br.edu.ifpb.gpes.shared.TermsCounter;
 import br.edu.ifpb.gpes.shared.readers.FileProjectNames;
 import java.io.File;
 import java.io.FileWriter;
@@ -33,16 +36,48 @@ public class AppFalsePatternFileGenerator {
 
         readFile.forEach(projectName -> {
             Benchmarking benchmarking = new FileBenchmarking(new File(String.format("../benchmarking/%s.json", projectName))).readOutput();
-            Map<String, Integer> metricCalcule = new ClassName().metricCalcule(benchmarking.getTerms(), catalog);
+            
+            // Really useful
+            List<TermsCounter> newListTermsCounterWithFactoryOrCreate = new ArrayList<>();
 
+            // Separando todas as classes que possuem esses termos
+            benchmarking.getTerms().stream().forEach(terms -> {
+                terms.getTermsWithCounter().forEach((key, value) -> {
+                    if (key.equals("factory") || key.equals("create")) {
+//                        System.out.println(terms.getEntityName());
+                        newListTermsCounterWithFactoryOrCreate.add(terms);
+                    }
+                });
+            });
+
+            // Separando as Entidades que fazem parte dos Factory Methods
+            List<String> classesWithFactoryPattern = new ArrayList<>();
+            benchmarking.getPatterns().stream().forEach(pattern -> {
+                if (pattern.getPatternName().equals("Factory Method")) {
+                    List<Instance> instances = pattern.getInstances();
+                    instances.forEach(instance -> {
+                        List<Role> roles = instance.getRoles();
+                        roles.forEach(role -> {
+                            classesWithFactoryPattern.add(role.getElement());
+                        });
+                    });
+                }
+            });
+            
+            // classesWithFactoryPattern => Todas as classes que sao Factory Method de acordo com output de detecçao
+            // metricCalcule => Todas as entidades que possuem os termos do catalogo com sua metrica calculada
             List<Metric> metrics = new ArrayList<>();
-
+            Map<String, Integer> metricCalcule = new ClassName().metricCalcule(newListTermsCounterWithFactoryOrCreate, catalog);
             for (Map.Entry<String, Integer> entry : metricCalcule.entrySet()) {
-                String key = entry.getKey();
-                Integer value = entry.getValue();
-
-                Metric metric = new Metric(key, value);
-                metrics.add(metric);
+                int numberExists = 0;
+                for (int i = 0; i < classesWithFactoryPattern.size(); i++) {
+                    if (entry.getKey().equals(classesWithFactoryPattern.get(i)) && entry.getValue() > 0) ++numberExists;
+                }
+                
+                if(numberExists == 0) {
+                    Metric metric = new Metric(entry.getKey(), entry.getValue());
+                    metrics.add(metric);
+                }
             }
 
             FalsePattern falsePattern = new FalsePattern(projectName, metrics);
