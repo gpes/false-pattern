@@ -1,11 +1,10 @@
 import React from 'react';
 
-const PageTitle = ({ title }) => (
-    <div className='p-grid'>
-        <div className='p-col-12'>
-            <h1>{title}</h1>
-        </div>
-    </div>
+const PageTitle = props => (
+    <>
+        <h1>{props.title}</h1>
+        <p>{props.subtitle}</p>
+    </>
 )
 
 export default PageTitle;

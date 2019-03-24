@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Container } from 'react-grid-system';
-
 import Menubar from './components/Menubar';
-import SidebarList from './components/SidebarList';
-
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
+import Routes from './Routes';
 
 export default class App extends Component {
     state = {
@@ -24,13 +20,10 @@ export default class App extends Component {
         return (
             <>
                 <Menubar handleOpenSidebar={this.handleOpenSidebar} />
-                <Sidebar visible={this.state.visible} onHide={this.handleCloseSidebar}>
-                    <SidebarList />
-                </Sidebar>
-                <Container>
-                    <h1>sasa</h1>
-                </Container>
-                <Footer />
+                <Routes 
+                    visible={this.state.visible}
+                    handleCloseSidebar={this.handleCloseSidebar} />
+                {/* <Footer /> */}
             </>
         )
     }

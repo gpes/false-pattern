@@ -1,5 +1,7 @@
 .menubar {
     padding: 10px 0 10px 0 !important;
+    background-color: teal !important;
+    color: white;
 }
 
 .menubar span {
@@ -7,9 +9,17 @@
 }
 
 .iconBarSize {
+    vertical-align: middle;
     font-size: 26px;
     background-color: transparent;
     border: 0ch;
+    color: white !important;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+}
+
+.iconBarSize i {
+    vertical-align: middle;
 }
 
 .title {
