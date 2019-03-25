@@ -5,9 +5,12 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import { DataTable } from 'primereact/datatable';
 import {Column} from 'primereact/column';
 
+import { listProjectNames, listDetectionByProject } from '../../requests';
+
 export default class DetectionPage extends Component {
     state = {
-        projectName: ''
+        projectName: '',
+        options: []
     }
 
     detection = [
@@ -18,12 +21,25 @@ export default class DetectionPage extends Component {
         { entityName: 'entity 5', metricValue: 1 },
     ]
 
-    handleSelectChange = () => {
-
+    componentDidMount() {
+        this.getProjectNames();
     }
 
-    handleSubmit = e => {
+    handleSelectChange = e => {
+        this.setState({ projectName: e.value })
+    }
+
+    getProjectNames = async () => {
+        let data = await listProjectNames();
+        let projectNames = data.map(project => ({ label: project, value: project }));
+        this.setState({ ...this.state, options: projectNames });
+    }
+
+    handleSubmit = async e => {
         e.preventDefault();
+
+        let data = await listDetectionByProject(this.state.projectName);
+        console.log(data);
     }
 
     render() {
@@ -34,6 +50,7 @@ export default class DetectionPage extends Component {
 
                 <ProjectSelection
                     projectName={this.state.projectName}
+                    options={this.state.options}
                     handleSelectChange={this.handleSelectChange}
                     handleSubmit={this.handleSubmit} />
 
