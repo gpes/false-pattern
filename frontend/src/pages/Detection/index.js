@@ -3,23 +3,16 @@ import PageTitle from '../../components/PageTitle';
 import ProjectSelection from '../../components/ProjectSelection';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { DataTable } from 'primereact/datatable';
-import {Column} from 'primereact/column';
+import { Column } from 'primereact/column';
 
 import { listProjectNames, listDetectionByProject } from '../../requests';
 
 export default class DetectionPage extends Component {
     state = {
         projectName: '',
-        options: []
+        options: [],
+        detection: []
     }
-
-    detection = [
-        { entityName: 'entity 1', metricValue: 7 },
-        { entityName: 'entity 2', metricValue: 3 },
-        { entityName: 'entity 3', metricValue: 5 },
-        { entityName: 'entity 4', metricValue: 3 },
-        { entityName: 'entity 5', metricValue: 1 },
-    ]
 
     componentDidMount() {
         this.getProjectNames();
@@ -39,7 +32,7 @@ export default class DetectionPage extends Component {
         e.preventDefault();
 
         let data = await listDetectionByProject(this.state.projectName);
-        console.log(data);
+        this.setState({ ...this.state, detection: data.metrics })
     }
 
     render() {
@@ -54,23 +47,17 @@ export default class DetectionPage extends Component {
                     handleSelectChange={this.handleSelectChange}
                     handleSubmit={this.handleSubmit} />
 
-
                 <Accordion multiple={true}>
-                    <AccordionTab header='Design pattern name'>
-                        {/* <Row>
-                            <Col md={6}><h4>Entity Name</h4></Col>
-                            <Col md={6}><h4>Metric Value</h4></Col>
-                        </Row>
-                        {new Array(30).fill(2).map((element, index) => (
-                            <Row key={index}>
-                                <Col md={6}>Term {index + 1}</Col>
-                                <Col md={6}>{element + Math.floor(Math.random() * index)}</Col>
-                            </Row>
-                        ))} */}
-                        <DataTable value={this.detection}>
-                            <Column field='entityName' header='Entity Name' />
-                            <Column field='metricValue' header='Metric Value' />
-                        </DataTable>
+                    <AccordionTab header='False Factory Method'>
+                        <>
+                            <h4>
+                                <b>Instances quantity: </b> {this.state.detection.length}
+                            </h4>
+                            <DataTable value={this.state.detection}>
+                                <Column field='entityName' header='Entity Name' />
+                                <Column field='metricValue' header='Metric Value' />
+                            </DataTable>
+                        </>
                     </AccordionTab>
                 </Accordion>
             </>
