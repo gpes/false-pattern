@@ -45,6 +45,14 @@ public class ClassName {
             builder.append(line);
         });
         
+//        Path path = Paths.get("metric_" + projectName + ".csv");
+//        
+//        try {
+//            Files.write(path, builder.toString().getBytes());
+//        } catch (IOException ex) {
+//            Logger.getLogger(NameOfTheClass.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
         return classPerMetric;
     }
     
