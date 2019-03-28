@@ -87,7 +87,7 @@ public class AppFalsePatternFileGenerator {
 
         jsonObject.put("falsePatterns", falsePatterns);
 
-        try (FileWriter fileWriter = new FileWriter("../falsePatterns.json")) {
+        try (FileWriter fileWriter = new FileWriter("../false-patterns/falsePatterns.json")) {
             fileWriter.write(jsonObject.toString());
         }
     }

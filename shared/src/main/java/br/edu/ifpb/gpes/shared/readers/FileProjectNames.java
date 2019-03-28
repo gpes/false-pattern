@@ -15,7 +15,7 @@ public class FileProjectNames {
     private File filePath;
     
     public FileProjectNames() {
-        this(new File("../projectNames.txt"));
+        this(new File("../selected-projects/projectNames.txt"));
     }
     
     public FileProjectNames(File filePath) {

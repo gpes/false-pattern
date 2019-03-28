@@ -20,7 +20,7 @@ app.use(cors({
 
 app.get('/project-names', (req, res) => {
     try {
-        let rawData = fs.readFileSync(path.join(__dirname, '..', 'projectNames.txt'), 'utf8');
+        let rawData = fs.readFileSync(path.join(__dirname, '..', 'selected-projects', 'projectNames.txt'), 'utf8');
         res.status(200).json(rawData.split('\n'))
     } catch(err) {
         res.status(500).json({ message: err.message })
@@ -40,7 +40,7 @@ app.get('/benchmarking/:projectName', (req, res) => {
 
 app.get('/detection/:projectName', (req, res) => {
     try {
-        let rawData = fs.readFileSync(path.join(__dirname, '..', 'falsePatterns.json'));
+        let rawData = fs.readFileSync(path.join(__dirname, '..', 'false-patterns', 'falsePatterns.json'));
         let jsonData = JSON.parse(rawData);
 
         let projectName = req.params.projectName;
