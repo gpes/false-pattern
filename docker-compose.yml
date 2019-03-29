@@ -1,0 +1,21 @@
+version: '2'
+services:
+    service:
+        build: ./service
+        container_name: service
+        volumes:
+            - ./benchmarking:/benchmarking
+            - ./false-patterns:/false-patterns
+            - ./selected-projects:/selected-projects
+        ports:
+            - "3004:3001"
+
+    frontend:
+        build: ./frontend
+        container_name: frontend
+        ports:
+            - "3002:3000"
+        depends_on:
+            - service
+        links:
+            - "service:service-link"
