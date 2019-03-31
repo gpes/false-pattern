@@ -1,0 +1,10 @@
+NOM => Number of Methods
+NOF => Number of Attributes
+NORM => Number of Overridden Methods
+NSM => Number of Static Methods
+NSF => Number of Static Attributes
+WMC => Weighted methods per Class
+DIT => Depth of Inheritance Tree
+NSC => Number of Children
+LCOM => Lack of Cohesion of Methods
+SIX => Specialization Index

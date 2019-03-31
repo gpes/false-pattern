@@ -8,6 +8,7 @@ how to.txt
 
 /output
 /projects
+/qualitas-metrics
 termsCounter_file.properties
 /extractf/target/
 /extractf/nb-configuration.xml
