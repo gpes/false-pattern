@@ -4,6 +4,16 @@
 echo $1
 echo $2
 
+if [ ! -d "projects" ]
+then
+    mkdir projects
+fi
+
+if [ ! -d "output" ]
+then
+    mkdir output
+fi
+
 # ls
 
 if [ $2 != "y" ]
@@ -11,10 +21,10 @@ then
 	echo "nao baixar"
 else
 	cd ./projects
-        wget http://java.labsoft.dcc.ufmg.br/qualitas.class/corpus/$1.zip
-        unzip -q $1.zip
-        cd ..
-        mkdir output/$1
+    wget http://java.labsoft.dcc.ufmg.br/qualitas.class/corpus/$1.zip
+    unzip -q $1.zip
+    cd ..
+    mkdir output/$1
 fi
 
 cd ./projects/$1
