@@ -54,8 +54,8 @@ export default class DetectionPage extends Component {
                                 <b>Instances quantity: </b> {this.state.detection.length}
                             </h4>
                             <DataTable value={this.state.detection}>
-                                <Column field='entityName' header='Entity Name' />
-                                <Column field='metricValue' header='Metric Value' />
+                                <Column field='entityName' header='Entity Name' className='p-col-10' style={{ wordBreak: 'break-all' }} />
+                                <Column field='metricValue' header='Metric Value' className='p-col-2' />
                             </DataTable>
                         </>
                     </AccordionTab>
