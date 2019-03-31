@@ -1,15 +1,16 @@
 .DS_Store
 pattern4.jar
+TermsCounter.jar
+termsCounter.properties
+VocabularyExtractor.jar
+
 how to.txt
+
 /output
 /projects
 termsCounter_file.properties
 /extractf/target/
 /extractf/nb-configuration.xml
-
-TermsCounter.jar
-termsCounter.properties
-VocabularyExtractor.jar
 axion-1.0-M2.zip
 axion-1.0-M2
 /shared/target/
