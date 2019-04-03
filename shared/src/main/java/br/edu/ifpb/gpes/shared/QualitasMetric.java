@@ -10,15 +10,15 @@ import java.util.Map;
  */
 public class QualitasMetric {
     private String metricId;
-    private Map<String, Integer> entityValue;
+    private Map<String, Double> entityValues;
     
     public QualitasMetric() {
-        this.entityValue = new HashMap<>();
+        this.entityValues = new HashMap<>();
     }
 
-    public QualitasMetric(String metricId, Map<String, Integer> entityValue) {
+    public QualitasMetric(String metricId, Map<String, Double> entityValues) {
         this.metricId = metricId;
-        this.entityValue = entityValue;
+        this.entityValues = entityValues;
     }
 
     public String getMetricId() {
@@ -29,16 +29,16 @@ public class QualitasMetric {
         this.metricId = metricId;
     }
 
-    public Map<String, Integer> getEntityValue() {
-        return entityValue;
+    public Map<String, Double> getEntityValues() {
+        return entityValues;
     }
 
-    public void setEntityValue(Map<String, Integer> entityValue) {
-        this.entityValue = entityValue;
+    public void setEntityValue(Map<String, Double> entityValues) {
+        this.entityValues = entityValues;
     }
 
     @Override
     public String toString() {
-        return "QualitasMetric{" + "metricId=" + metricId + ", entityValue=" + entityValue + '}';
+        return "QualitasMetric{" + "metricId=" + metricId + ", entityValues=" + entityValues + '}';
     }
 }
