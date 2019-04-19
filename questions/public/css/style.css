@@ -2,6 +2,10 @@ body {
     background-color: grey;
 }
 
+body#questionario {
+    background-color: #edeaea;
+}
+
 .my-text {
     text-transform: capitalize;
 }
