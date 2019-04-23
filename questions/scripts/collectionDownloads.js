@@ -1,6 +1,6 @@
 /*
     Command example:
-        node collectionDownloads.js collectionName apiKey
+        node collectionDownloads.js collectionName mongolabApiKey
 */
 
 const https = require('https');
