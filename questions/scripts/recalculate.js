@@ -1,4 +1,6 @@
 const fetch = require('node-fetch')
+const fs = require('fs');
+const path = require('path');
 
 // My own async/aait forEach
 async function asyncForEach(array, callback) {
@@ -204,7 +206,6 @@ async function commitsUser(username, accessToken) {
 // const username = 'chabou'
 // const username = 'acdlite'
 // const username = 'natansevero'
-// let accessToken = '717146e411a3678b3c5be224310a24ffff394072'
 
 // const users = usuarioRepository.getAll();
 // const users = ['chabou', 'acdlite', 'natansevero']
@@ -212,23 +213,50 @@ async function commitsUser(username, accessToken) {
 // const users = await usuarioRepository.getAll()
 // console.log(users)
 
-let usernamesRawData = fs.readFileSync(path.join(__dirname, '..', '..', 'questions-data', 'usernamesFinishedQuestions.json'));
-let usernames = JSON.parse(usernamesRawData);
+// let usernamesRawData = fs.readFileSync(path.join(__dirname, '..', '..', 'questions-data', 'usernamesFinishedQuestions.json'));
+// let usernames = JSON.parse(usernamesRawData);
 
-try {
-    // for(let i = 0; i < users.length; i++) {
-    const commits = await commitsUser(username, accessToken)
-    const commitsPull = await commitsPullRequest(username, accessToken)
-    console.log("commitsPull: ", commitsPull)
-    const exp = calcExp(commits, commitsPull.quantCommits)
-    console.log("AAAAAAAAA", username, exp)
+/*
+    node recalculate.js username accessToken
+*/
 
-    await calcRepository.create({
-        usuario: username,
-        exp: exp,
-        pulls: commitsPull.pulls
-    })
-    // }
-} catch (e) {
-    console.log("ERROR:", e.message)
-}
+(async () => {
+    const args = process.argv.slice(2);
+
+    const username = args[0];
+    let accessToken = args[1];
+    
+    try {
+        // for(let i = 0; i < users.length; i++) {
+        console.log('Initiating calc for the user: ', username);
+    
+        const commits = await commitsUser(username, accessToken)
+        const commitsPull = await commitsPullRequest(username, accessToken)
+        console.log("commitsPull: ", commitsPull)
+        const exp = calcExp(commits, commitsPull.quantCommits)
+        console.log("Username and Exp: ", username, exp)
+    
+        // await calcRepository.create({
+        //     usuario: username,
+        //     exp: exp,
+        //     pulls: commitsPull.pulls
+        // })
+        // }
+    
+        let newCalcsRawData = fs.readFileSync(path.join(__dirname, '..', '..', 'questions-data', 'newCalcs.json'));
+        let newCalcs = JSON.parse(newCalcsRawData);
+    
+        newCalcs.push({
+            usuario: username,
+            exp: exp,
+            pulls: commitsPull.pulls
+        })
+    
+        fs.writeFileSync(path.join(__dirname, '..', '..', 'questions-data', `newCalcs.json`), JSON.stringify(newCalcs));
+    
+        console.log('Calc finished for user: ', username);
+    } catch (e) {
+        console.log("ERROR:", e.message)
+    }
+})();
+
