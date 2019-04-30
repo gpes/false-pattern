@@ -32,7 +32,7 @@ async function countCommitsOfARepo(repoUrl, accessToken) {
 /**
  * @description Função para retornar repositorios que são ou não fork de um usuário
  * @param {string} username
- * @param {boolean} sholdBeForks 
+ * @param {boolean} shouldBeForks 
  * @returns {Array} Um array contendo os links de todos os repos que são ou não forks
  * ou um array vazio se não houver nenhum repositório 
  */
