@@ -217,7 +217,7 @@ async function commitsUser(username, accessToken) {
 // let usernames = JSON.parse(usernamesRawData);
 
 /*
-    node recalculate.js username accessToken
+    node recalculate.js username githubAccessToken
 */
 
 (async () => {
