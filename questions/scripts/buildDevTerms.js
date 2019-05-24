@@ -8,9 +8,10 @@ function alreadyHasPattern(theresResulsts, patternName) {
 
 function alreadyHasTerm(theresResulsts, patternName, term) {
     // Se o termo já existir no obj do padrão, então TRUE é retornado 
+    // console.log(theresResulsts)
     return theresResulsts
-            .find(result => result.patternName === patternName)
-            .terms.includes(term)
+        .find(result => result.patternName === patternName)
+        .terms.includes(term)
 }
 
 let mainRawDatas = fs.readFileSync(path.join(__dirname, '..', '..', 'questions-data', `mainDatas.json`));
@@ -18,29 +19,27 @@ let mainDatas = JSON.parse(mainRawDatas);
 
 let finalResults = [];
 
-for(let i = 0; i < mainDatas.length; i++) {
-    let respostas = mainDatas[i].respostas;
+for (let i = 0; i < mainDatas.length; i++) {
+    let respostas = mainDatas[i].resposta;
 
-    for(let j = 0; j < respostas.length; j++) {
+    for (let j = 0; j < respostas.length; j++) {
         let padrao = respostas[j].padrao;
-        
-        if(!alreadyHasPattern(finalResults, padrao)) {
-            finalResults.push({
-                patternName: padrao,
-                terms: [...respostas[j].termos]
-            });
+
+        if (!alreadyHasPattern(finalResults, padrao)) {
+            finalResults[finalResults.length] = { patternName: padrao, terms: [...respostas[j].termos] };
         } else {
             let termos = respostas[j].termos;
 
-            for(let k = 0; k < termos.length; k++) {
+            for (let k = 0; k < termos.length; k++) {
                 let termo = termos[k];
-                
-                if(!alreadyHasTerm(finalResults, padrao, termo)) {
+                if (!alreadyHasTerm(finalResults, padrao, termo)) {
                     finalResults = finalResults.map(result => {
-                        if(result.patternName === padrao) {
-                            result.terms.push(termo);
+                        if (result.patternName === padrao) {
+                            result.terms[result.terms.length] = termo;
                             return result;
-                        } 
+                        } else {
+                            return result;
+                        }
                     })
                 }
             }
@@ -48,3 +47,4 @@ for(let i = 0; i < mainDatas.length; i++) {
     }
 }
 
+fs.writeFileSync(path.join(__dirname, '..', '..', 'questions-data', `devTerms.json`), JSON.stringify(finalResults));

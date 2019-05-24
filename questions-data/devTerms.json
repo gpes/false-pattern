@@ -1,0 +1,175 @@
+[
+    {
+        "patternName": "visitor",
+        "terms": [
+            "command",
+            "execute",
+            "visit",
+            "visitor",
+            "state"
+        ]
+    },
+    {
+        "patternName": "state",
+        "terms": [
+            "method",
+            "template",
+            "state",
+            "execute",
+            "listener"
+        ]
+    },
+    {
+        "patternName": "chain",
+        "terms": [
+            "chain",
+            "strategy",
+            "next",
+            "successor",
+            "execute",
+            "listener",
+            "command",
+            "handler"
+        ]
+    },
+    {
+        "patternName": "builder",
+        "terms": [
+            "build",
+            "builder",
+            "factory",
+            "instance"
+        ]
+    },
+    {
+        "patternName": "prototype",
+        "terms": [
+            "clone",
+            "factory",
+            "prototype",
+            "create",
+            "instance",
+            "builder",
+            "getInstance",
+            "unique"
+        ]
+    },
+    {
+        "patternName": "factory method",
+        "terms": [
+            "create",
+            "singleton",
+            "factory",
+            "getInstance",
+            "builder"
+        ]
+    },
+    {
+        "patternName": "bridge",
+        "terms": [
+            "adaptee",
+            "imp",
+            "implementor",
+            "adapter",
+            "composite",
+            "impl",
+            "decorator"
+        ]
+    },
+    {
+        "patternName": "proxy",
+        "terms": [
+            "component",
+            "proxy",
+            "decorated",
+            "adaptee",
+            "implementor",
+            "impl",
+            "decorator",
+            "composite"
+        ]
+    },
+    {
+        "patternName": "adapter",
+        "terms": [
+            "adapter",
+            "composite",
+            "adaptee",
+            "component",
+            "imp",
+            "proxy"
+        ]
+    },
+    {
+        "patternName": "strategy",
+        "terms": [
+            "execute",
+            "strategy",
+            "successor"
+        ]
+    },
+    {
+        "patternName": "command",
+        "terms": [
+            "command",
+            "execute",
+            "subject",
+            "observer",
+            "state"
+        ]
+    },
+    {
+        "patternName": "observer",
+        "terms": [
+            "update",
+            "subject",
+            "notify",
+            "listener",
+            "observable"
+        ]
+    },
+    {
+        "patternName": "decorator",
+        "terms": [
+            "component",
+            "decorator",
+            "decorated",
+            "implementor",
+            "proxy",
+            "impl",
+            "composite",
+            "adapter"
+        ]
+    },
+    {
+        "patternName": "composite",
+        "terms": [
+            "composite",
+            "decorator",
+            "proxy",
+            "adapter",
+            "component"
+        ]
+    },
+    {
+        "patternName": "singleton",
+        "terms": [
+            "instance",
+            "unique",
+            "singleton",
+            "clone",
+            "getInstance",
+            "builder",
+            "create"
+        ]
+    },
+    {
+        "patternName": "template method",
+        "terms": [
+            "method",
+            "template",
+            "handler",
+            "strategy"
+        ]
+    }
+]
