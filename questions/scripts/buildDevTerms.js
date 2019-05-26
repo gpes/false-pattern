@@ -47,4 +47,4 @@ for (let i = 0; i < mainDatas.length; i++) {
     }
 }
 
-fs.writeFileSync(path.join(__dirname, '..', '..', 'questions-data', `devTerms.json`), JSON.stringify(finalResults));
+fs.writeFileSync(path.join(__dirname, '..', '..', 'terms', `devTerms.json`), JSON.stringify(finalResults));

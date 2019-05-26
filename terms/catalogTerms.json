@@ -1,0 +1,120 @@
+[
+    {
+        "patternName": "visitor",
+        "terms": [
+            "visitor",
+            "visit"
+        ]
+    },
+    {
+        "patternName": "state",
+        "terms": [
+            "state"
+        ]
+    },
+    {
+        "patternName": "chain",
+        "terms": [
+            "chain",
+            "handler",
+            "next",
+            "successor"
+        ]
+    },
+    {
+        "patternName": "builder",
+        "terms": [
+            "build",
+            "builder"
+        ]
+    },
+    {
+        "patternName": "prototype",
+        "terms": [
+            "clone",
+            "prototype"
+        ]
+    },
+    {
+        "patternName": "factory method",
+        "terms": [
+            "create",
+            "factory"
+        ]
+    },
+    {
+        "patternName": "bridge",
+        "terms": [
+            "imp",
+            "implementor",
+            "impl"
+        ]
+    },
+    {
+        "patternName": "proxy",
+        "terms": [
+            "proxy"
+        ]
+    },
+    {
+        "patternName": "adapter",
+        "terms": [
+            "adapter",
+            "adaptee"
+        ]
+    },
+    {
+        "patternName": "strategy",
+        "terms": [
+            "strategy"
+        ]
+    },
+    {
+        "patternName": "command",
+        "terms": [
+            "command",
+            "execute"
+        ]
+    },
+    {
+        "patternName": "observer",
+        "terms": [
+            "observer",
+            "listener",
+            "subject",
+            "observable",
+            "notify",
+            "update"
+        ]
+    },
+    {
+        "patternName": "decorator",
+        "terms": [
+            "component",
+            "decorator",
+            "decorated"
+        ]
+    },
+    {
+        "patternName": "composite",
+        "terms": [
+            "composite"
+        ]
+    },
+    {
+        "patternName": "singleton",
+        "terms": [
+            "instance",
+            "unique",
+            "singleton",
+            "getInstance"
+        ]
+    },
+    {
+        "patternName": "template method",
+        "terms": [
+            "method",
+            "template"
+        ]
+    }
+]
