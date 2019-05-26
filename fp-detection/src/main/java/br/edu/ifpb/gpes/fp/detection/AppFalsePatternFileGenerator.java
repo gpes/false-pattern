@@ -2,11 +2,13 @@ package br.edu.ifpb.gpes.fp.detection;
 
 import br.edu.ifpb.gpes.fp.detection.metrics.ClassName;
 import br.edu.ifpb.gpes.fp.detection.readers.FileBenchmarking;
+import br.edu.ifpb.gpes.fp.detection.readers.FileTermSets;
 import br.edu.ifpb.gpes.shared.Benchmarking;
 import br.edu.ifpb.gpes.shared.FalsePattern;
 import br.edu.ifpb.gpes.shared.Instance;
 import br.edu.ifpb.gpes.shared.Metric;
 import br.edu.ifpb.gpes.shared.Role;
+import br.edu.ifpb.gpes.shared.TermSet;
 import br.edu.ifpb.gpes.shared.TermsCounter;
 import br.edu.ifpb.gpes.shared.readers.FileProjectNames;
 import java.io.File;
@@ -22,15 +24,21 @@ import org.json.JSONObject;
  * @author natan
  */
 public class AppFalsePatternFileGenerator {
+    
+    public static final String DEV_TERMS = "devTerms";
+    public static final String CATALOG_TERMS = "catalogTerms";
+    public static final String UNION_TERMS = "unionTerms";
 
     public static void main(String[] args) throws IOException {
         FileProjectNames fileProjectNames = new FileProjectNames();
         List<String> readFile = fileProjectNames.readFile();
-
-        List<String> catalog = new ArrayList<>();
-        catalog.add("factory");
-        catalog.add("create");
-
+        
+        // CATALOG_TERMS is the default set
+        FileTermSets fileTermSets = new FileTermSets(new File(String.format("../terms/%s.json", CATALOG_TERMS)));
+        List<TermSet> termSets = fileTermSets.readOutput();
+        List<String> catalog = fileTermSets.pickATermList("factory method", termSets);
+//        System.out.println(catalog);
+       
         JSONObject jsonObject = new JSONObject();
         List<FalsePattern> falsePatterns = new ArrayList<>();
 
@@ -90,6 +98,18 @@ public class AppFalsePatternFileGenerator {
         try (FileWriter fileWriter = new FileWriter("../false-patterns/falsePatterns.json")) {
             fileWriter.write(jsonObject.toString());
         }
+        
+//        try (FileWriter fileWriter = new FileWriter("../false-patterns/falsePatternsDevTerms.json")) {
+//            fileWriter.write(jsonObject.toString());
+//        }
+        
+//        try (FileWriter fileWriter = new FileWriter("../false-patterns/falsePatternsCatalogTerms.json")) {
+//            fileWriter.write(jsonObject.toString());
+//        }
+        
+//        try (FileWriter fileWriter = new FileWriter("../false-patterns/falsePatternsUnionTerms.json")) {
+//            fileWriter.write(jsonObject.toString());
+//        }
     }
 
 }
