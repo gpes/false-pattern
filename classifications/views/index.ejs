@@ -1,7 +1,27 @@
 <% include partials/header %>
 
 <body>
-    <h1>Hello world</h1>
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col s6'>
+                <pre class='prettyprint'>
+                    <%= code %>
+                </pre>
+            </div>
+
+            <div class='col s6'>
+                <div class='response'>
+                    <span>Esta entidade é um Falso Padrão?</span>
+                    <div class='buttons'>
+                        <a class="waves-effect waves-light btn btn-large green darken-2">SIM</a>
+                        <a class="waves-effect waves-light btn btn-large red darken-2">NÂO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 <% include partials/footer %>

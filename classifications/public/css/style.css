@@ -1,0 +1,21 @@
+html {
+    background-color: #ededed;
+}
+pre {
+    width: 50%;
+    float: left;
+    font-size: 12px;
+    display: inline-table;
+    white-space: pre-wrap;
+}
+
+.response {
+    /* float: right; */
+    text-align: center;
+    border: 2px solid red;
+}
+
+.response span {
+    font-size: 20px;
+    font-weight: bold;
+}
