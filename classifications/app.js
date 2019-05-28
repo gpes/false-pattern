@@ -4,11 +4,11 @@ const consign = require('consign');
 const app = express();
 
 consign()
-    .include('libs/middlewares.js')
-    .then('libs/db.js')
-    .then('models')
+    .include('lib/middlewares.js')
+    .then('lib/db.js')
     .then('repositories')
+    .then('services')
     .then('controllers')
     .then('routes')
-    .then('libs/boot.js')
+    .then('lib/boot.js')
     .into(app);
