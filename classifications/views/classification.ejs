@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<body>
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col s12 m8'>
+                <pre class='prettyprint'>
+                    <code class='language-java'>
+                        <%= code %>
+                    </code>
+                </pre>
+            </div>
+
+            <div class='col s12 m4'>
+                <div class='response'>
+                    <span>Esta entidade é um <b>falso</b> <i>Factory Method</i>?</span>
+                    <div class='buttons'>
+                        <a class="waves-effect waves-light btn btn-large green darken-2 block">SIM</a>
+                        <a class="waves-effect waves-light btn btn-large red darken-2 block">NÂO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<% include partials/footer %>
