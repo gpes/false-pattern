@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const cors = require('cors')
 const path = require('path');
 // const passport = require('passport')
-const cookieSession = require('cookie-session')
+// const cookieSession = require('cookie-session')
 
 module.exports = app => {
     app.set('port', process.env.PORT || 3000);
@@ -18,10 +18,10 @@ module.exports = app => {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json())
     // app.use(expressValidator());
-    app.use(cookieSession({
-        maxAge: 24 * 60 * 60 * 1000,
-        keys: ['appbsied21jis090ss']
-    }));
+    // app.use(cookieSession({
+    //     maxAge: 24 * 60 * 60 * 1000,
+    //     keys: ['appbsied21jis090ss']
+    // }));
     app.use(expressSession({
         secret: 'appbsied',
         resave: true,

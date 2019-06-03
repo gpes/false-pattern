@@ -8,24 +8,40 @@ module.exports = app => {
             try {
                 res.render('index');
             } catch(e) {
+                console.log(e);
                 res.redirect('/error');
-                console.log(e.message);
+            }
+        },
+
+        generate: async (req, res) => {
+            try {
+                let { rows } = await indiciosService.findAll();
+                
+                req.session.indicios = rows.slice(0, 10);
+                req.session.current_position = 0;
+
+                res.redirect('/classification');
+            } catch(e) {
+                console.log(e)
+                res.redirect('/error');
             }
         },
 
         render: async (req, res) => {
             try {
-                // let { rows } = await indiciosService.findAll();
+                let indicio = req.session.indicios[req.session.current_position];
 
                 let axiosResponse = 
-                    await axios.get('https://raw.githubusercontent.com/gpes/false-pattern/master/fp-detection/src/main/java/br/edu/ifpb/gpes/fp/detection/AppFalsePatternFileGenerator.java')
+                    await axios.get(indicio.link);
+                
+                indicio.codigo = axiosResponse.data;
 
                 res.render('classification', {
-                    code: axiosResponse.data
+                    indicio
                 });
             } catch(e) {
+                console.log(e)
                 res.redirect('/error')
-                console.log(e.message)
             }
         }
     }
