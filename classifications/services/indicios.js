@@ -1,9 +1,25 @@
 module.exports = app => {
     const indiciosRepository = app.repositories.indicios;
-    
+
     return {
-        findAll: async () => {
-            return await indiciosRepository.findAll();
+        randomIndicios: async () => {
+            let { rows } = await indiciosRepository.findAll();
+            let indicios = _getRandom(rows, 10);
+            return indicios;
+        },
+
+        _getRandom: (arr, n) => {
+            var result = new Array(n),
+                len = arr.length,
+                taken = new Array(len);
+            if (n > len)
+                throw new RangeError("getRandom: more elements taken than available");
+            while (n--) {
+                var x = Math.floor(Math.random() * len);
+                result[n] = arr[x in taken ? taken[x] : x];
+                taken[x] = --len in taken ? taken[len] : len;
+            }
+            return result;
         }
     }
 } 

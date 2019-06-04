@@ -15,7 +15,7 @@ module.exports = app => {
 
         generate: async (req, res) => {
             try {
-                let { rows } = await indiciosService.findAll();
+                let { rows } = await indiciosService.randomIndicios();
                 
                 req.session.indicios = rows.slice(0, 10);
                 req.session.current_position = 0;

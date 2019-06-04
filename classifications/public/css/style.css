@@ -19,13 +19,17 @@ pre {
     margin-top: 50%;
 }
 
-.response span {
-    font-size: 20px;
+.entidade {
+    font-size: 24px;
     font-weight: bold;
 }
 
+.pergunta {
+    font-size: 22px;
+}
+
 .buttons {
-    margin-top: 10%;
+    margin-top: 6%;
 }
 
 .buttons a {
