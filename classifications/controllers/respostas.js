@@ -5,7 +5,7 @@ module.exports = app => {
 
             // data store
 
-            if(req.session.current_position === 10) {
+            if(req.session.current_position === 9) {
                 res.redirect('/finished')
             } else {
                 ++req.session.current_position;

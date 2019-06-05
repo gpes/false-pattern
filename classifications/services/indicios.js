@@ -7,9 +7,7 @@ module.exports = app => {
             let indicios = _getRandom(rows, 10);
             return indicios;
         },
-
     }
-
 }
 
 const _getRandom = (arr, n) => {

@@ -30,8 +30,6 @@ module.exports = app => {
         render: async (req, res) => {
             try {
                 let indicio = req.session.indicios[req.session.current_position];
-                
-                console.log(indicio.link)
 
                 let axiosResponse = 
                     await axios.get(indicio.link);
@@ -40,7 +38,8 @@ module.exports = app => {
 
                 res.render('classification', {
                     indicio,
-                    current_position: req.session.current_position
+                    current_position: req.session.current_position,
+                    total_length: req.session.indicios.length
                 });
             } catch(e) {
                 console.log(e)
