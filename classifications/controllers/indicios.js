@@ -15,9 +15,9 @@ module.exports = app => {
 
         generate: async (req, res) => {
             try {
-                let { rows } = await indiciosService.randomIndicios();
+                let indicios = await indiciosService.randomIndicios();
                 
-                req.session.indicios = rows.slice(0, 10);
+                req.session.indicios = indicios;
                 req.session.current_position = 0;
 
                 res.redirect('/classification');
@@ -30,6 +30,8 @@ module.exports = app => {
         render: async (req, res) => {
             try {
                 let indicio = req.session.indicios[req.session.current_position];
+                
+                console.log(indicio.link)
 
                 let axiosResponse = 
                     await axios.get(indicio.link);
@@ -37,7 +39,8 @@ module.exports = app => {
                 indicio.codigo = axiosResponse.data;
 
                 res.render('classification', {
-                    indicio
+                    indicio,
+                    current_position: req.session.current_position
                 });
             } catch(e) {
                 console.log(e)

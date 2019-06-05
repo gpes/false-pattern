@@ -14,12 +14,19 @@ pre {
     /* background-color: #fffefe; */
 }
 
+.steps {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10%;
+}
+
 .response {
     text-align: center;
-    margin-top: 50%;
+    margin-top: 20%;
 }
 
 .entidade {
+    word-wrap: break-word;
     font-size: 24px;
     font-weight: bold;
 }
@@ -32,9 +39,10 @@ pre {
     margin-top: 6%;
 }
 
-.buttons a {
+.buttons button {
     display: block;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 @media (max-width: 600px) {
