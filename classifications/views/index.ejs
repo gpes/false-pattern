@@ -1,12 +1,52 @@
 <% include partials/header %>
 
 <body>
-    <div class='container-fluid'>
-        <div class='row'>
-            <h1>Hello, buddy</h1>
-            <a class='waves-effect waves-light btn' href='/generate'>Iniciar!</a>
+    <div class="container-fluid center-align index">
+        <div class="row">
+            <h3 class="my-text-color">Bem-vindo a aplicação de classificação de indícios de falsos padrões de projeto.</h3>
         </div>
+        
+        <div class="row">
+            <div id="border_right" class="col s12 m6">
+                <p class="my-text-color desc">
+                    Aplicação para Trabalho de Conclusão de Curso do aluno: <a class="link" href="https://github.com/natansevero">Natan Severo</a>. 
+                    Com orientação do professor: <a class="link" href="https://github.com/ricardojob">Ricardo Job</a>
+                </p>            
+                <p class="my-text-color desc">Tema do trabalho: <b>Uma abordagem para detectar Falsos Padrões de Projetos</b></p>
+            
+                <p class="my-text-color desc">Esta aplicação tem o propósito de recolher informações a respeito
+                da classificação de indicios de falsos padrões de projetos encontrados em projetos do <a href="http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html" class="link">Qualitas.class Corpus</a></p>
+            </div>
+            
+            <div class="col s12 m6">
+                <p class="my-text-color desc">Para cada entidade, você deve responder a pergunta: <i>A entidade ao lado é um falso Factory Method? </i><b>SIM</b> ou <b>NÃO?</b></p>
+                <p class="my-text-color desc">Mas o que é um falso padrão de projeto?  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Infos</a></p>
+                <p class="my-text-color desc">Deixando claro que as classificações são apenas em relação ao padrão <b>Factory Method.</b></p>
+                
+                <a class='waves-effect waves-light btn startButton btn-large' href='/generate'>Iniciar classificação</a>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+          
     </div>
+    
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, {});
+    });
+</script>
 
 <% include partials/footer %>
