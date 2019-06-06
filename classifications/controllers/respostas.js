@@ -1,10 +1,10 @@
 module.exports = app => {
+    const respostasService = app.services.respostas;
+    
     return {
-        answer: (req, res) => {
-            console.log(req.body)
-
-            // data store
-
+        answer: async (req, res) => {
+            let data = await respostasService.answer(req.session.indicios[req.session.current_position].id, req.body.answer);
+            
             if(req.session.current_position === 9) {
                 res.redirect('/finished')
             } else {
