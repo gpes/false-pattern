@@ -7,6 +7,7 @@
         </div>
         
         <div class="row">
+            <!--
             <div id="border_right" class="col s12 m6">
                 <p class="my-text-color desc">
                     Aplicação para Trabalho de Conclusão de Curso do aluno: <a class="link" href="https://github.com/natansevero">Natan Severo</a>. 
@@ -17,10 +18,12 @@
                 <p class="my-text-color desc">Esta aplicação tem o propósito de recolher informações a respeito
                 da classificação de indicios de falsos padrões de projetos encontrados em projetos do <a href="http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html" class="link">Qualitas.class Corpus</a></p>
             </div>
+            -->
             
-            <div class="col s12 m6">
-                <p class="my-text-color desc">Para cada entidade, você deve responder a pergunta: <i>A entidade ao lado é um falso Factory Method? </i><b>SIM</b> ou <b>NÃO?</b></p>
-                <p class="my-text-color desc">Mas o que é um falso padrão de projeto?  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Infos</a></p>
+            <div class="col s12 m12">
+                <p class="my-text-color desc">Para cada entidade, você deve responder seguinte a pergunta:</p>
+                <p class="my-text-color desc"><i>A entidade ao lado é um falso Factory Method? </i><b>SIM</b> ou <b>NÃO?</b></p>
+                <p class="my-text-color desc">Mas o que é um falso padrão de projeto?  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Sobre</a></p>
                 <p class="my-text-color desc">Deixando claro que as classificações são apenas em relação ao padrão <b>Factory Method.</b></p>
                 
                 <a class='waves-effect waves-light btn startButton btn-large' href='/generate'>Iniciar classificação</a>
@@ -30,11 +33,29 @@
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
             <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+                <h4>O que é um falso padrão de projeto?</h4>
+                <div class='row'>
+                    <p>
+                        Há cenários onde os desenvolvedores criam classes com nomenclaturas que indicam o uso de determinado padrão, mas não temos, de fato, uma implementação do padrão descrito.
+                    </p>
+                    <p>
+                        Para exemplificar esse contexto, podemos observar a classe <b><i>ConnectionSingleton</i></b>, que segundo a sua nomenclatura, indica aos desenvolvedores que temos uma implementação do padrão de projeto chamado <i>Singleton</i>.
+                    </p>
+                    <img src='img/singleton.jpeg' alt='Singleton example' />
+                    <p>
+                        Entretanto, quando analisamos as características que descrevem o <i>Singleton</i>, não as detectamos na classe <b><i>ConnectionSingleton</i></b>, pois não temos: <i>(i)</i> o construtor privado e <i>(ii)</i> o atributo estático do mesmo tipo da classe. Este é um exemplo de um <b>falso padrão de projeto</b>.
+                    </p>
+                    <p>
+                        Os falsos padrões de projeto caracterizam-se por possuir terminologias referentes ao padrão, 
+                        porém não atendem as estruturas que descrevem o padrão de projeto. Por exemplo, a classe 
+                        <i><b>ConnectionSingleton</b></i> possui o sufixo <i><b>Singleton</b></i> e um atributo <i><b>instance</b></i>, 
+                        que geralmente são termos encontrados em implementações do padrão Singleton.
+                    </p>
+                    
+                </div>
             </div>
             <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <button class="modal-close waves-effect waves-green btn-flat">Entendi</button>
             </div>
         </div>
           
@@ -48,5 +69,6 @@
         var instances = M.Modal.init(elems, {});
     });
 </script>
+
 
 <% include partials/footer %>
