@@ -1,3 +1,20 @@
+create table indicio (
+    id serial,
+    projeto varchar(30) not null,
+    entidade varchar(100) not null,
+    link varchar(200) not null,
+    metrica integer,
+    primary key(id)
+);
+
+create table resposta (
+    id serial,
+    id_indicio integer,
+    resposta boolean,
+    primary key(id),
+    foreign key(id_indicio) references indicio(id) on delete cascade
+);
+
 INSERT INTO indicio (projeto, entidade, link, metrica) VALUES ('axion-1.0-M2', 'org.axiondb.jdbc.ConnectionFactory', 'https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/axion-1.0-M2/src/org/axiondb/jdbc/ConnectionFactory.java', '3');
 INSERT INTO indicio (projeto, entidade, link, metrica) VALUES ('axion-1.0-M2', 'org.axiondb.Database', 'https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/axion-1.0-M2/src/org/axiondb/Database.java', '5');
 INSERT INTO indicio (projeto, entidade, link, metrica) VALUES ('axion-1.0-M2', 'org.axiondb.engine.SnapshotIsolationTransaction', 'https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/axion-1.0-M2/src/org/axiondb/engine/SnapshotIsolationTransaction.java', '6');

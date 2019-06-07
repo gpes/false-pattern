@@ -1,0 +1,17 @@
+version: '2'
+services:
+    postgresdb:
+        build: ./postgres
+        container_name: postgresdb
+        ports:
+            - "5434:5432"
+
+    classification:
+        build: .
+        container_name: classification
+        depends_on:
+            - postgresdb
+        links:
+            - "postgresdb:classification-db"
+        ports:
+            - "3001:3000"

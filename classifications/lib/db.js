@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
 // const connString = 'postgres://postgres:12345@localhost:5432/classification';
-const connString = "postgres://postgres:12345@banco-classification:5432/loja";
+const connString = "postgres://postgres:12345@classification-db:5432/classification";
 // const connString = process.env.DATABASE_URL;
 
 let single_connection;
