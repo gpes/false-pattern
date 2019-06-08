@@ -1,0 +1,282 @@
+[
+    {
+        "projectName": "axion-1.0-M2",
+        "metrics": []
+    },
+    {
+        "projectName": "cobertura-1.9.4.1",
+        "metrics": []
+    },
+    {
+        "projectName": "collections-3.2.1",
+        "metrics": []
+    },
+    {
+        "projectName": "freecs-1.3.20100406",
+        "metrics": []
+    },
+    {
+        "projectName": "galleon-2.3.0",
+        "metrics": []
+    },
+    {
+        "projectName": "informa-0.7.0-alpha2",
+        "metrics": []
+    },
+    {
+        "projectName": "jext-5.0",
+        "metrics": [
+            {
+                "entityName": "org.jext.gui.Dockable",
+                "metricValue": 2,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/Dockable.java"
+            },
+            {
+                "entityName": "org.jext.gui.SkinManager",
+                "metricValue": 3,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/SkinManager.java"
+            },
+            {
+                "entityName": "com.jgoodies.uif_lite.component.Factory",
+                "metricValue": 2,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/com/jgoodies/uif_lite/component/Factory.java"
+            },
+            {
+                "entityName": "org.jext.gui.SkinFactory",
+                "metricValue": 3,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/SkinFactory.java"
+            },
+            {
+                "entityName": "org.jext.gui.BundledSkinFactory",
+                "metricValue": 6,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/BundledSkinFactory.java"
+            },
+            {
+                "entityName": "org.jext.misc.FindFilter",
+                "metricValue": 4,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/misc/FindFilter.java"
+            },
+            {
+                "entityName": "org.jext.misc.FindAccessory$FindTabs",
+                "metricValue": 4,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/misc/FindAccessory.java"
+            }
+        ]
+    },
+    {
+        "projectName": "jgraph-5.13.0.0",
+        "metrics": []
+    },
+    {
+        "projectName": "marauroa-3.8.1",
+        "metrics": []
+    },
+    {
+        "projectName": "nekohtml-1.9.14",
+        "metrics": []
+    },
+    {
+        "projectName": "oscache-2.3",
+        "metrics": []
+    },
+    {
+        "projectName": "pmd-4.2.5",
+        "metrics": []
+    },
+    {
+        "projectName": "quickserver-1.4.7",
+        "metrics": []
+    },
+    {
+        "projectName": "quilt-0.6-a-5",
+        "metrics": [
+            {
+                "entityName": "org.quilt.cl.RunTest",
+                "metricValue": 3,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/quilt-0.6-a-5/src/test/org/quilt/cl/RunTest.java"
+            }
+        ]
+    },
+    {
+        "projectName": "trove-2.1.0",
+        "metrics": []
+    },
+    {
+        "projectName": "webmail-0.7.10",
+        "metrics": []
+    },
+    {
+        "projectName": "xalan-2.7.1",
+        "metrics": [
+            {
+                "entityName": "org.apache.xml.dtm.ref.sax2dtm.SAX2DTM2org.apache.xml.dtm.ref.sax2dtm.SAX2DTM2",
+                "metricValue": 6,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/org/apache/xml/dtm/ref/sax2dtm/SAX2DTM2org/apache/xml/dtm/ref/sax2dtm/SAX2DTM2.java"
+            },
+            {
+                "entityName": "javax.xml.transform.stream.StreamResult",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/stream/StreamResult.java"
+            },
+            {
+                "entityName": "javax.xml.datatype.DatatypeFactory",
+                "metricValue": 16,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/datatype/DatatypeFactory.java"
+            },
+            {
+                "entityName": "javax.xml.transform.sax.SAXResult",
+                "metricValue": 4,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/sax/SAXResult.java"
+            },
+            {
+                "entityName": "javax.xml.parsers.SAXParser",
+                "metricValue": 3,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/parsers/SAXParser.java"
+            },
+            {
+                "entityName": "org.w3c.dom.bootstrap.DOMImplementationRegistry",
+                "metricValue": 7,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/org/w3c/dom/bootstrap/DOMImplementationRegistry.java"
+            },
+            {
+                "entityName": "javax.xml.xpath.XPathFactoryFinder",
+                "metricValue": 7,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/xpath/XPathFactoryFinder.java"
+            },
+            {
+                "entityName": "javax.xml.parsers.DocumentBuilderFactory",
+                "metricValue": 9,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/parsers/DocumentBuilderFactory.java"
+            },
+            {
+                "entityName": "javax.xml.transform.dom.DOMSource",
+                "metricValue": 2,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/dom/DOMSource.java"
+            },
+            {
+                "entityName": "javax.xml.transform.stream.StreamSource",
+                "metricValue": 2,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/stream/StreamSource.java"
+            },
+            {
+                "entityName": "javax.xml.validation.Schema",
+                "metricValue": 3,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/validation/Schema.java"
+            },
+            {
+                "entityName": "javax.xml.validation.SchemaFactory",
+                "metricValue": 8,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/validation/SchemaFactory.java"
+            },
+            {
+                "entityName": "javax.xml.validation.Validator",
+                "metricValue": 1,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/validation/Validator.java"
+            },
+            {
+                "entityName": "javax.xml.datatype.FactoryFinder",
+                "metricValue": 4,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/datatype/FactoryFinder.java"
+            },
+            {
+                "entityName": "javax.xml.datatype.XMLGregorianCalendar",
+                "metricValue": 16,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/datatype/XMLGregorianCalendar.java"
+            },
+            {
+                "entityName": "javax.xml.parsers.DocumentBuilder",
+                "metricValue": 9,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/parsers/DocumentBuilder.java"
+            },
+            {
+                "entityName": "javax.xml.transform.TransformerFactory",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/TransformerFactory.java"
+            },
+            {
+                "entityName": "javax.xml.transform.Transformer",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/Transformer.java"
+            },
+            {
+                "entityName": "javax.xml.xpath.XPathFactoryConfigurationException",
+                "metricValue": 7,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/xpath/XPathFactoryConfigurationException.java"
+            },
+            {
+                "entityName": "javax.xml.datatype.Duration",
+                "metricValue": 9,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/datatype/Duration.java"
+            },
+            {
+                "entityName": "org.w3c.dom.ls.DOMImplementationLS",
+                "metricValue": 9,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/org/w3c/dom/ls/DOMImplementationLS.java"
+            },
+            {
+                "entityName": "javax.xml.validation.SchemaFactoryFinder",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/validation/SchemaFactoryFinder.java"
+            },
+            {
+                "entityName": "org.xml.sax.helpers.XMLReaderFactory",
+                "metricValue": 7,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/org/xml/sax/helpers/XMLReaderFactory.java"
+            },
+            {
+                "entityName": "org.w3c.dom.ls.LSOutput",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/org/w3c/dom/ls/LSOutput.java"
+            },
+            {
+                "entityName": "javax.xml.parsers.FactoryFinder",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/parsers/FactoryFinder.java"
+            },
+            {
+                "entityName": "javax.xml.parsers.SAXParserFactory",
+                "metricValue": 9,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/parsers/SAXParserFactory.java"
+            },
+            {
+                "entityName": "javax.xml.transform.FactoryFinder",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/FactoryFinder.java"
+            },
+            {
+                "entityName": "javax.xml.transform.TransformerFactoryConfigurationError",
+                "metricValue": 6,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/TransformerFactoryConfigurationError.java"
+            },
+            {
+                "entityName": "org.xml.sax.helpers.ParserFactory",
+                "metricValue": 6,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/org/xml/sax/helpers/ParserFactory.java"
+            },
+            {
+                "entityName": "javax.xml.parsers.FactoryConfigurationError",
+                "metricValue": 5,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/parsers/FactoryConfigurationError.java"
+            },
+            {
+                "entityName": "javax.xml.transform.sax.SAXSource",
+                "metricValue": 6,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/sax/SAXSource.java"
+            },
+            {
+                "entityName": "org.w3c.dom.ls.LSInput",
+                "metricValue": 7,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/org/w3c/dom/ls/LSInput.java"
+            },
+            {
+                "entityName": "javax.xml.transform.dom.DOMResult",
+                "metricValue": 8,
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/xalan-2.7.1/src/javax/xml/transform/dom/DOMResult.java"
+            }
+        ]
+    },
+    {
+        "projectName": "xerces-2.10.0",
+        "metrics": []
+    }
+]
