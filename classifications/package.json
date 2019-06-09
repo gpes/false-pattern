@@ -1,31 +1,34 @@
 {
-  "name": "classifications",
-  "version": "1.0.0",
-  "description": "Aplicação para realizar da classeficação de indicios de falsos padrões de projeto",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "node.js",
-    "mvc",
-    "postgres",
-    "false-pattern",
-    "gpes"
-  ],
-  "author": "Natan Severo <natanseverolp@gmail.com> (https://twitter.com/natan_severo)",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.19.0",
-    "consign": "^0.1.6",
-    "cookie-session": "^1.3.3",
-    "cors": "^2.8.5",
-    "ejs": "^2.6.1",
-    "express": "^4.17.1",
-    "express-session": "^1.16.1",
-    "helmet": "^3.18.0",
-    "morgan": "^1.9.1",
-    "pg": "^7.11.0"
+    "name": "classifications",
+    "version": "1.0.0",
+    "description": "Aplicação para realizar da classeficação de indicios de falsos padrões de projeto",
+    "main": "index.js",
+    "scripts": {
+      "dev": "NODE_ENV=development nodemon app.js",
+      "docker": "NODE_ENV=docker node app.js",
+      "production": "node app.js"
+    },
+    "keywords": [
+      "node.js",
+      "mvc",
+      "postgres",
+      "false-pattern",
+      "gpes"
+    ],
+    "author": "Natan Severo <natanseverolp@gmail.com> (https://twitter.com/natan_severo)",
+    "license": "MIT",
+    "dependencies": {
+      "axios": "^0.18.0",
+      "body-parser": "^1.19.0",
+      "consign": "^0.1.6",
+      "cookie-session": "^1.3.3",
+      "cors": "^2.8.5",
+      "ejs": "^2.6.1",
+      "express": "^4.17.1",
+      "express-session": "^1.16.1",
+      "helmet": "^3.18.0",
+      "morgan": "^1.9.1",
+      "pg": "^7.11.0"
+    }
   }
-}
+  
