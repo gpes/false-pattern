@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
 
 function linkFormat(entityClassPath, projectName) {
     let pathWithSlashs = entityClassPath.split('.').join('/');
@@ -12,6 +13,8 @@ function linkFormat(entityClassPath, projectName) {
 
     if(projectName === 'collections-3.2.1' && pathWithSlashs.includes('Test') || projectName === 'quilt-0.6-a-5' && pathWithSlashs.includes('Test')) {
         pathWithSlashs = `test/${pathWithSlashs}.java`;
+    } else if(entityClassPath !== 'com.jgoodies.uif_lite.component.Factory' && projectName === 'jext-5.0') { 
+        pathWithSlashs = `lib/${pathWithSlashs}.java`;
     } else if(projectName === 'collections-3.2.1' || projectName === 'oscache-2.3' || projectName === 'quilt-0.6-a-5') {
         pathWithSlashs = `java/${pathWithSlashs}.java`;
     } else if(projectName === 'quickserver-1.4.7') {
@@ -25,14 +28,22 @@ function linkFormat(entityClassPath, projectName) {
     return formatedLink;
 }
 
-function buildSqlFile(metrics) {
+async function buildSqlFile(metrics, removedEntities) {
     let sqlString = '';
 
     for(let i = 0; i < metrics.length; i++) {
         let metric = metrics[i];
+        
+        if(!removedEntities.includes(metric.entityName)) {
+            let insertSql = `INSERT INTO indicio (projeto, entidade, link, metrica) VALUES ('${metric.projectName}', '${metric.entityName}', '${metric.link}', '${metric.metricValue}');\n` 
+            sqlString += insertSql;
 
-        let insertSql = `INSERT INTO indicios (projeto, entidade, link, metrica) VALUES ('${metric.projectName}', '${metric.entityName}', '${metric.link}', '${metric.metricValue}');\n` 
-        sqlString += insertSql;
+            try {
+                let res = await axios.get(metric.link);
+            } catch(e) {
+                console.log(metric.link);
+            }
+        }
     }
 
     fs.writeFileSync(path.join(__dirname, 'insert.sql'), sqlString);
@@ -42,6 +53,9 @@ function buildSqlFile(metrics) {
     const rawData = fs.readFileSync(path.join(__dirname, '..', '..', 'false-patterns', 'falsePatternsUnionTerms.json'));
     const data = JSON.parse(rawData);
     const falsePatterns = data.falsePatterns;
+
+    const removedEntitiesRawData = fs.readFileSync(path.join(__dirname, '..', '..', 'false-patterns', 'removedEntities.json'));
+    const removedEntitiesData = JSON.parse(removedEntitiesRawData);
     
     let allMetricsWithProjectName = [];
     
@@ -53,7 +67,14 @@ function buildSqlFile(metrics) {
     
     let metricsAndLinks = allMetricsWithProjectName.map(metric => ({ ...metric, link: linkFormat(metric.entityName, metric.projectName) })); 
     
-    buildSqlFile(metricsAndLinks);
+    let allRemovedEntities = [];
+    for(let j = 0; j < removedEntitiesData.length; j++) {
+        let entities = removedEntitiesData[j].metrics.map(metric => metric.entityName);
+
+        allRemovedEntities = [...allRemovedEntities, ...entities]
+    }
+
+    buildSqlFile(metricsAndLinks, allRemovedEntities);
 })();
 
 

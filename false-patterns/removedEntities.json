@@ -27,39 +27,14 @@
         "projectName": "jext-5.0",
         "metrics": [
             {
-                "entityName": "org.jext.gui.Dockable",
-                "metricValue": 2,
-                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/Dockable.java"
-            },
-            {
-                "entityName": "org.jext.gui.SkinManager",
-                "metricValue": 3,
-                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/SkinManager.java"
-            },
-            {
                 "entityName": "com.jgoodies.uif_lite.component.Factory",
                 "metricValue": 2,
                 "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/com/jgoodies/uif_lite/component/Factory.java"
             },
             {
-                "entityName": "org.jext.gui.SkinFactory",
-                "metricValue": 3,
-                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/SkinFactory.java"
-            },
-            {
-                "entityName": "org.jext.gui.BundledSkinFactory",
-                "metricValue": 6,
-                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/gui/BundledSkinFactory.java"
-            },
-            {
                 "entityName": "org.jext.misc.FindFilter",
                 "metricValue": 4,
-                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/misc/FindFilter.java"
-            },
-            {
-                "entityName": "org.jext.misc.FindAccessory$FindTabs",
-                "metricValue": 4,
-                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/org/jext/misc/FindAccessory.java"
+                "entityPath": "https://raw.githubusercontent.com/natansevero/qualitas-class-corpus-projects/master/jext-5.0/src/lib/org/jext/misc/FindFilter.java"
             }
         ]
     },

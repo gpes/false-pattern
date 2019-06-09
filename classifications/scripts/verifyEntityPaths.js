@@ -13,6 +13,8 @@ function linkFormat(entityClassPath, projectName) {
 
     if(projectName === 'collections-3.2.1' && pathWithSlashs.includes('Test') || projectName === 'quilt-0.6-a-5' && pathWithSlashs.includes('Test')) {
         pathWithSlashs = `test/${pathWithSlashs}.java`;
+    } else if(entityClassPath !== 'com.jgoodies.uif_lite.component.Factory' && projectName === 'jext-5.0') { 
+        pathWithSlashs = `lib/${pathWithSlashs}.java`;
     } else if(projectName === 'collections-3.2.1' || projectName === 'oscache-2.3' || projectName === 'quilt-0.6-a-5') {
         pathWithSlashs = `java/${pathWithSlashs}.java`;
     } else if(projectName === 'quickserver-1.4.7') {
@@ -55,5 +57,5 @@ function linkFormat(entityClassPath, projectName) {
 
     console.log(allMetricsWithProjectName)
 
-    fs.writeFileSync(path.join(__dirname, 'removedEntities.json'), JSON.stringify(allMetricsWithProjectName));
+    fs.writeFileSync(path.join(__dirname, '..', '..', 'false-patterns', 'removedEntities.json'), JSON.stringify(allMetricsWithProjectName));
 })();
