@@ -4,15 +4,19 @@
     <div class='container-fluid'>
         <div class='row'>
             <div class='col s12 m8'>
-                <pre class='prettyprint'>
-                    <code class='language-java'>
-                        <%= indicio.codigo %>
-                    </code>
-                </pre>
+                <div class='code-section'>
+                    <pre class='prettyprint'>
+                        <code class='language-java'>
+                            <%= indicio.codigo %>
+                        </code>
+                    </pre>
+                </div>
             </div>
 
             <div class='col s12 m4'>
                 <div class='row steps center-align'>
+                   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">O que é um falso padrão de projeto?</a>
+                   <br /><br />
                    <%= (current_position + 1) %> de <%= total_length %>
                 </div>
 
@@ -32,10 +36,46 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>O que é um falso padrão de projeto?</h4>
+                    <div class='row'>
+                        <p>
+                            Há cenários onde os desenvolvedores criam classes com nomenclaturas que indicam o uso de determinado padrão, mas não temos, de fato, uma implementação do padrão descrito.
+                        </p>
+                        <p>
+                            Para exemplificar esse contexto, podemos observar a classe <b><i>ConnectionSingleton</i></b>, que segundo a sua nomenclatura, indica aos desenvolvedores que temos uma implementação do padrão de projeto chamado <i>Singleton</i>.
+                        </p>
+                        <img src='img/singleton.jpeg' alt='Singleton example' />
+                        <p>
+                            Entretanto, quando analisamos as características que descrevem o <i>Singleton</i>, não as detectamos na classe <b><i>ConnectionSingleton</i></b>, pois não temos: <i>(i)</i> o construtor privado e <i>(ii)</i> o atributo estático do mesmo tipo da classe. Este é um exemplo de um <b>falso padrão de projeto</b>.
+                        </p>
+                        <p>
+                            Os falsos padrões de projeto caracterizam-se por possuir terminologias referentes ao padrão, 
+                            porém não atendem as estruturas que descrevem o padrão de projeto. Por exemplo, a classe 
+                            <i><b>ConnectionSingleton</b></i> possui o sufixo <i><b>Singleton</b></i> e um atributo <i><b>instance</b></i>, 
+                            que geralmente são termos encontrados em implementações do padrão Singleton.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-close waves-effect waves-green btn-flat">Entendi</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, {});
+    });
+</script>
 
 <% include partials/footer %>

@@ -3,6 +3,16 @@ html {
     min-width: 100%;
 }
 
+body {
+    overflow: hidden; 
+    margin: 0;
+}
+
+.code-section {
+    overflow-y: scroll !important;
+    height: 675px;
+}
+
 pre {
     width: 100%;
     margin-top: 0;
@@ -23,6 +33,7 @@ pre {
 .response {
     text-align: center;
     margin-top: 20%;
+    padding-right: 10px;
 }
 
 .entidade {
@@ -48,6 +59,11 @@ pre {
 @media (max-width: 600px) {
     .response {
         margin-top: 10%;
+    }
+
+    body {
+        overflow: auto; 
+        margin: auto;
     }
 }
 
@@ -85,11 +101,4 @@ pre {
 
 .startButton {
     /* margin-top: 25px; */
-}
-
-@media (min-width: 601px) {
-    #border_right {
-        border-right: 0.5px solid black;
-        padding-right: 16px;
-    }
 }
