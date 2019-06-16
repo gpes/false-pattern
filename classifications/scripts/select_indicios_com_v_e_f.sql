@@ -8,4 +8,4 @@ where
 and
 (
 	select count(*) from resposta where id_indicio = i.id and resposta = false
-) = 1
+) = 1;
