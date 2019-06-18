@@ -20,7 +20,11 @@ module.exports = app => {
                 req.session.indicios = indicios;
                 req.session.current_position = 0;
 
-                res.redirect('/classification');
+                if(indicios.length > 0) {
+                    res.redirect('/classification');
+                } else {
+                    res.redirect('/finished');
+                }
             } catch(e) {
                 console.log(e)
                 res.redirect('/error');
