@@ -1,0 +1,237 @@
+projeto,entidade,metrica,resposta,categoria
+
+
+=> É um Factory Method
+
+1) axion-1.0-M2,org.axiondb.types.FileLobLocatorFactory,5,f
+2) axion-1.0-M2,org.axiondb.types.FileOffsetLobLocatorFactory,6,f
+3) axion-1.0-M2,org.axiondb.engine.MemoryTableFactory,4,f
+4) axion-1.0-M2,org.axiondb.engine.BTreeIndexFactory,5,f
+5) axion-1.0-M2,org.axiondb.engine.DiskTableFactory,4,f
+6) axion-1.0-M2,org.axiondb.engine.ArrayIndexFactory,4,f
+7) collections-3.2.1,org.apache.commons.collections.functors.PrototypeFactory$PrototypeSerializationFactory,4,f
+8) collections-3.2.1,org.apache.commons.collections.functors.ForClosure,2,f
+9) collections-3.2.1,org.apache.commons.collections.functors.PrototypeFactory$PrototypeCloneFactory,4,f
+10) collections-3.2.1,org.apache.commons.collections.functors.WhileClosure,4,f
+11) collections-3.2.1,org.apache.commons.collections.functors.ChainedClosure,4,f
+12) collections-3.2.1,org.apache.commons.collections.functors.SwitchClosure,5,f
+13) collections-3.2.1,org.apache.commons.collections.functors.ClosureTransformer,3,f
+
+
+=> Entidade faz parte um uma implementação de Factory Method
+
+1) axion-1.0-M2,org.axiondb.types.LOBType,6,f
+2) collections-3.2.1,org.apache.commons.collections.Factory,2,f
+
+
+=> É um Factory Method junto com outro padrão (Decorator)
+
+1) collections-3.2.1,org.apache.commons.collections.map.TypedMap,4,f
+2) collections-3.2.1,org.apache.commons.collections.map.MultiValueMap,6,f
+3) collections-3.2.1,org.apache.commons.collections.map.UnmodifiableOrderedMap,5,f
+4) collections-3.2.1,org.apache.commons.collections.list.SetUniqueList,5,f
+5) collections-3.2.1,org.apache.commons.collections.list.TransformedList,5,f
+6) collections-3.2.1,org.apache.commons.collections.map.LazySortedMap,5,f
+7) collections-3.2.1,org.apache.commons.collections.bidimap.UnmodifiableBidiMap,5,f
+8) collections-3.2.1,org.apache.commons.collections.set.PredicatedSet,6,f
+9) collections-3.2.1,org.apache.commons.collections.list.PredicatedList,7,f
+10) collections-3.2.1,org.apache.commons.collections.bag.TransformedSortedBag,5,f
+11) collections-3.2.1,org.apache.commons.collections.list.SynchronizedList,3,f
+12) collections-3.2.1,org.apache.commons.collections.set.UnmodifiableSortedSet,4,f
+13) collections-3.2.1,org.apache.commons.collections.functors.NotPredicate,3,f
+14) collections-3.2.1,org.apache.commons.collections.functors.NullIsTruePredicate,5,f
+15) collections-3.2.1,org.apache.commons.collections.functors.AndPredicate,3,f
+16) collections-3.2.1,org.apache.commons.collections.functors.TransformerPredicate,4,f
+17) collections-3.2.1,org.apache.commons.collections.set.SynchronizedSortedSet,4,f
+18) collections-3.2.1,org.apache.commons.collections.functors.AllPredicate,6,f
+19) collections-3.2.1,org.apache.commons.collections.bag.UnmodifiableSortedBag,4,f
+20) collections-3.2.1,org.apache.commons.collections.map.FixedSizeMap,5,f
+21) collections-3.2.1,org.apache.commons.collections.set.TypedSortedSet,5,f
+22) collections-3.2.1,org.apache.commons.collections.map.DefaultedMap,7,f
+23) collections-3.2.1,org.apache.commons.collections.list.LazyList,3,f
+24) collections-3.2.1,org.apache.commons.collections.map.LazyMap,4,f
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+collections-3.2.1,org.apache.commons.collections.bag.TypedBag,4,f
+collections-3.2.1,org.apache.commons.collections.collection.UnmodifiableBoundedCollection,5,f
+collections-3.2.1,org.apache.commons.collections.functors.FactoryTransformer,3,f
+collections-3.2.1,org.apache.commons.collections.functors.ChainedTransformer,4,f
+collections-3.2.1,org.apache.commons.collections.functors.IdentityPredicate,4,f
+collections-3.2.1,org.apache.commons.collections.map.UnmodifiableMap,4,f
+collections-3.2.1,org.apache.commons.collections.buffer.BlockingBuffer,5,f
+collections-3.2.1,org.apache.commons.collections.buffer.UnmodifiableBuffer,3,f
+collections-3.2.1,org.apache.commons.collections.collection.SynchronizedCollection,4,f
+collections-3.2.1,org.apache.commons.collections.functors.NullIsExceptionPredicate,5,f
+collections-3.2.1,org.apache.commons.collections.map.UnmodifiableEntrySet,4,f
+collections-3.2.1,org.apache.commons.collections.set.TransformedSet,4,f
+collections-3.2.1,org.apache.commons.collections.set.ListOrderedSet,5,f
+collections-3.2.1,org.apache.commons.collections.bag.TransformedBag,5,f
+collections-3.2.1,org.apache.commons.collections.set.UnmodifiableSet,3,f
+collections-3.2.1,org.apache.commons.collections.functors.TransformedPredicate,4,f
+collections-3.2.1,org.apache.commons.collections.functors.NullIsFalsePredicate,5,f
+collections-3.2.1,org.apache.commons.collections.map.TransformedMap,3,f
+collections-3.2.1,org.apache.commons.collections.functors.ConstantFactory,3,f
+collections-3.2.1,org.apache.commons.collections.buffer.BoundedBuffer,5,f
+collections-3.2.1,org.apache.commons.collections.functors.InstantiateFactory,4,f
+collections-3.2.1,org.apache.commons.collections.collection.TypedCollection,5,f
+collections-3.2.1,org.apache.commons.collections.set.SynchronizedSet,3,f
+collections-3.2.1,org.apache.commons.collections.set.MapBackedSet,5,f
+collections-3.2.1,org.apache.commons.collections.bag.SynchronizedBag,3,f
+collections-3.2.1,org.apache.commons.collections.set.TypedSet,4,f
+collections-3.2.1,org.apache.commons.collections.buffer.TypedBuffer,4,f
+collections-3.2.1,org.apache.commons.collections.buffer.SynchronizedBuffer,3,f
+collections-3.2.1,org.apache.commons.collections.functors.OrPredicate,3,f
+collections-3.2.1,org.apache.commons.collections.map.UnmodifiableSortedMap,5,f
+collections-3.2.1,org.apache.commons.collections.buffer.PredicatedBuffer,6,f
+collections-3.2.1,org.apache.commons.collections.buffer.TransformedBuffer,4,f
+collections-3.2.1,org.apache.commons.collections.map.TypedSortedMap,5,f
+collections-3.2.1,org.apache.commons.collections.map.MultiValueMap$ReflectionFactory,3,f
+collections-3.2.1,org.apache.commons.collections.functors.MapTransformer,4,f
+collections-3.2.1,org.apache.commons.collections.functors.EqualPredicate,4,f
+collections-3.2.1,org.apache.commons.collections.functors.OnePredicate,6,f
+collections-3.2.1,org.apache.commons.collections.FactoryUtils,3,f
+galleon-2.3.0,org.lnicholls.galleon.togo.TiVoSSLProtocolSocketFactory,1,f
+galleon-2.3.0,org.lnicholls.galleon.app.AppFactory,1,f
+galleon-2.3.0,org.lnicholls.galleon.util.DummySSLSocketFactory,5,f
+jext-5.0,org.jext.gui.BundledSkinFactory,6,f
+jgraph-5.13.0.0,com.jgraph.io.svg.SVGGraphWriter,9,f
+jgraph-5.13.0.0,org.jgraph.graph.DefaultCellViewFactory,6,f
+marauroa-3.8.1,marauroa.server.db.AdapterFactory,1,f
+marauroa-3.8.1,marauroa.server.game.rp.RPObjectFactory,5,f
+marauroa-3.8.1,marauroa.common.net.MessageFactory,4,f
+nekohtml-1.9.14,org.cyberneko.html.ObjectFactory,4,f
+pmd-4.2.5,net.sourceforge.pmd.RuleSetFactory,6,f
+pmd-4.2.5,net.sourceforge.pmd.sourcetypehandlers.JavaTypeHandler,4,f
+quickserver-1.4.7,org.quickserver.net.server.impl.BasicPoolManager,1,f
+quickserver-1.4.7,org.quickserver.util.pool.MakeQSObjectPool,6,f
+quickserver-1.4.7,org.quickserver.util.pool.thread.ThreadObjectFactory,5,f
+quickserver-1.4.7,org.quickserver.util.pool.ByteBufferObjectFactory,6,f
+quilt-0.6-a-5,org.quilt.cl.ClassFactory,4,f
+xalan-2.7.1,org.apache.xml.serializer.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.lib.sql.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.extensions.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.compiler.util.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.runtime.output.TransletOutputHandlerFactory,2,f
+xalan-2.7.1,org.apache.xalan.xsltc.trax.TemplatesImpl,6,f
+xalan-2.7.1,org.apache.xpath.jaxp.XPathImpl,6,f
+xalan-2.7.1,org.apache.xalan.processor.XSLTElementDef,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.cmdline.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xml.utils.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xpath.functions.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.trax.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xml.dtm.ref.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xpath.axes.UnionPathIterator,10,f
+xalan-2.7.1,org.apache.xalan.serialize.SerializerFactory,3,f
+xalan-2.7.1,org.apache.xml.serializer.SerializerFactory,3,f
+xalan-2.7.1,org.apache.xpath.jaxp.XPathFactoryImpl,8,f
+xalan-2.7.1,org.apache.xalan.xsltc.dom.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.compiler.util.Type,2,f
+xalan-2.7.1,org.apache.xpath.objects.XObjectFactory,2,f
+xalan-2.7.1,org.apache.xml.utils.XMLStringFactoryDefault,6,f
+xalan-2.7.1,org.apache.xml.utils.DOMHelper,11,f
+xalan-2.7.1,org.apache.xalan.lib.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.runtime.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xml.dtm.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xalan.xslt.ObjectFactory,4,f
+xalan-2.7.1,org.apache.xpath.XPathFactory,2,f
+xalan-2.7.1,org.apache.xpath.objects.XMLStringFactoryImpl,1,f
+xalan-2.7.1,org.apache.xalan.transformer.TransformerImpl,15,f
+xerces-2.10.0,org.apache.xerces.jaxp.validation.XMLSchemaFactory,6,f
+xerces-2.10.0,org.apache.html.dom.ObjectFactory,4,f
+xerces-2.10.0,org.apache.xerces.impl.dv.xs.FullDVFactory,7,f
+xerces-2.10.0,org.apache.xerces.impl.dv.DTDDVFactory,6,f
+xerces-2.10.0,org.apache.xerces.parsers.ObjectFactory,4,f
+xerces-2.10.0,org.apache.xerces.impl.dv.dtd.DTDDVFactoryImpl,8,f
+xerces-2.10.0,org.apache.xerces.impl.dv.xs.BaseDVFactory,7,f
+xerces-2.10.0,org.apache.xerces.jaxp.datatype.DatatypeFactoryImpl,17,f
+xerces-2.10.0,org.apache.xerces.dom.ASModelImpl,10,f
+xerces-2.10.0,org.apache.xerces.impl.xs.XMLSchemaValidator,15,f
+xerces-2.10.0,org.apache.xerces.dom.ObjectFactory,4,f
+xerces-2.10.0,org.apache.xerces.impl.dv.xs.SchemaDVFactoryImpl,8,f
+xerces-2.10.0,org.apache.xerces.stax.XMLEventFactoryImpl,6,f
+xerces-2.10.0,org.apache.xerces.dom.PSVIDocumentImpl,9,f
+xerces-2.10.0,org.apache.xml.serialize.SerializerFactory,4,f
+xerces-2.10.0,org.apache.xerces.impl.dv.xs.BaseSchemaDVFactory,7,f
+xerces-2.10.0,org.apache.xerces.xinclude.ObjectFactory,4,f
+xerces-2.10.0,org.apache.xerces.parsers.CachingParserPool,6,f
+xerces-2.10.0,org.apache.xerces.impl.xs.models.CMNodeFactory,5,f
+xerces-2.10.0,org.apache.xerces.dom.DocumentTypeImpl,13,f
+xerces-2.10.0,org.apache.xerces.jaxp.SAXParserFactoryImpl,7,f
+xerces-2.10.0,org.apache.xml.serialize.ObjectFactory,4,f
+xerces-2.10.0,org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser,5,f
+xerces-2.10.0,org.apache.xerces.impl.dtd.XMLDTDLoader,4,f
+xerces-2.10.0,org.apache.xml.serialize.SerializerFactoryImpl,6,f
+axion-1.0-M2,org.axiondb.jdbc.ConnectionFactory,3,f
+axion-1.0-M2,org.axiondb.Database,5,f
+axion-1.0-M2,org.axiondb.engine.MemoryDatabase,3,f
+axion-1.0-M2,org.axiondb.engine.DiskDatabase,3,f
+collections-3.2.1,org.apache.commons.collections.collection.TransformedCollection,5,f
+collections-3.2.1,org.apache.commons.collections.bag.PredicatedSortedBag,7,f
+collections-3.2.1,org.apache.commons.collections.bag.UnmodifiableBag,3,f
+collections-3.2.1,org.apache.commons.collections.bidimap.UnmodifiableOrderedBidiMap,6,f
+collections-3.2.1,org.apache.commons.collections.TransformerUtils,4,f
+collections-3.2.1,org.apache.commons.collections.map.PredicatedSortedMap,7,f
+collections-3.2.1,org.apache.commons.collections.comparators.BooleanComparator,7,f
+collections-3.2.1,org.apache.commons.collections.collection.PredicatedCollection,8,f
+collections-3.2.1,org.apache.commons.collections.map.ListOrderedMap,6,f
+collections-3.2.1,org.apache.commons.collections.bag.SynchronizedSortedBag,4,f
+collections-3.2.1,org.apache.commons.collections.set.TransformedSortedSet,5,f
+collections-3.2.1,org.apache.commons.collections.map.FixedSizeSortedMap,7,f
+collections-3.2.1,org.apache.commons.collections.map.PredicatedMap,6,f
+collections-3.2.1,org.apache.commons.collections.functors.ConstantTransformer,3,f
+collections-3.2.1,org.apache.commons.collections.set.PredicatedSortedSet,7,f
+collections-3.2.1,org.apache.commons.collections.functors.PrototypeFactory,4,f
+collections-3.2.1,org.apache.commons.collections.list.UnmodifiableList,3,f
+collections-3.2.1,org.apache.commons.collections.functors.AnyPredicate,6,f
+collections-3.2.1,org.apache.commons.collections.map.TransformedSortedMap,6,f
+collections-3.2.1,org.apache.commons.collections.list.FixedSizeList,4,f
+collections-3.2.1,org.apache.commons.collections.bidimap.UnmodifiableSortedBidiMap,6,f
+collections-3.2.1,org.apache.commons.collections.collection.UnmodifiableCollection,4,f
+collections-3.2.1,org.apache.commons.collections.bag.TypedSortedBag,5,f
+collections-3.2.1,org.apache.commons.collections.functors.TransformerClosure,3,f
+collections-3.2.1,org.apache.commons.collections.functors.SwitchTransformer,5,f
+galleon-2.3.0,org.lnicholls.galleon.apps.jabber.Jabber$JabberFactory,3,f
+informa-0.7.0-alpha2,de.nava.informa.utils.poller.Poller$PollerThreadFactory,4,f
+informa-0.7.0-alpha2,de.nava.informa.utils.cleaner.Cleaner$CleanerThreadFactory,3,f
+informa-0.7.0-alpha2,de.nava.informa.impl.basic.ChannelBuilder,6,f
+marauroa-3.8.1,marauroa.server.game.db.RPObjectDAO,5,f
+pmd-4.2.5,net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandlerBroker,3,f
+pmd-4.2.5,net.sourceforge.pmd.cpd.LanguageFactory,1,f
+quickserver-1.4.7,org.quickserver.util.pool.ClientHandlerObjectFactory,6,f
+quickserver-1.4.7,org.quickserver.net.server.PoolManager,1,f
+quickserver-1.4.7,org.quickserver.util.pool.PoolableObject,4,f
+quickserver-1.4.7,org.quickserver.security.SecureStoreManager,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.trax.SmartTransformerFactoryImpl,4,f
+xalan-2.7.1,org.apache.xalan.xsltc.trax.TransformerFactoryImpl,12,f
+xalan-2.7.1,org.apache.xalan.processor.TransformerFactoryImpl,8,f
+xalan-2.7.1,org.apache.xalan.xsltc.dom.CollatorFactoryBase,4,f
+xalan-2.7.1,org.apache.xpath.axes.WalkerFactory,7,f
+xalan-2.7.1,org.apache.xml.dtm.ref.DTMDefaultBaseTraversers,9,f
+xalan-2.7.1,org.apache.xml.serializer.OutputPropertiesFactory,10,f
+xalan-2.7.1,org.apache.xalan.xsltc.compiler.ObjectFactory,4,f
+xerces-2.10.0,org.apache.xerces.dom.EntityImpl,5,f
+xerces-2.10.0,org.apache.xerces.impl.xs.identity.Field,3,f
+xerces-2.10.0,org.apache.xerces.impl.dv.xs.ExtendedSchemaDVFactoryImpl,9,f
+xerces-2.10.0,org.apache.xerces.impl.dv.dtd.XML11DTDDVFactoryImpl,9,f
+xerces-2.10.0,org.apache.xerces.impl.dv.ObjectFactory,4,f
