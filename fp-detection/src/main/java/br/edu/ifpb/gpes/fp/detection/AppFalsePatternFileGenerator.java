@@ -51,8 +51,12 @@ public class AppFalsePatternFileGenerator {
             // Separando todas as classes que possuem esses termos
             benchmarking.getTerms().stream().forEach(terms -> {
                 terms.getTermsWithCounter().forEach((key, value) -> {
-                    if (key.equals("factory") || key.equals("create")) {
-//                        System.out.println(terms.getEntityName());
+//                    if (key.equals("factory") || key.equals("create")) {
+////                        System.out.println(terms.getEntityName());
+//                        newListTermsCounterWithFactoryOrCreate.add(terms);
+//                    }
+                    
+                    if(catalog.contains(key)) {
                         newListTermsCounterWithFactoryOrCreate.add(terms);
                     }
                 });

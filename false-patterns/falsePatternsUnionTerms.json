@@ -3,6 +3,10 @@
         {
             "metrics": [
                 {
+                    "entityName": "org.axiondb.ComparisonOperator",
+                    "metricValue": 7
+                },
+                {
                     "entityName": "org.axiondb.jdbc.ConnectionFactory",
                     "metricValue": 3
                 },
@@ -53,12 +57,25 @@
                 {
                     "entityName": "org.axiondb.DataTypeFactory",
                     "metricValue": 4
+                },
+                {
+                    "entityName": "org.axiondb.engine.commands.BaseAxionCommand",
+                    "metricValue": 3
                 }
             ],
             "projectName": "axion-1.0-M2"
         },
         {
-            "metrics": [],
+            "metrics": [
+                {
+                    "entityName": "net.sourceforge.cobertura.util.CommandLineBuilder",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "net.sourceforge.cobertura.ant.CommonMatchingTask",
+                    "metricValue": 7
+                }
+            ],
             "projectName": "cobertura-1.9.4.1"
         },
         {
@@ -66,6 +83,10 @@
                 {
                     "entityName": "org.apache.commons.collections.collection.TransformedCollection",
                     "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.commons.collections.iterators.EmptyOrderedIterator",
+                    "metricValue": 4
                 },
                 {
                     "entityName": "org.apache.commons.collections.functors.PrototypeFactory$PrototypeSerializationFactory",
@@ -96,6 +117,10 @@
                     "metricValue": 4
                 },
                 {
+                    "entityName": "org.apache.commons.collections.iterators.TestSingletonIterator",
+                    "metricValue": 4
+                },
+                {
                     "entityName": "org.apache.commons.collections.functors.TransformerPredicate",
                     "metricValue": 4
                 },
@@ -105,6 +130,10 @@
                 },
                 {
                     "entityName": "org.apache.commons.collections.functors.NullPredicate",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.commons.collections.iterators.SingletonIterator",
                     "metricValue": 4
                 },
                 {
@@ -164,12 +193,20 @@
                     "metricValue": 5
                 },
                 {
+                    "entityName": "org.apache.commons.collections.map.SingletonMap$SingletonValues",
+                    "metricValue": 3
+                },
+                {
                     "entityName": "org.apache.commons.collections.map.PredicatedSortedMap",
                     "metricValue": 7
                 },
                 {
                     "entityName": "org.apache.commons.collections.list.TypedList",
                     "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.commons.collections.iterators.TestSingletonListIterator",
+                    "metricValue": 5
                 },
                 {
                     "entityName": "org.apache.commons.collections.iterators.TestUnmodifiableOrderedMapIterator",
@@ -272,6 +309,10 @@
                     "metricValue": 4
                 },
                 {
+                    "entityName": "org.apache.commons.collections.map.SingletonMap",
+                    "metricValue": 6
+                },
+                {
                     "entityName": "org.apache.commons.collections.bag.UnmodifiableSortedBag",
                     "metricValue": 4
                 },
@@ -328,6 +369,10 @@
                     "metricValue": 5
                 },
                 {
+                    "entityName": "org.apache.commons.collections.iterators.EmptyOrderedMapIterator",
+                    "metricValue": 5
+                },
+                {
                     "entityName": "org.apache.commons.collections.iterators.TestUnmodifiableIterator",
                     "metricValue": 4
                 },
@@ -372,6 +417,10 @@
                     "metricValue": 4
                 },
                 {
+                    "entityName": "org.apache.commons.collections.map.SingletonMap$SingletonMapIterator",
+                    "metricValue": 4
+                },
+                {
                     "entityName": "org.apache.commons.collections.functors.NullIsExceptionPredicate",
                     "metricValue": 5
                 },
@@ -380,12 +429,24 @@
                     "metricValue": 6
                 },
                 {
+                    "entityName": "org.apache.commons.collections.IteratorUtils",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.commons.collections.iterators.EmptyMapIterator",
+                    "metricValue": 4
+                },
+                {
                     "entityName": "org.apache.commons.collections.map.UnmodifiableEntrySet",
                     "metricValue": 4
                 },
                 {
                     "entityName": "org.apache.commons.collections.map.TestTransformedSortedMap",
                     "metricValue": 7
+                },
+                {
+                    "entityName": "org.apache.commons.collections.iterators.EmptyIterator",
+                    "metricValue": 4
                 },
                 {
                     "entityName": "org.apache.commons.collections.map.TestUnmodifiableSortedMap",
@@ -404,8 +465,16 @@
                     "metricValue": 5
                 },
                 {
+                    "entityName": "org.apache.commons.collections.iterators.EmptyListIterator",
+                    "metricValue": 5
+                },
+                {
                     "entityName": "org.apache.commons.collections.functors.PrototypeFactory",
                     "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.commons.collections.map.TestSingletonMap",
+                    "metricValue": 5
                 },
                 {
                     "entityName": "org.apache.commons.collections.set.UnmodifiableSet",
@@ -428,12 +497,24 @@
                     "metricValue": 3
                 },
                 {
+                    "entityName": "org.apache.commons.collections.functors.InstantiateTransformer",
+                    "metricValue": 4
+                },
+                {
                     "entityName": "org.apache.commons.collections.functors.ExceptionTransformer",
                     "metricValue": 4
                 },
                 {
                     "entityName": "org.apache.commons.collections.functors.AnyPredicate",
                     "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.commons.collections.iterators.SingletonListIterator",
+                    "metricValue": 1
+                },
+                {
+                    "entityName": "org.apache.commons.collections.comparators.ComparableComparator",
+                    "metricValue": 4
                 },
                 {
                     "entityName": "org.apache.commons.collections.functors.NullIsFalsePredicate",
@@ -498,6 +579,10 @@
                 {
                     "entityName": "org.apache.commons.collections.bag.SynchronizedBag",
                     "metricValue": 3
+                },
+                {
+                    "entityName": "org.apache.commons.collections.buffer.TestBlockingBuffer",
+                    "metricValue": 6
                 },
                 {
                     "entityName": "org.apache.commons.collections.set.TypedSet",
@@ -577,6 +662,10 @@
                 },
                 {
                     "entityName": "org.apache.commons.collections.map.TestLazyMap",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.commons.collections.iterators.TestSingletonIterator2",
                     "metricValue": 4
                 },
                 {
@@ -681,6 +770,10 @@
                     "metricValue": 1
                 },
                 {
+                    "entityName": "org.lnicholls.galleon.server.Server",
+                    "metricValue": 2
+                },
+                {
                     "entityName": "org.lnicholls.galleon.apps.jukebox.Jukebox$JukeboxFactory",
                     "metricValue": 3
                 },
@@ -710,15 +803,15 @@
                     "metricValue": 4
                 },
                 {
-                    "entityName": "de.nava.informa.utils.Atom030Settings",
-                    "metricValue": 3
+                    "entityName": "de.nava.informa.utils.PersistChanGrpMgr",
+                    "metricValue": 14
                 },
                 {
-                    "entityName": "de.nava.informa.utils.RSS200Settings",
-                    "metricValue": 3
+                    "entityName": "de.nava.informa.utils.ChannelRegistry",
+                    "metricValue": 5
                 },
                 {
-                    "entityName": "de.nava.informa.impl.hibernate.ChannelBuilder",
+                    "entityName": "de.nava.informa.utils.InformaUtils",
                     "metricValue": 3
                 },
                 {
@@ -726,26 +819,94 @@
                     "metricValue": 6
                 },
                 {
+                    "entityName": "de.nava.informa.utils.toolkit.WorkersManager",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "de.nava.informa.parsers.FeedParser",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "de.nava.informa.utils.FeedManagerEntry",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "de.nava.informa.parsers.RSS_0_91_Parser",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "de.nava.informa.utils.Atom030Settings",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "de.nava.informa.core.ChannelParserIF",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "de.nava.informa.parsers.RSS_2_0_Parser",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "de.nava.informa.utils.PersistChanGrpMgrTask",
+                    "metricValue": 8
+                },
+                {
+                    "entityName": "de.nava.informa.utils.RSS100Settings",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "de.nava.informa.parsers.Atom_1_0_Parser",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "de.nava.informa.utils.poller.PollerWorkerThread",
+                    "metricValue": 4
+                },
+                {
                     "entityName": "de.nava.informa.utils.cleaner.Cleaner$CleanerThreadFactory",
                     "metricValue": 3
                 },
                 {
-                    "entityName": "de.nava.informa.utils.toolkit.WorkersManager",
+                    "entityName": "de.nava.informa.utils.UpdateChannelTask",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "de.nava.informa.utils.FeedManager",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "de.nava.informa.utils.RSS200Settings",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "de.nava.informa.parsers.Atom_0_3_Parser",
                     "metricValue": 4
+                },
+                {
+                    "entityName": "de.nava.informa.impl.hibernate.ChannelBuilder",
+                    "metricValue": 3
                 },
                 {
                     "entityName": "de.nava.informa.impl.basic.ChannelBuilder",
                     "metricValue": 6
                 },
                 {
-                    "entityName": "de.nava.informa.utils.RSS100Settings",
-                    "metricValue": 3
+                    "entityName": "de.nava.informa.parsers.RSS_1_0_Parser",
+                    "metricValue": 2
+                },
+                {
+                    "entityName": "de.nava.informa.core.ChannelBuilderException",
+                    "metricValue": 5
                 }
             ],
             "projectName": "informa-0.7.0-alpha2"
         },
         {
             "metrics": [
+                {
+                    "entityName": "default.HyperTyperObjectManager",
+                    "metricValue": 7
+                },
                 {
                     "entityName": "org.jext.gui.Dockable",
                     "metricValue": 2
@@ -788,8 +949,16 @@
                     "metricValue": 9
                 },
                 {
+                    "entityName": "com.jgraph.algebra.JGraphAlgebra",
+                    "metricValue": 9
+                },
+                {
                     "entityName": "org.jgraph.graph.DefaultCellViewFactory",
                     "metricValue": 6
+                },
+                {
+                    "entityName": "org.jgraph.util.ParallelEdgeRouter",
+                    "metricValue": 4
                 },
                 {
                     "entityName": "org.jgraph.graph.GraphLayoutCache",
@@ -800,6 +969,42 @@
         },
         {
             "metrics": [
+                {
+                    "entityName": "marauroa.server.game.python.GameScript",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "marauroa.server.db.TransactionPool",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "marauroa.common.net.MessageFactory",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "marauroa.common.net.Decoder",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "marauroa.server.game.container.PlayerEntryContainer",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "marauroa.common.net.Encoder",
+                    "metricValue": 2
+                },
+                {
+                    "entityName": "marauroa.common.net.message.Message",
+                    "metricValue": 2
+                },
+                {
+                    "entityName": "marauroa.common.game.RPClass",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "marauroa.server.game.Statistics",
+                    "metricValue": 1
+                },
                 {
                     "entityName": "marauroa.server.game.db.DatabaseFactory",
                     "metricValue": 3
@@ -813,28 +1018,32 @@
                     "metricValue": 6
                 },
                 {
-                    "entityName": "marauroa.server.db.TransactionPool",
-                    "metricValue": 3
-                },
-                {
                     "entityName": "marauroa.server.game.rp.RPObjectFactory",
                     "metricValue": 5
                 },
                 {
-                    "entityName": "marauroa.common.net.MessageFactory",
-                    "metricValue": 4
+                    "entityName": "marauroa.server.db.command.DBCommandQueue",
+                    "metricValue": 5
                 },
                 {
                     "entityName": "marauroa.server.game.db.RPObjectDAO",
                     "metricValue": 5
                 },
                 {
-                    "entityName": "marauroa.common.net.Decoder",
-                    "metricValue": 3
+                    "entityName": "marauroa.server.marauroad",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "marauroa.server.game.rp.RPWorld",
+                    "metricValue": 5
                 },
                 {
                     "entityName": "marauroa.server.game.rp.NoFactoryConfException",
                     "metricValue": 5
+                },
+                {
+                    "entityName": "marauroa.common.Configuration",
+                    "metricValue": 6
                 },
                 {
                     "entityName": "marauroa.server.game.db.RPZoneDAO",
@@ -855,6 +1064,10 @@
         {
             "metrics": [
                 {
+                    "entityName": "com.opensymphony.oscache.web.ServletCacheAdministrator",
+                    "metricValue": 10
+                },
+                {
                     "entityName": "com.opensymphony.oscache.plugins.clustersupport.JMS10BroadcastingListener",
                     "metricValue": 1
                 },
@@ -868,11 +1081,15 @@
         {
             "metrics": [
                 {
-                    "entityName": "net.sourceforge.pmd.PMD",
-                    "metricValue": 5
+                    "entityName": "net.sourceforge.pmd.dcd.graph.UsageGraph",
+                    "metricValue": 8
                 },
                 {
-                    "entityName": "net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandlerBroker",
+                    "entityName": "net.sourceforge.pmd.ant.Formatter$RendererBuilder",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "net.sourceforge.pmd.util.filter.Filters",
                     "metricValue": 3
                 },
                 {
@@ -888,16 +1105,40 @@
                     "metricValue": 3
                 },
                 {
+                    "entityName": "net.sourceforge.pmd.rules.design.UnsynchronizedStaticDateFormatter",
+                    "metricValue": 2
+                },
+                {
                     "entityName": "net.sourceforge.pmd.cpd.LanguageFactory",
                     "metricValue": 1
                 },
                 {
-                    "entityName": "net.sourceforge.pmd.sourcetypehandlers.JavaTypeHandler",
-                    "metricValue": 4
-                },
-                {
                     "entityName": "net.sourceforge.pmd.PMD$PmdThreadFactory",
                     "metricValue": 3
+                },
+                {
+                    "entityName": "net.sourceforge.pmd.dcd.graph.UsageGraphBuilder",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "net.sourceforge.pmd.PMD",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandlerBroker",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "net.sourceforge.pmd.rules.design.UseSingleton",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "net.sourceforge.pmd.rules.design.NonThreadSafeSingleton",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "net.sourceforge.pmd.sourcetypehandlers.JavaTypeHandler",
+                    "metricValue": 4
                 }
             ],
             "projectName": "pmd-4.2.5"
@@ -958,6 +1199,10 @@
                     "metricValue": 4
                 },
                 {
+                    "entityName": "org.quilt.reports.XMLFormatter",
+                    "metricValue": 5
+                },
+                {
                     "entityName": "org.quilt.cl.TestGraphTransformer",
                     "metricValue": 4
                 },
@@ -999,8 +1244,16 @@
         {
             "metrics": [
                 {
-                    "entityName": "org.apache.xml.dtm.ref.sax2dtm.SAX2DTM2org.apache.xml.dtm.ref.sax2dtm.SAX2DTM2",
+                    "entityName": "org.apache.xml.dtm.ref.sax2dtm.SAX2DTM2",
                     "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xml.dtm.ref.DTMDefaultBaseIterators$TypedSingletonIterator",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "javax.xml.transform.sax.TemplatesHandler",
+                    "metricValue": 2
                 },
                 {
                     "entityName": "javax.xml.transform.stream.StreamResult",
@@ -1055,6 +1308,10 @@
                     "metricValue": 2
                 },
                 {
+                    "entityName": "org.apache.xalan.xsltc.dom.SingletonIterator",
+                    "metricValue": 3
+                },
+                {
                     "entityName": "org.apache.xalan.processor.ProcessorOutputElem",
                     "metricValue": 7
                 },
@@ -1087,6 +1344,10 @@
                     "metricValue": 7
                 },
                 {
+                    "entityName": "org.apache.xml.dtm.ref.IncrementalSAXSource_Filter",
+                    "metricValue": 16
+                },
+                {
                     "entityName": "org.apache.xpath.axes.LocPathIterator",
                     "metricValue": 13
                 },
@@ -1105,6 +1366,10 @@
                 {
                     "entityName": "org.apache.xml.serializer.Method",
                     "metricValue": 1
+                },
+                {
+                    "entityName": "org.apache.xalan.xsltc.dom.MultiDOM",
+                    "metricValue": 7
                 },
                 {
                     "entityName": "org.apache.xml.dtm.ref.DTMDefaultBaseIterators",
@@ -1155,6 +1420,18 @@
                     "metricValue": 7
                 },
                 {
+                    "entityName": "org.apache.xalan.xsltc.dom.SAXImpl",
+                    "metricValue": 12
+                },
+                {
+                    "entityName": "org.apache.xalan.processor.ProcessorAttributeSet",
+                    "metricValue": 1
+                },
+                {
+                    "entityName": "org.apache.xalan.xsltc.dom.AdaptiveResultTreeImpl",
+                    "metricValue": 7
+                },
+                {
                     "entityName": "org.apache.xpath.functions.ObjectFactory",
                     "metricValue": 4
                 },
@@ -1177,6 +1454,10 @@
                 {
                     "entityName": "org.apache.xalan.processor.StylesheetHandler",
                     "metricValue": 10
+                },
+                {
+                    "entityName": "org.apache.xalan.xsltc.dom.SimpleResultTreeImpl$SingletonIterator",
+                    "metricValue": 3
                 },
                 {
                     "entityName": "org.apache.xalan.xsltc.trax.ObjectFactory",
@@ -1211,6 +1492,10 @@
                     "metricValue": 10
                 },
                 {
+                    "entityName": "org.apache.xalan.xsltc.runtime.BasisLibrary",
+                    "metricValue": 4
+                },
+                {
                     "entityName": "org.apache.xalan.xsltc.dom.NodeSortRecord",
                     "metricValue": 5
                 },
@@ -1239,6 +1524,10 @@
                     "metricValue": 4
                 },
                 {
+                    "entityName": "org.apache.xalan.processor.ProcessorDecimalFormat",
+                    "metricValue": 1
+                },
+                {
                     "entityName": "org.apache.xalan.processor.ProcessorStylesheetElement",
                     "metricValue": 2
                 },
@@ -1249,6 +1538,10 @@
                 {
                     "entityName": "org.apache.xalan.processor.ProcessorNamespaceAlias",
                     "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xalan.xsltc.dom.DOMAdapter",
+                    "metricValue": 4
                 },
                 {
                     "entityName": "org.apache.xml.serializer.SerializerFactory",
@@ -1299,6 +1592,10 @@
                     "metricValue": 12
                 },
                 {
+                    "entityName": "org.apache.xalan.xsltc.compiler.util.NodeType",
+                    "metricValue": 3
+                },
+                {
                     "entityName": "org.apache.xml.utils.XMLReaderManager",
                     "metricValue": 7
                 },
@@ -1339,6 +1636,10 @@
                     "metricValue": 5
                 },
                 {
+                    "entityName": "javax.xml.validation.TypeInfoProvider",
+                    "metricValue": 3
+                },
+                {
                     "entityName": "org.apache.xalan.xsltc.compiler.Constants",
                     "metricValue": 4
                 },
@@ -1363,7 +1664,23 @@
                     "metricValue": 4
                 },
                 {
+                    "entityName": "org.apache.xalan.xsltc.DOMCache",
+                    "metricValue": 2
+                },
+                {
+                    "entityName": "org.apache.xml.utils.DOMBuilder",
+                    "metricValue": 7
+                },
+                {
                     "entityName": "javax.xml.validation.SchemaFactoryFinder",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xml.dtm.ref.DTMDefaultBaseIterators$SingletonIterator",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "org.apache.xalan.xsltc.dom.SimpleResultTreeImpl",
                     "metricValue": 5
                 },
                 {
@@ -1435,8 +1752,20 @@
                     "metricValue": 6
                 },
                 {
+                    "entityName": "org.apache.xml.serializer.utils.Utils",
+                    "metricValue": 3
+                },
+                {
                     "entityName": "javax.xml.transform.FactoryFinder",
                     "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xml.serializer.utils.Messages",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xalan.xsltc.dom.DOMBuilder",
+                    "metricValue": 3
                 },
                 {
                     "entityName": "org.apache.xml.serializer.dom3.DOMOutputImpl",
@@ -1453,6 +1782,10 @@
                 {
                     "entityName": "org.apache.xalan.xsltc.trax.TemplatesHandlerImpl",
                     "metricValue": 2
+                },
+                {
+                    "entityName": "org.apache.xalan.lib.sql.SQLQueryParser",
+                    "metricValue": 7
                 },
                 {
                     "entityName": "org.apache.xpath.functions.FuncSystemProperty",
@@ -1495,6 +1828,10 @@
                     "metricValue": 2
                 },
                 {
+                    "entityName": "org.apache.xml.dtm.ref.sax2dtm.SAX2DTM2$TypedSingletonIterator",
+                    "metricValue": 4
+                },
+                {
                     "entityName": "org.w3c.dom.ls.LSInput",
                     "metricValue": 7
                 },
@@ -1520,18 +1857,6 @@
         {
             "metrics": [
                 {
-                    "entityName": "org.apache.xerces.dom.CharacterDataImpl",
-                    "metricValue": 12
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.EntityImpl",
-                    "metricValue": 5
-                },
-                {
-                    "entityName": "org.apache.xerces.impl.xs.traversers.XSDHandler",
-                    "metricValue": 9
-                },
-                {
                     "entityName": "org.apache.xerces.parsers.XML11NonValidatingConfiguration",
                     "metricValue": 1
                 },
@@ -1540,32 +1865,24 @@
                     "metricValue": 10
                 },
                 {
-                    "entityName": "org.apache.xerces.impl.dtd.XMLDTDProcessor",
-                    "metricValue": 1
-                },
-                {
-                    "entityName": "org.apache.xerces.jaxp.validation.XMLSchemaFactory",
-                    "metricValue": 6
-                },
-                {
                     "entityName": "org.apache.html.dom.ObjectFactory",
                     "metricValue": 4
-                },
-                {
-                    "entityName": "org.apache.xerces.impl.XMLDocumentFragmentScannerImpl",
-                    "metricValue": 14
                 },
                 {
                     "entityName": "org.apache.xerces.impl.xs.identity.Field",
                     "metricValue": 3
                 },
                 {
+                    "entityName": "org.apache.xerces.dom.PSVIDOMImplementationImpl",
+                    "metricValue": 2
+                },
+                {
                     "entityName": "org.apache.xerces.impl.dv.xs.FullDVFactory",
                     "metricValue": 7
                 },
                 {
-                    "entityName": "org.apache.xerces.dom.NotationImpl",
-                    "metricValue": 7
+                    "entityName": "org.apache.xerces.dom.CoreDOMImplementationImpl",
+                    "metricValue": 16
                 },
                 {
                     "entityName": "org.apache.xerces.parsers.IntegratedParserConfiguration",
@@ -1576,10 +1893,6 @@
                     "metricValue": 7
                 },
                 {
-                    "entityName": "org.apache.xerces.impl.dv.DTDDVFactory",
-                    "metricValue": 6
-                },
-                {
                     "entityName": "org.apache.xerces.parsers.XML11DTDConfiguration",
                     "metricValue": 2
                 },
@@ -1588,44 +1901,24 @@
                     "metricValue": 4
                 },
                 {
-                    "entityName": "org.apache.xerces.jaxp.validation.StAXEventResultBuilder",
-                    "metricValue": 8
-                },
-                {
                     "entityName": "org.apache.xerces.parsers.StandardParserConfiguration",
                     "metricValue": 10
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.DOMOutputImpl",
-                    "metricValue": 7
-                },
-                {
-                    "entityName": "org.apache.xerces.impl.dv.xs.ExtendedSchemaDVFactoryImpl",
-                    "metricValue": 9
-                },
-                {
-                    "entityName": "org.apache.xerces.impl.dv.dtd.DTDDVFactoryImpl",
-                    "metricValue": 8
                 },
                 {
                     "entityName": "org.apache.xerces.parsers.AbstractDOMParser",
                     "metricValue": 2
                 },
                 {
-                    "entityName": "org.apache.xerces.impl.dv.xs.BaseDVFactory",
-                    "metricValue": 7
-                },
-                {
-                    "entityName": "org.apache.xerces.jaxp.datatype.DatatypeFactoryImpl",
-                    "metricValue": 17
+                    "entityName": "org.apache.xerces.parsers.DOMParserImpl",
+                    "metricValue": 11
                 },
                 {
                     "entityName": "org.apache.xerces.dom.ElementImpl",
                     "metricValue": 11
                 },
                 {
-                    "entityName": "org.apache.xerces.impl.XMLDocumentScannerImpl",
-                    "metricValue": 13
+                    "entityName": "org.apache.xerces.dom.DOMImplementationImpl",
+                    "metricValue": 2
                 },
                 {
                     "entityName": "org.apache.xerces.dom.ASModelImpl",
@@ -1640,10 +1933,6 @@
                     "metricValue": 11
                 },
                 {
-                    "entityName": "org.apache.xerces.impl.xs.XMLSchemaValidator",
-                    "metricValue": 15
-                },
-                {
                     "entityName": "org.apache.xerces.dom.ObjectFactory",
                     "metricValue": 4
                 },
@@ -1652,24 +1941,16 @@
                     "metricValue": 5
                 },
                 {
-                    "entityName": "org.apache.xerces.jaxp.validation.StreamValidatorHelper",
-                    "metricValue": 3
-                },
-                {
-                    "entityName": "org.apache.xerces.impl.dv.xs.AbstractDateTimeDV",
-                    "metricValue": 11
+                    "entityName": "org.apache.xerces.dom.ASDOMImplementationImpl",
+                    "metricValue": 12
                 },
                 {
                     "entityName": "org.apache.xml.serialize.Serializer",
                     "metricValue": 1
                 },
                 {
-                    "entityName": "org.apache.xerces.impl.xs.XMLSchemaLoader",
-                    "metricValue": 4
-                },
-                {
-                    "entityName": "org.apache.xerces.impl.Constants",
-                    "metricValue": 4
+                    "entityName": "org.apache.xerces.jaxp.validation.DOMResultBuilder",
+                    "metricValue": 5
                 },
                 {
                     "entityName": "org.apache.xerces.impl.dv.dtd.XML11DTDDVFactoryImpl",
@@ -1684,10 +1965,6 @@
                     "metricValue": 7
                 },
                 {
-                    "entityName": "org.apache.xerces.impl.dv.DVFactoryException",
-                    "metricValue": 4
-                },
-                {
                     "entityName": "org.apache.xerces.dom.ElementDefinitionImpl",
                     "metricValue": 2
                 },
@@ -1700,36 +1977,12 @@
                     "metricValue": 10
                 },
                 {
-                    "entityName": "org.apache.xerces.parsers.XMLGrammarParser",
-                    "metricValue": 3
-                },
-                {
-                    "entityName": "org.apache.xerces.stax.XMLEventFactoryImpl",
-                    "metricValue": 6
-                },
-                {
                     "entityName": "org.apache.xerces.dom.PSVIDocumentImpl",
                     "metricValue": 9
                 },
                 {
                     "entityName": "org.apache.xerces.dom.CDATASectionImpl",
                     "metricValue": 11
-                },
-                {
-                    "entityName": "org.apache.xerces.parsers.XML11Configuration",
-                    "metricValue": 1
-                },
-                {
-                    "entityName": "org.apache.xml.serialize.SerializerFactory",
-                    "metricValue": 4
-                },
-                {
-                    "entityName": "org.apache.xerces.impl.dv.xs.BaseSchemaDVFactory",
-                    "metricValue": 7
-                },
-                {
-                    "entityName": "org.apache.xerces.xinclude.ObjectFactory",
-                    "metricValue": 4
                 },
                 {
                     "entityName": "org.apache.xerces.parsers.CachingParserPool",
@@ -1748,18 +2001,6 @@
                     "metricValue": 13
                 },
                 {
-                    "entityName": "org.apache.xerces.jaxp.SAXParserFactoryImpl",
-                    "metricValue": 7
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.DocumentImpl",
-                    "metricValue": 13
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.NodeImpl",
-                    "metricValue": 11
-                },
-                {
                     "entityName": "org.apache.xerces.impl.dtd.XML11NSDTDValidator",
                     "metricValue": 7
                 },
@@ -1768,47 +2009,15 @@
                     "metricValue": 8
                 },
                 {
-                    "entityName": "org.apache.xml.serialize.ObjectFactory",
-                    "metricValue": 4
-                },
-                {
-                    "entityName": "org.apache.xerces.jaxp.DocumentBuilderImpl",
-                    "metricValue": 6
-                },
-                {
-                    "entityName": "org.apache.xerces.parsers.DTDConfiguration",
-                    "metricValue": 11
-                },
-                {
                     "entityName": "org.apache.xerces.jaxp.DocumentBuilderFactoryImpl",
                     "metricValue": 7
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.CoreDocumentImpl",
-                    "metricValue": 17
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.ParentNode",
-                    "metricValue": 9
                 },
                 {
                     "entityName": "org.apache.xerces.impl.dv.ObjectFactory",
                     "metricValue": 4
                 },
                 {
-                    "entityName": "org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser",
-                    "metricValue": 5
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.DocumentFragmentImpl",
-                    "metricValue": 10
-                },
-                {
                     "entityName": "org.apache.xerces.dom3.as.ASModel",
-                    "metricValue": 6
-                },
-                {
-                    "entityName": "org.apache.xerces.dom.TextImpl",
                     "metricValue": 6
                 },
                 {
@@ -1824,12 +2033,224 @@
                     "metricValue": 2
                 },
                 {
+                    "entityName": "org.apache.xerces.jaxp.validation.StAXStreamResultBuilder",
+                    "metricValue": 7
+                },
+                {
                     "entityName": "org.apache.xerces.jaxp.SAXParserImpl",
                     "metricValue": 6
                 },
                 {
                     "entityName": "org.apache.xerces.dom.ChildNode",
                     "metricValue": 2
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.validation.DraconianErrorHandler",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.CharacterDataImpl",
+                    "metricValue": 12
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.EntityImpl",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.xs.traversers.XSDHandler",
+                    "metricValue": 9
+                },
+                {
+                    "entityName": "org.apache.wml.dom.WMLDOMImplementationImpl",
+                    "metricValue": 8
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.DeferredDOMImplementationImpl",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dtd.XMLDTDProcessor",
+                    "metricValue": 1
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.validation.XMLSchemaFactory",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.XMLDocumentFragmentScannerImpl",
+                    "metricValue": 14
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.validation.DOMValidatorHelper",
+                    "metricValue": 7
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.NotationImpl",
+                    "metricValue": 7
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dv.DTDDVFactory",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.validation.StAXEventResultBuilder",
+                    "metricValue": 8
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.DOMOutputImpl",
+                    "metricValue": 7
+                },
+                {
+                    "entityName": "org.apache.xerces.stax.DefaultNamespaceContext",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.xs.SchemaGrammar$Schema4Annotations",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dv.xs.ExtendedSchemaDVFactoryImpl",
+                    "metricValue": 9
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dv.dtd.DTDDVFactoryImpl",
+                    "metricValue": 8
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dv.xs.BaseDVFactory",
+                    "metricValue": 7
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.datatype.DatatypeFactoryImpl",
+                    "metricValue": 17
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.XMLDocumentScannerImpl",
+                    "metricValue": 13
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.xs.XMLSchemaValidator",
+                    "metricValue": 15
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.xs.XSComplexTypeDecl",
+                    "metricValue": 8
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.validation.StreamValidatorHelper",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dv.xs.AbstractDateTimeDV",
+                    "metricValue": 11
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.xs.XMLSchemaLoader",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.Constants",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.parsers.XMLGrammarCachingConfiguration",
+                    "metricValue": 11
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.xs.XSImplementationImpl",
+                    "metricValue": 2
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dv.DVFactoryException",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.parsers.DOMASBuilderImpl",
+                    "metricValue": 10
+                },
+                {
+                    "entityName": "org.apache.xerces.parsers.XMLGrammarParser",
+                    "metricValue": 3
+                },
+                {
+                    "entityName": "org.apache.xerces.stax.XMLEventFactoryImpl",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xerces.parsers.XML11Configuration",
+                    "metricValue": 1
+                },
+                {
+                    "entityName": "org.apache.xml.serialize.SerializerFactory",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.impl.dv.xs.BaseSchemaDVFactory",
+                    "metricValue": 7
+                },
+                {
+                    "entityName": "org.apache.xerces.xinclude.ObjectFactory",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.SAXParserFactoryImpl",
+                    "metricValue": 7
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.DocumentImpl",
+                    "metricValue": 13
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.NodeImpl",
+                    "metricValue": 11
+                },
+                {
+                    "entityName": "org.apache.xml.serialize.ObjectFactory",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.DocumentBuilderImpl",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xerces.parsers.DTDConfiguration",
+                    "metricValue": 11
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.CoreDocumentImpl",
+                    "metricValue": 17
+                },
+                {
+                    "entityName": "org.apache.xerces.stax.EmptyLocation",
+                    "metricValue": 4
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.ParentNode",
+                    "metricValue": 9
+                },
+                {
+                    "entityName": "org.apache.html.dom.HTMLBuilder",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.JAXPValidatorComponent$DraconianErrorHandler",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser",
+                    "metricValue": 5
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.DocumentFragmentImpl",
+                    "metricValue": 10
+                },
+                {
+                    "entityName": "org.apache.xerces.dom.TextImpl",
+                    "metricValue": 6
+                },
+                {
+                    "entityName": "org.apache.xerces.jaxp.validation.StAXValidatorHelper",
+                    "metricValue": 8
                 },
                 {
                     "entityName": "org.apache.xml.serialize.SerializerFactoryImpl",
