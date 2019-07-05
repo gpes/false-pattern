@@ -16,7 +16,7 @@ emp.data <- data.frame(
   quantity = entityQuantities
 )
 
-png(filename = "./r-scripts/goal1.png", width=380,height=400,bg = "white")
+png(filename = "./results/goal1.png", width=380,height=400,bg = "white")
 grid.table(emp.data)
 dev.off()
 

@@ -33,8 +33,8 @@ public class AppQualitasMetricsRelation {
         StringBuilder finalBuilder = new StringBuilder();
         
         List<String> metricIds = new FileMetricIds().readFile();
-        finalBuilder.append("projectName; entityName; pattern; metricValue; ");
-        metricIds.forEach(id -> finalBuilder.append(String.format("%s; ", id)));
+        finalBuilder.append("projectName,entityName,pattern,metricValue,");
+        metricIds.forEach(id -> finalBuilder.append(String.format("%s,", id)));
         finalBuilder.append("\n");
         
         projectNames.stream().forEach(projectName -> {
@@ -53,19 +53,19 @@ public class AppQualitasMetricsRelation {
                 StringBuilder lineBuilder = new StringBuilder();
                 
                 String line = String.format(
-                        "%s; %s; %s; %s; ",
+                        "%s,%s,%s,%s,",
                         projectName, fpMetric.getEntityName(), "factory", fpMetric.getMetricValue()
                 );
                 lineBuilder.append(line);
                 
                 qualitasMetrics.forEach(qualitasMetric -> {
                     Double qualitasMetricValue = qualitasMetric.getEntityValues().get(fpMetric.getEntityName());
-                    String collumn = String.format("%f; ", qualitasMetricValue);
+                    String collumn = String.format("%f,", qualitasMetricValue);
                     lineBuilder.append(collumn);
                 });
                 lineBuilder.append("\n");
                 
-                if(!lineBuilder.toString().contains("null;")) finalBuilder.append(lineBuilder.toString());
+                if(!lineBuilder.toString().contains("null,")) finalBuilder.append(lineBuilder.toString());
             });
            
         });

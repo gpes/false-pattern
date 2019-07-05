@@ -22,7 +22,7 @@ emp.data <- data.frame(
 
 print(entityQuantities)
 
-png(filename = "./r-scripts/goal2-h3.png", width=380,height=415,bg = "white")
+png(filename = "./results/goal2-h3.png", width=380,height=415,bg = "white")
 grid.table(emp.data)
 dev.off()
 
