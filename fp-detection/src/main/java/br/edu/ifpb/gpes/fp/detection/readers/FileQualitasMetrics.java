@@ -72,7 +72,7 @@ public class FileQualitasMetrics {
 
                         values.stream().forEach(value -> {
                             entityValues.put(
-                                    String.format("%s.%s", value.getAttributeValue("package"), value.getAttributeValue("name")),
+                                    String.format("%s.%s", value.getAttributeValue("package"), value.getAttributeValue("name").replace(".", "$")),
                                     Double.parseDouble(value.getAttributeValue("value"))
                             );
                         });
