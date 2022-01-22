@@ -25,7 +25,7 @@
     "helmet": "^3.12.1",
     "mongoose": "^5.1.4",
     "morgan": "^1.9.0",
-    "node-fetch": "^2.2.0",
+    "node-fetch": "^3.1.1",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0"
   },
